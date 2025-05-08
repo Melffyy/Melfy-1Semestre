@@ -19,7 +19,7 @@
 
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: "Istok Web", sans-serif;
     background: linear-gradient(to bottom, #FBDC2A, #FFF1A3);
     color: var(--cor-texto);
 }

@@ -1,7 +1,7 @@
 :root {
     --cor-fundo: #ffffff;
     --cor-texto: #333;
-    --cor-header: #F9E955;
+    --cor-header: #FBDC2A;
     --cor-link: #573224;
     --cor-ativa: #ffa500;
     --cor-borda: #00000057;
@@ -16,9 +16,10 @@
     --cor-botao: #4a2c1d;
     --cor-botao-hover: #3a2014;
 }
+
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: "Istok Web", sans-serif;
     background: var(--cor-fundo);
     color: var(--cor-texto);
 }
@@ -33,7 +34,7 @@ header {
 }
   
 .logo img {
-    height: 80px;
+    height: 70px;
     width: auto;
 }
   
@@ -44,52 +45,76 @@ nav {
     flex-grow: 2;
     margin-left: 400px;
 }
-  
+
 nav a {
     margin: 0 15px;
     text-decoration: none;
     color: var(--cor-link);
-    font-size: 20px;
+    font-size: 15px;
     font-family: "Istok Web", sans-serif;
     font-weight: 700;
     font-style: normal;
+    padding: 8px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
 }
-  
+
+nav a:hover {
+    background-color: var(--cor-laranja);
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
+}
+
 nav .iconbag {
     margin-left: 20px;
 }
-  
+
+nav .iconbag a {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--cor-link);
+}
+
+nav .iconbag a:hover {
+    background-color: var(--cor-laranja);
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
+}
+
 nav .iconuser {
     margin-left: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -30px;
+    margin-top: 0px;
 }
-  
+
 .iconuser img {
-    height: 60px;
-  }
-  
+    height: 50px;
+}
+
 nav .iconbag a, nav .iconuser a {
     display: inline-block;
 }
-  
+
 nav .active {
     background-color: var(--cor-ativa);
     padding: 5px 10px;
     border-radius: 10px;
 }
-  
+
 .iconbag i {
     font-size: 34px;
     color: var(--cor-link);
 }
-  
+
 .iconbag i:hover, .iconuser i:hover {
-    color: var(--cor-ativa);
+    color: white;
 }
-  
+
 .icons span {
     margin-left: 10px;
     font-size: 20px;
@@ -295,7 +320,7 @@ h3 {
     background-color: var(--cor-botao-hover);
 }
   
-.footer {
+footer {
     background-color: var(--cor-footer);
     font-family: 'Quicksand', sans-serif;
     color: #666;
@@ -304,14 +329,14 @@ h3 {
     border-top: 2px solid var(--cor-borda);
     width: 100%;
     box-sizing: border-box;
-    height: 150px;
-}
+    height: 170px;
+  }
   
-.footer .social-icons {
+.footer-top .social-icons {
     margin-bottom: 10px;
 }
   
-.footer .social-icons a {
+.footer-top .social-icons a {
     margin: 0 8px;
     display: inline-block;
     background-color: #fff;
@@ -321,7 +346,7 @@ h3 {
     height: 30px;
 }
   
-.footer .social-icons a img {
+.footer-top .social-icons a img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -337,7 +362,9 @@ h3 {
     margin-top: 15px;
     padding: 10px 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between; 
+    padding-left: 50px;
+    padding-right: 50px;
     font-size: 14px;
     color: #666;
     width: 100%;
@@ -347,11 +374,13 @@ h3 {
 .footer-bottom a {
     text-decoration: none;
     color: #666;
-    margin: 0 15px;
+    font-size: 14px;
 }
   
 .footer-bottom span {
     color: #666;
+    font-size: 14px;
+    text-align: center; 
+    flex-grow: 1; 
 }
-  
   
