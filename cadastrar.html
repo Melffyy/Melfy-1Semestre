@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Melfy</title>
-  <link rel="stylesheet" href="./css/home.css"/>
+  <link rel="stylesheet" href="./css/cadastrar.css"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -16,7 +16,7 @@
 <body>
   <header>
     <div class="logo">
-        <img src="img/Melfy-versão final.svg" alt="Logo"</>
+        <img src="img/Melfy-versão final.svg" alt="Logo" />
     </div>
     <nav>
       <a href="home.html">Home</a>
@@ -33,40 +33,47 @@
         </a>
       </div>
     </nav>
-  </header>  
+  </header> 
 
-  <main class="home-section">
-    <section class="mapa-section">
-      <div class="pesquisa">
-        <input type="text" id="inputLocal" placeholder="Onde você está?" />
-        <button onclick="pesquisar()">Ver confeitarias próximas</button>
+  <main>
+    <section>
+      <h1 class="titulo">Cadastrar</h1>
+      <div class="container">
+        <div class="login-box">
+          <form>
+            <label for="nome">Nome</label>
+            <input type="nome" id="nome" placeholder="Digite seu nome">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Digite seu email">
+    
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" placeholder="Digite sua senha">
+    
+            <label for="senha">Repetir Senha</label>
+            <input type="repeatpassword" id="repetirsenha" placeholder="Confirme sua senha">
+            <button type="submit" class="btn-logar">Cadastrar</button>
+    
+            <button class="btn-google">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" />
+              Sign in with Google
+            </button>
+    
+            <button class="btn-facebook">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook" />
+              Sign in with Facebook
+            </button>
+    
+        </form>
+        </div>
+    
+        <div class="image-box">
+          <img src="./img/Morango.svg" alt="Bolo" class="cake">
+        </div>
       </div>
-      <div id="mapa" style="width: 100%; height: 400px; border-radius: 10px; margin-top: 20px;"></div>
     </section>
-  
-    <section class="info-section">
-        <div class="card-info">
-          <img src="./img/Comendo Doce.svg" alt="Ilustração pessoa" />
-          <div class="text-content">
-            <h3>VOCÊ TEM FOME DE UM DOCINHO DEPOIS DE UM DIA DIFÍCIL?</h3>
-            <h3>A GENTE TE ENTENDE</h3>
-            <p>Cadastre-se e vem pedir o seu no Melfy!</p>
-            <button>Saiba mais</button>
-          </div>
-        </div>
-      
-        <div class="card-info">
-          <img src="./img/Confeitaria.svg" alt="Confeitaria" />
-          <div class="text-content">
-            <h3>A SUA DOÇURA DE EMPREENDER COMEÇA NO MELFY</h3>
-            <p>Cadastre sua confeitaria ou sua doceria</p>
-            <button>Saiba mais</button>
-          </div>
-        </div>
-      </section>
-      
-  </main>  
-  
+  </main>
+
   <footer class="footer">
     <div class="footer-top">
       <div class="social-icons">
@@ -87,8 +94,5 @@
     </div>
   </footer>
   
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="./js/home.js"></script>
-
 </body>
 </html>
