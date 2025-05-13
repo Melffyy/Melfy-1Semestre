@@ -22,6 +22,22 @@ body {
     font-family: "Istok Web", sans-serif;
     background: linear-gradient(to bottom, #FBDC2A, #FFF1A3);
     color: var(--cor-texto);
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: -280px;
+    left: 0;
+    right: 0;
+    bottom: -140px;
+    background: url('../img/Imagens.png');
+    background-size: 90% 62%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    max-height: calc(300vh - 50px);
 }
   
 header {
@@ -120,6 +136,27 @@ nav .active {
     font-size: 20px;
 }
 
+.titulo {
+  font-family: "Istok Web", sans-serif;
+  font-size: 40px;
+  color: var(--cor-destaque);
+  text-shadow:
+    -1px 1px 0 var(--cor-destaque),  
+     1px 1px 0 var(--cor-destaque),
+    -1px 1px 0 var(--cor-destaque),
+     1px 1px 0 var(--cor-destaque);
+  text-align: center;
+  margin-top: 40px;
+}
+
+.subTitulo{
+    font-family: "Istok Web", sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin-top: -40px;
+    color: var(--cor-contraste);
+}
+
 .home-section {
     padding: 200px;
 }
@@ -129,7 +166,7 @@ nav .active {
     width: 100%;
     max-width: 800px;
     margin-bottom: 15px;
-    margin-top: -90px;
+    margin-top: -140px;
 }
 
 .pesquisa input {
@@ -181,7 +218,7 @@ nav .active {
 .card-info {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
     flex: 1;
     min-width: 300px;
     padding: 20px;
@@ -191,6 +228,7 @@ nav .active {
 .card-info img {
     max-width: 120px;
     flex-shrink: 0;
+    margin-right: 30px;
 }
   
 .text-content {
@@ -222,7 +260,6 @@ nav .active {
     background-color: var(--cor-botao-hover);
 }
 
-  
 footer {
     background-color: var(--cor-footer);
     font-family: 'Quicksand', sans-serif;
