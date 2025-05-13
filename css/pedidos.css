@@ -1,0 +1,289 @@
+:root {
+    --cor-fundo: #ffffff;
+    --cor-texto: #333;
+    --cor-header: #FBDC2A;
+    --cor-link: #573224;
+    --cor-ativa: #ffa500;
+    --cor-borda: #00000057;
+    --cor-footer: #F9E955;
+    --cor-footer-bottom: #F8D720;
+    --cor-contraste: #5d3a00;
+    --cor-amarelo: #FFE600;
+    --cor-laranja: #F8A520;
+    --cor-destaque: #664032;
+    --cor-preco: #ffe8cc;
+    --cor-preco-icone: #a86a00;
+    --cor-botao: #4a2c1d;
+    --cor-botao-hover: #3a2014;
+}
+
+body {
+    margin: 0;
+    font-family: "Istok Web", sans-serif;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFE063;
+    padding: 10px 20px;
+    border-bottom: 2px solid var(--cor-borda);
+}
+  
+.logo img {
+    height: 70px;
+    width: auto;
+}
+  
+nav {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-grow: 2;
+    margin-left: 400px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--cor-link);
+    font-size: 15px;
+    font-family: "Istok Web", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    padding: 8px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--cor-laranja);
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
+}
+
+
+nav .iconbag {
+    margin-left: 20px;
+}
+
+nav .iconbag a {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--cor-link);
+}
+
+nav .iconbag a:hover {
+    background-color: var(--cor-laranja);
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
+}
+
+nav .iconuser {
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.iconuser img {
+    height: 50px;
+}
+
+nav .iconbag a, nav .iconuser a {
+    display: inline-block;
+}
+
+nav .active {
+    background-color: var(--cor-ativa);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.iconbag i {
+    font-size: 34px;
+    color: var(--cor-link);
+}
+
+.iconbag i:hover{
+    color: white;
+}
+
+.icons span {
+    margin-left: 10px;
+    font-size: 20px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fff;
+    color: #333;
+}
+
+.container {
+    max-width: 1600px;
+    margin: auto;
+    padding: 20px 40px;
+}
+
+h2 {
+    margin-top: 40px;
+}
+
+.pedidos-ativos {
+    background-color: #ffe082;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.pedido-card {
+    background: white;
+    border-radius: 10px;
+    width: 270px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.pedido-card img {
+    width: 91%;
+    position: relative;
+    height: auto;
+    padding: 10px;
+    border-radius: 18px;
+}
+
+.pedido-info {
+    padding: 17px;
+}
+
+.marca {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.marca .perfil-img {
+  width: 20%;
+  height: 70%;
+  border-radius: 60%;
+  object-fit: cover;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+
+.produto {
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 3px;
+}
+
+.descricao {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.detalhes {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.status {
+    font-size: 14px;
+    font-weight: bold;
+    color: green;
+}
+.tempo{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.bolinha {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: green;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.pedido-id {
+    font-size: 11px;
+    color: #999;
+}
+
+.data-bloco {
+    margin-bottom: 30px;
+}
+
+.historico-linha {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.historico-card {
+    background: #fff8cc;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.205);
+}
+
+.historico-card .topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.historico-card img {
+    width: 65px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.26);
+}
+
+.historico-card .descricao {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.historico-card button {
+    background: #ff9f00;
+    border: none;
+    border-radius:  15px;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.205);
+    left: 67%;
+    position: relative;
+    
+}
+
+.ver-mais {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: underline;
+}
