@@ -323,3 +323,20 @@ footer {
     text-align: center; 
     flex-grow: 1; 
 }
+
+@media only screen and (max-width: 1920px) {
+    body::before{
+        content: '';
+        position: absolute;
+        top: -200px;
+        left: 0;
+        right: 0;
+        bottom: -140px;
+        background: url('../img/Imagens.png');
+        background-size: 90% 62%;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        max-height: calc(300vh - 50px);
+    }
+}
