@@ -126,7 +126,6 @@ nav .active {
     display: flex;
     justify-content: center;
     gap: 40px;
-    /* background-color: yellow; */
     padding: 3%;
 }
 
@@ -141,6 +140,8 @@ nav .active {
     gap: 10px;
     padding: 3%;
 }
+
+
 
 .item-topicos-flex{
     display: flex;
@@ -198,15 +199,7 @@ a{
     text-decoration: none;
     transition: all 0.3s ease;
 }
-/* 
-a:hover{
-    background-color: var(--cor-laranja);
-    color: white;
-    box-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
-    border-radius: 20px;
-    padding: 10px;
-    width: 140px;
-} */
+
 
 .meus-dados{
     background-color: transparent;
@@ -217,6 +210,16 @@ a:hover{
 .main-title{
     text-align: center;
     margin-top: 5%;
+    font-size: 40px;
+}
+
+#title-meus-dados{
+    color: #D36900;
+    margin-bottom: 7%;
+}
+
+#name-user{
+    font-weight: bold;
 }
 
 h1{
@@ -240,29 +243,80 @@ h1{
 .item-meus-dados-flex{
     display: flex;
     flex-direction: row;
-    gap: 60px;
+    gap: 40px;
     border-radius: 20px;
     height: 100vh;
-    
+}
+
+.item-meus-dados{
+    width: 350px;
 }
 
 input{
     background-color: #E9E9E9;
-    /* box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.18); */
-    border-bottom: 1px solid rgb(189, 189, 189);
+    border: 2px solid rgb(201, 201, 201);
     border-radius: 6px;
-    border: none;
-    height: 25px;
-    width: 190px;
+    height: 30px;
+    width: 70%;
     margin: 20px;
     transition: 0.5s;
 }
 
-input:hover{
-    border-bottom: 1px dotted rgb(189, 189, 189);
-}
 
 label{
     margin: 20px;
-    
+    font-weight: bold;    
+    color: #D36900;
+}
+
+
+                                /* CONTAINER DOS BOTÕES */
+
+
+.item-container-buttons{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+#botao-salvar{
+    background-color: #B8E033;
+    color: white;
+}
+
+#botao-editar{
+    background-color: #FF7F00;
+    color: white;
+}
+
+button{
+    height: 50px;
+    width: 140px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.192);
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+
+                                /* CONTAINER PARA CENTRALIZAR A IMG LOGOUT */
+
+.item-container-logout{
+    display: flex;
+    align-items: flex-end;
+    height: 90vh;
+}
+
+.img-logout{
+    cursor: pointer;
+    width: 30px;
 }

@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+
+
+                                          <!-- HEADER -->
     <header>
         <div class="logo">
             <img src="img/Melfy-versão final.svg" alt="Logo" />
@@ -29,14 +32,17 @@
       </header>  
 
     <h1 class="main-title">Perfil</h1>
+
+
+      
     <div class="container">
         
         <div class="item">
-           
+                                              <!-- CONTAINER TÓPICOS DO PERFIL -->
             <div class="item-container-perfil">
                 <img src="img/cute-bee-design.avif" alt="" id="image-profile">
                 <div class="item-nome-email">
-                    <p>Nome do Usuário</p>
+                    <p id="name-user">Nome do Usuário</p>
                     <p>E-mail</p>
                 </div>
             </div>
@@ -47,13 +53,20 @@
               <a href="perfil.html" class="a-topicos" id="meus-dados"><strong>MEUS DADOS</strong></a>
               <a href="" class="a-topicos"><strong>ENDEREÇOS</strong></a>
               <a href="" class="a-topicos" id="forma-pg"><strong>FORMA DE PAGAMENTO</strong></a>
+              
             </div>
-            <!-- <h1 id="titulo-perfil">Perfil</h1> -->
-          
+
+            <div class="item-container-logout">
+              <img src="./img/logout (1).png" class="img-logout" alt="">
+              <p></p>
+            </div>
         </div>
 
+
+                                              <!-- CONTAINER INPUTS MEUS DADOS -->
+
         <div class="item container-meus-dados">
-          
+          <h1 id="title-meus-dados">Meus Dados</h1>
           <div class="item-meus-dados-flex">
             <div class="item-meus-dados">
               <div class="item-meus-dados-input">
@@ -73,7 +86,7 @@
             
           <div class="item-meus-dados">
               <div class="item-meus-dados-input">
-                <label>teste</label>
+                <label>Data de Nascimento</label>
                 <input type="text" name="" id="">
               </div>
               
@@ -86,10 +99,22 @@
                 <label for="">Telefone</label>
                 <input type="text" name="" id="">
               </div>
-              
+          </div>   
           </div>
-            
+
+          
+          <div>
+                                                <!-- BOTÕES SALVAR E EDITAR -->
+            <div class="item-container-buttons">
+              <div class="item-buttons">
+                <button id="botao-salvar">Salvar dados</button>
+              </div>
+              <div class="item-buttons">
+                <button id="botao-editar">Editar dados</button>
+              </div>
+            </div>
           </div>
+
         </div>
     </div>
 </body>
