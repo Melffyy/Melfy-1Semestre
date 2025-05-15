@@ -1,12 +1,12 @@
 :root {
     --cor-fundo: #ffffff;
     --cor-texto: #333;
-    --cor-header: rgba(0, 0, 0, 0.08);
+    --cor-header: #FBDC2A;
     --cor-link: #573224;
     --cor-ativa: #ffa500;
     --cor-borda: #00000057;
-    --cor-footer: rgb(249, 233, 85, 0.23);
-    --cor-footer-bottom: rgba(248, 216, 32, 0.521);
+    --cor-footer: #F9E955;
+    --cor-footer-bottom: #F8D720;
     --cor-contraste: #5d3a00;
     --cor-amarelo: #FFE600;
     --cor-laranja: #F8A520;
@@ -29,7 +29,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #FFE063;
+    background: var(--cor-header);
     padding: 10px 20px;
     border-bottom: 2px solid var(--cor-borda);
 }
@@ -320,3 +320,68 @@ button:hover{
     cursor: pointer;
     width: 30px;
 }
+
+footer {
+    background-color: var(--cor-footer);
+    font-family: 'Quicksand', sans-serif;
+    color: #666;
+    text-align: center;
+    padding: 20px 0px;
+    border-top: 2px solid var(--cor-borda);
+    width: 100%;
+    box-sizing: border-box;
+    height: 170px;
+  }
+  
+.footer-top .social-icons {
+    margin-bottom: 10px;
+}
+  
+.footer-top .social-icons a {
+    margin: 0 8px;
+    display: inline-block;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+  
+.footer-top .social-icons a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.footer-top p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+  
+.footer-bottom {
+    background-color: var(--cor-footer-bottom);
+    margin-top: 15px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between; 
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 14px;
+    color: #666;
+    width: 100%;
+    box-sizing: border-box;
+}
+  
+.footer-bottom a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+}
+  
+.footer-bottom span {
+    color: #666;
+    font-size: 14px;
+    text-align: center; 
+    flex-grow: 1; 
+}
+  
