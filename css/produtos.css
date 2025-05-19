@@ -25,7 +25,7 @@ body {
     color: var(--cor-texto);
 }
 
-/* #region CSS HEADER   ----------------------------------------------------------------------------------------- */
+/* #region CSS HEADER */
 header {
     display: flex;
     justify-content: space-between;
@@ -118,7 +118,9 @@ nav .active {
     color: white;
 }
 /* #endregion */
-/*----------------------------------------------------CSS CONTEUDO DA PAGINA--------------------------------------*/
+
+/* CONTEUDO DA Pagina*/
+
 /* #region Barra de pesquisa e Botão filtro */
 .inicio-botao-pesquisar{
     display: flex;
@@ -135,10 +137,10 @@ nav .active {
 }
 
 .search-bar input{
-    width: 600px;
+    width: 800px;
     padding: 15px;
     border: 1px solid #ccc;
-    border-radius: 50px;
+    border-radius: 20px;
 
 }
 
@@ -149,42 +151,143 @@ nav .active {
     margin-left: -65px;
 }
 
-
-
-
 .button-filtro{
     margin-top: 70px;
     padding: 15px;
     background: #FFE500;
-    border-radius: 50px;
+    border-radius: 20px;
     font-size: 20px;
     text-align: center;
     justify-items: center;
-
-
 }
 /* #endregion */
 
+/* #region Perfil- Header*/
+.loja-categoria {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #461E14;
+}
+
+.perfil-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.perfil-nome-avaliacao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.nome-loja {
+  font-size: 20px;
+  font-weight: bold;
+  color: #3a2e2e;
+}
+
+.perfil-avaliacao {
+  width: 100px;
+  height: auto;
+  margin-top: 4px;
+}
+
+/* #endregion*/
+
+
 .container_produtos{
-/* Conainer */
-display: flex;
-flex-wrap: wrap;               /* Quebra os itens para baixo se não couberem */
-align-items: flex-start;       /* Alinha os itens no topo */
-  
-gap: 20px;                     /* Espaço entre os itens */
-padding: 20px;                 /* Espaço interno */
-max-width: 1200px;             /* Largura máxima no desktop */
-width: 100%;                   /* Ocupa toda a largura disponível */
-margin: 0 auto;                /* Centraliza a div na tela */
+padding: 20px;                 
+max-width: 1200px;            
+width: 100%;                   
+margin: 0 auto;                
 box-sizing: border-box;
-
-
 background: #FFFDF4;
 border: 1px solid #461E14;
 border-radius: 20px;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
 
 }
 
+.card{
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    width: 220px;
+    background-color: #FFFDF4;
+    border-radius: 16px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #FEFFF8;
+    margin: 20px;
+    gap: 10px;
+}
+
+
+.foto-produto{
+    flex-direction: inherit;
+    width: 220px;
+    height: auto;
+}
+
+
+.descricao h3 {
+    font-size: 18px;
+    color:var(--cor-texto);
+    padding-left: 10px;
+    margin: 0;
+}
+  
+.preco-comprar {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+  
+.preco {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--cor-texto);
+}
+  
+.icone-preco {
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 10px;
+}
+  
+.valor {
+    font-size: 16px;
+}
+  
+.botao-comprar {
+    background-color: var(--cor-botao);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding-left: 10px;
+    margin-left: 30px;
+}
+  
+.botao-comprar:hover {
+    background-color: var(--cor-botao-hover);
+}
+  
 
 /* #region CSS FOOTER--------------------------------------*/
 footer {
