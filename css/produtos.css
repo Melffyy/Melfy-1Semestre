@@ -127,7 +127,6 @@ nav .active {
     gap: 100px;
     justify-content: center;
     padding-top: 5px;
-    padding-bottom: 40px;
 }
 
 .search-bar{
@@ -154,7 +153,6 @@ nav .active {
 .button-filtro{
     margin-top: 70px;
     padding: 15px;
-
     font-size: 20px;
     text-align: center;
     justify-items: center;
@@ -173,13 +171,24 @@ nav .active {
   width: 60px;
   height: 60px;
   border-radius: 50%;
+  padding-left: 15px;
+  padding-top: 10px;
 }
 
 .perfil-nome-avaliacao {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+.perfil-nome-avaliacao span{
+    padding-top: 15px;
+}
+
+.perfil-nome-avaliacao img{
+    padding-bottom: 10px;
 }
 
 .nome-loja {
@@ -191,17 +200,18 @@ nav .active {
 .perfil-avaliacao {
   width: 100px;
   height: auto;
-  margin-top: 4px;
 }
 
 /* #endregion*/
 
 
 .container_produtos{
-    padding: 20px;                 
+    
     max-width: 1200px;            
-    width: 100%;                   
-    margin: 0 auto;                
+    width: 100%;    
+    margin: 0 auto;  
+    margin-top: 60px;          
+    margin-bottom: 60px;   
     box-sizing: border-box;
     background: #FFFDF4;
     border: 1px solid #461E14;
@@ -209,11 +219,12 @@ nav .active {
 }
 
 .cards-container {
+  width: 100%;    
   display: flex;
   flex-direction: row;
   gap: 15px;
   margin-top: 20px;
-  padding-left: 25px;
+  padding-left: 50px;
   padding-right: 25px;
 
 }
