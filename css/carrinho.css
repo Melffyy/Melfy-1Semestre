@@ -117,8 +117,64 @@ nav .active {
     color: white;
 }
 /* #endregion */
+main{
+    padding: 0 30px;
+}
+.page-title{
+    font-size: 40px;
+    padding: 50px 0; 
+    text-align: center;
+    color: var(--cor-texto);
+}
 
+.content{
+display: flex;
 
+}
+
+section {
+    flex: 1;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color:#F9E955;
+}
+
+thead{
+    text-align: left;  
+}
+tr{
+    border-bottom: 3px solid rgb(56, 24, 1);
+}
+thead th{
+    padding: 10px;
+    text-transform: uppercase;
+    color: sienna;
+}
+td{
+    padding: 10px 0;
+}
+
+.produto{
+    display: flex;
+    align-items: center;
+}
+
+.foto-produto{
+    width: 100px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.nome{
+    color: var(--cor-texto);
+}
+
+aside{
+
+}
 /* #region CSS FOOTER--------------------------------------*/
 footer {
     background-color: var(--cor-footer);
