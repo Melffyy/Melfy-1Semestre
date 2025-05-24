@@ -19,8 +19,13 @@ function logar() {
     const usuarios = JSON.parse(localStorage.getItem('banco'));
     const confeiteiras = JSON.parse(localStorage.getItem('confeiteiras'));
 
-    let lg = document.querySelector('#email').value;
-    let sn = document.querySelector('#senha').value;
+    let lg = document.querySelector('#email').value.trim();
+    let sn = document.querySelector('#senha').value.trim();
+
+    if (!lg || !sn) {
+        alert('Por favor, preencha ambos os campos de email e senha.');
+        return;
+    }
 
     const usuario = usuarios.find(u => u.email === lg && u.senha === sn);
     if (usuario) {
@@ -49,9 +54,14 @@ function logado() {
 function redefinirSenha(event) {
     event.preventDefault();
 
-    let email = document.querySelector('#emailRedefinir').value;
-    let novaSenha = document.querySelector('#RedefinirSenha').value;
-    let confirmarSenha = document.querySelector('#ConfirmarSenha').value;
+    let email = document.querySelector('#emailRedefinir').value.trim();
+    let novaSenha = document.querySelector('#RedefinirSenha').value.trim();
+    let confirmarSenha = document.querySelector('#ConfirmarSenha').value.trim();
+
+    if (!email || !novaSenha || !confirmarSenha) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+    }
 
     if (novaSenha !== confirmarSenha) {
         alert('As senhas não coincidem.');
