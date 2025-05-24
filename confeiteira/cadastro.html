@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Melfy</title>
+  <link rel="stylesheet" href="./css/cadastro.css"/>
+  <script src="./js/cadastro.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body onload="continuar()">
+  <header>
+    <div class="logo">
+        <img src="../img/Melfy-versão final.svg" alt="Logo" />
+    </div>
+    <nav>
+      <a href="adicionarProdutos.html">Criar Produto</a>
+      <a href="meusProdutos.html">Editar Produtos</a>
+      <a href="pedidos.html">Pedidos</a>
+      <a href="painelADM.html">Painel Administrativo</a>
+      
+      <div class="iconuser">
+        <a href="../login.html"> 
+          <img src="../img/Perfil.svg" alt="">
+        </a>
+      </div>
+    </nav>
+  </header> 
+
+  <main>
+  <section>
+    <h1 class="titulo">Cadastro</h1>
+    <div class="container">
+      <div class="login-box" id="form-informacoes">
+        <form>
+          <h2>Informações Pessoais</h2>
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" placeholder="Digite seu nome completo" />
+          
+          <label for="cpf_cnpj">CPF ou CNPJ</label>
+          <input type="text" id="cpf_cnpj" placeholder="Digite seu CPF ou CNPJ" />
+          
+          <label for="data">Data de nascimento</label>
+          <input type="date" id="data" placeholder="Data de nascimento" />
+          
+          <label for="endereco">Endereço</label>
+          <input type="text" id="endereco" placeholder="Digite seu endereço completo" />
+          
+          <label for="celular">Celular</label>
+          <input type="text" id="celular" placeholder="Digite seu celular" />
+          
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Digite seu email" />
+          
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" placeholder="Digite sua senha" />
+          
+          <button type="button" class="btn-logar" id="btn-cadastrar" onclick="continuar()">Continuar</button>
+        </form>
+      </div>
+
+      <div class="image-box" id="image-box">
+        <img src="../img/Morango.svg" alt="Bolo" class="cake" />
+      </div>
+    </div>
+  </section>
+</main>
+
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="social-icons">
+        <a href="#"><img src="../img/Instagram.svg" alt="Instagram" /></a>
+        <a href="#"><img src="../img/Facebook.svg" alt="Facebook" /></a>
+        <a href="#"><img src="../img/Linkedin.svg" alt="LinkedIn" /></a>
+      </div>
+      <p>Rua das Flores, nº 255, Jardim Rosinha, SP, Brasil</p>
+      <p>
+        <i class="fas fa-phone-alt"></i> (11) 959343957 &nbsp;
+        <i class="fas fa-envelope"></i> melfy@gmail.com
+      </p>
+    </div>
+    <div class="footer-bottom">
+      <a href="#">Política de Privacidade</a>
+      <span>© Copyright, 2025</span>
+      <a href="#">Termos e Condições</a>
+    </div>
+  </footer>
+  
+</body>
+</html>
