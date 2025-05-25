@@ -4,12 +4,14 @@
     --cor-header: #FBDC2A;
     --cor-link: #573224;
     --cor-ativa: #ffa500;
+    --cor-ativa2: #ff9900;
     --cor-borda: #00000057;
     --cor-footer: #F9E955;
     --cor-footer-bottom: #F8D720;
     --cor-contraste: #5d3a00;
+    --cor-card: #ceac18;
     --cor-amarelo: #FFE600;
-    --cor-laranja: #ceac18;
+    --cor-laranja: #F8A520;
     --cor-destaque: #664032;
     --cor-preco: #ffe8cc;
     --cor-preco-icone: #a86a00;
@@ -20,15 +22,27 @@
 body {
     margin: 0;
     font-family: "Istok Web", sans-serif;
-    background: var(--cor-fundo);
-    color: var(--cor-texto);
+    background-position: center;
+    height: 100vh;
+    width: 100%;
 }
-  
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.623);
+    z-index: -1;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--cor-header);
+    background: linear-gradient(150deg, var(--cor-header), var(--cor-ativa));
     padding: 10px 20px;
     border-bottom: 2px solid var(--cor-borda);
 }
@@ -54,7 +68,7 @@ nav a {
     font-family: "Istok Web", sans-serif;
     font-weight: 700;
     font-style: normal;
-    padding: 8px 20px;
+    padding: 8px 10px;
     border-radius: 25px;
     transition: all 0.3s ease;
 }
@@ -119,6 +133,7 @@ nav .active {
     margin-left: 10px;
     font-size: 20px;
 }
+  
   
 .search-bar {
     display: flex;
@@ -244,7 +259,7 @@ h3 {
 .card{
     height: 300px;
     width: 220px;
-    background-color: var(--cor-laranja);
+    background-color: var(--cor-card);
     border-radius: 16px;
     padding: 10px;
     font-family: 'Arial', sans-serif;
@@ -349,7 +364,7 @@ h3 {
 }
   
 footer {
-    background-color: var(--cor-footer);
+    background: linear-gradient(150deg, var(--cor-footer), var(--cor-ativa));
     font-family: 'Quicksand', sans-serif;
     color: #666;
     text-align: center;
@@ -358,7 +373,7 @@ footer {
     width: 100%;
     box-sizing: border-box;
     height: 170px;
-  }
+}
   
 .footer-top .social-icons {
     margin-bottom: 10px;
@@ -386,7 +401,7 @@ footer {
 }
   
 .footer-bottom {
-    background-color: var(--cor-footer-bottom);
+    background: linear-gradient(150deg, var(--cor-footer-bottom), var(--cor-ativa2));
     margin-top: 15px;
     padding: 10px 0;
     display: flex;

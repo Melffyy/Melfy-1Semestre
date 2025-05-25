@@ -4,6 +4,7 @@
   --cor-header: #FBDC2A;
   --cor-link: #573224;
   --cor-ativa: #ffa500;
+  --cor-ativa2: #ff9900;
   --cor-borda: #00000057;
   --cor-footer: #F9E955;
   --cor-footer-bottom: #F8D720;
@@ -20,24 +21,36 @@
 body {
   margin: 0;
   font-family: "Istok Web", sans-serif;
-  background: var(--cor-fundo);
-  color: var(--cor-texto);
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.623);
+  z-index: -1;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--cor-header);
+  background: linear-gradient(150deg, var(--cor-header), var(--cor-ativa));
   padding: 10px 20px;
   border-bottom: 2px solid var(--cor-borda);
-}
-
+  }
+  
 .logo img {
   height: 70px;
   width: auto;
 }
-
+  
 nav {
   display: flex;
   justify-content: left;
@@ -45,7 +58,7 @@ nav {
   flex-grow: 2;
   margin-left: 400px;
 }
-
+  
 nav a {
   margin: 0 15px;
   text-decoration: none;
@@ -54,21 +67,21 @@ nav a {
   font-family: "Istok Web", sans-serif;
   font-weight: 700;
   font-style: normal;
-  padding: 8px 20px;
+  padding: 8px 10px;
   border-radius: 25px;
   transition: all 0.3s ease;
 }
-
+  
 nav a:hover {
   background-color: var(--cor-laranja);
   color: white;
   box-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
 }
-
+  
 nav .iconbag {
   margin-left: 20px;
 }
-
+  
 nav .iconbag a {
   display: inline-block;
   padding: 8px 20px;
@@ -77,49 +90,49 @@ nav .iconbag a {
   text-decoration: none;
   color: var(--cor-link);
 }
-
+  
 nav .iconbag a:hover {
   background-color: var(--cor-laranja);
   color: white;
   box-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
 }
-
+  
 nav .iconuser {
   margin-left: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 0px;
-}
-
+  }
+  
 .iconuser img {
   height: 50px;
 }
-
+  
 nav .iconbag a, nav .iconuser a {
   display: inline-block;
 }
-
+  
 nav .active {
   background-color: var(--cor-ativa);
   padding: 5px 10px;
   border-radius: 10px;
 }
-
+  
 .iconbag i {
   font-size: 34px;
   color: var(--cor-link);
 }
-
+  
 .iconbag i:hover, .iconuser i:hover {
   color: white;
 }
-
+  
 .icons span {
   margin-left: 10px;
   font-size: 20px;
 }
-
+  
 main {
   display: flex;
   justify-content: center;
@@ -245,7 +258,7 @@ input {
 }
 
 footer {
-  background-color: var(--cor-footer);
+  background: linear-gradient(150deg, var(--cor-footer), var(--cor-ativa));
   font-family: 'Quicksand', sans-serif;
   color: #666;
   text-align: center;
@@ -255,11 +268,11 @@ footer {
   box-sizing: border-box;
   height: 170px;
 }
-
+  
 .footer-top .social-icons {
   margin-bottom: 10px;
 }
-
+  
 .footer-top .social-icons a {
   margin: 0 8px;
   display: inline-block;
@@ -269,20 +282,20 @@ footer {
   width: 30px;
   height: 30px;
 }
-
+  
 .footer-top .social-icons a img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
+  
 .footer-top p {
   margin: 5px 0;
   font-size: 14px;
 }
-
+  
 .footer-bottom {
-  background-color: var(--cor-footer-bottom);
+  background: linear-gradient(150deg, var(--cor-footer-bottom), var(--cor-ativa2));
   margin-top: 15px;
   padding: 10px 0;
   display: flex;
@@ -294,13 +307,13 @@ footer {
   width: 100%;
   box-sizing: border-box;
 }
-
+  
 .footer-bottom a {
   text-decoration: none;
   color: #666;
   font-size: 14px;
 }
-
+  
 .footer-bottom span {
   color: #666;
   font-size: 14px;
