@@ -37,6 +37,7 @@
   </header>
 <!-- #endregion-->
 <main>
+  <div class="carrinho">
     <div class="page-title">Seu Carrinho</div>
 
     <div class="content">
@@ -59,7 +60,7 @@
                 <div class="produto">
                     <img src="/img/brigadeiros.jpg" alt="brigadeiro" class="foto-produto">
                     <div class="info">
-                      <h1 class="nome">Brigadeiros</h1>
+                      <h3 class="nome">Brigadeiros</h3>
                       <div class="nome-loja">Soucier</div>
 
                     </div>
@@ -68,78 +69,148 @@
               <td>R$ 120,00</td>
               <td>
                 <div class="qtd">
-                  <button>-</button>
+                  <button> <i class='bx  bx-minus'  ></i> </button>
                   <span>2</span>
-                  <button>+</button>
+                  <button> 
+                     <i class='bx  bx-plus'  ></i> 
+                  </button>
                 </div>
               </td>
               <td>R$ 240,00</td>
               <td>
-                <button>
-                  <i class='bx bx-x'></i>
-                </button>
+                <button class="remover"> <i class='bx bx-x'></i> </button>
               </td>
             </tr>
 
-            <tr>
-                <td>
-                <div class="produto">
-                    <img src="/img/brigadeiros.jpg" alt="brigadeiro" class="foto-produto">
-                    <div class="info">
-                      <h1 class="nome">Brigadeiros</h1>
-                      <div class="nome-loja">Soucier</div>
-
-                    </div>
-                </div>
-              </td>
-              <td>R$ 120,00</td>
-              <td>
-                <div class="qtd">
-                  <button>-</button>
-                  <span>2</span>
-                  <button>+</button>
-                </div>
-              </td>
-              <td>R$ 240,00</td>
-              <td>
-                <button>
-                  <i class='bx bx-x'></i>
-                </button>
-              </td>
-            </tr>
-
-            <tr>
-                <td>
-                <div class="produto">
-                    <img src="/img/brigadeiros.jpg" alt="brigadeiro" class="foto-produto">
-                    <div class="info">
-                      <h1 class="nome">Brigadeiros</h1>
-                      <div class="nome-loja">Soucier</div>
-
-                    </div>
-                </div>
-              </td>
-              <td>R$ 120,00</td>
-              <td>
-                <div class="qtd">
-                  <button>-</button>
-                  <span>2</span>
-                  <button>+</button>
-                </div>
-              </td>
-              <td>R$ 240,00</td>
-              <td>
-                <button>
-                  <i class='bx bx-x'></i>
-                </button>
-              </td>
-            </tr>
 
           </tbody>
         </table>
       </section>
-      <aside>Resumo de compras </aside>
+      <aside>
+        <div class="box-finalizar-compra">
+          <div class="cabecalho">Resumo da compra</div>
+          <div class="conteudo">
+            <div><span>Sutotal</span> <span> R$100</span></div>
+            <div><span>Taxa de entrega</span> <span>gratuito</span></div>
+            <div><button class="btn-cupom">Add copon de desconto</button>
+           </div>
+          </div>
+          <div class="rodape">
+            <span>Total</span>
+            <span>R$ 20,00</span>
+          </div>
+        
+        </div>
+    
+          <button class="btn-compra">Finalizar Compra</button>
+      
+      </aside> 
     </div>
+  </div>
+    <h3 class="h3Novidades">Peça também</h3>
+      <div class="cards-wrapper">
+        <div class="card">
+          <div class="border-card">
+              <div class="headerNovidade">
+                  <img src="./img/Foto de Perfil.svg" alt="Logo Sucrier" class="logoLoja">
+                  <span class="marca">Dama</span>
+              </div>
+              <img src="./img/Eclairs.svg" alt="Caixa de Bombons" class="imagem-produto">
+              <div class="descricao">
+                  <h3>Éclairs</h3>
+                  <p>Caixa com 7 éclairs sortidas</p>
+              </div>
+              <div class="footerNovidades">
+                  <div class="preco">
+                      <span class="icone-preco">$</span>
+                      <span class="valor">133.00</span>
+                  </div>
+                  <button class="botao-comprar">Comprar</button>
+              </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="border-card">
+              <div class="headerNovidade">
+                  <img src="./img/Foto de Perfil.svg" alt="Logo Sucrier" class="logoLoja">
+                  <span class="marca">Dama</span>
+              </div>
+              <img src="./img/Eclairs.svg" alt="Caixa de Bombons" class="imagem-produto">
+              <div class="descricao">
+                  <h3>Éclairs</h3>
+                  <p>Caixa com 7 éclairs sortidas</p>
+              </div>
+              <div class="footerNovidades">
+                  <div class="preco">
+                      <span class="icone-preco">$</span>
+                      <span class="valor">133.00</span>
+                  </div>
+                  <button class="botao-comprar">Comprar</button>
+              </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="border-card">
+              <div class="headerNovidade">
+                  <img src="./img/Foto de Perfil.svg" alt="Logo Sucrier" class="logoLoja">
+                  <span class="marca">Dama</span>
+              </div>
+              <img src="./img/Eclairs.svg" alt="Caixa de Bombons" class="imagem-produto">
+              <div class="descricao">
+                  <h3>Éclairs</h3>
+                  <p>Caixa com 7 éclairs sortidas</p>
+              </div>
+              <div class="footerNovidades">
+                  <div class="preco">
+                      <span class="icone-preco">$</span>
+                      <span class="valor">133.00</span>
+                  </div>
+                  <button class="botao-comprar">Comprar</button>
+              </div>
+          </div>
+        </div>
+         <div class="card">
+          <div class="border-card">
+              <div class="headerNovidade">
+                  <img src="./img/Foto de Perfil.svg" alt="Logo Sucrier" class="logoLoja">
+                  <span class="marca">Dama</span>
+              </div>
+              <img src="./img/Eclairs.svg" alt="Caixa de Bombons" class="imagem-produto">
+              <div class="descricao">
+                  <h3>Éclairs</h3>
+                  <p>Caixa com 7 éclairs sortidas</p>
+              </div>
+              <div class="footerNovidades">
+                  <div class="preco">
+                      <span class="icone-preco">$</span>
+                      <span class="valor">133.00</span>
+                  </div>
+                  <button class="botao-comprar">Comprar</button>
+              </div>
+          </div>
+        </div>
+         <div class="card">
+          <div class="border-card">
+              <div class="headerNovidade">
+                  <img src="./img/Foto de Perfil.svg" alt="Logo Sucrier" class="logoLoja">
+                  <span class="marca">Dama</span>
+              </div>
+              <img src="./img/Eclairs.svg" alt="Caixa de Bombons" class="imagem-produto">
+              <div class="descricao">
+                  <h3>Éclairs</h3>
+                  <p>Caixa com 7 éclairs sortidas</p>
+              </div>
+              <div class="footerNovidades">
+                  <div class="preco">
+                      <span class="icone-preco">$</span>
+                      <span class="valor">133.00</span>
+                  </div>
+                  <button class="botao-comprar">Comprar</button>
+              </div>
+          </div>
+        </div>
+        
+      </div>
 </main>
 
 <!-- #region Footer-->
