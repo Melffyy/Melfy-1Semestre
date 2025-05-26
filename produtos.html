@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/produtos.css">
+    <script src="./js/produto.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -23,7 +24,7 @@
       <a href="confeitarias.html">Confeitarias</a>
       <a href="pedidos.html">Meus Pedidos</a>
       <div class="iconbag">
-        <a href="sacola.html"> 
+        <a href="carrinho.html"> 
           <i class="fas fa-shopping-bag"></i>
         </a>
       </div>
@@ -52,6 +53,9 @@
         </section>        
      </div>
     <!-- #endregion -->
+
+
+
 
         <div class="container_produtos">
           <!-- #region Perfil-Header-->
@@ -91,7 +95,7 @@
               <div class="preco-comprar">
                 <div class="preco">
                   <span class="icone-preco">R$</span>
-                  <span class="valor">2.00</span>
+                  <span class="valor">3.00</span>
                 </div>
                 <button class="botao-comprar">Comprar</button>
               </div>
@@ -219,6 +223,8 @@
 
   </main>
 
+  
+
     <!-- #endregion -->
 
 
@@ -243,6 +249,34 @@
     </div>
   </footer>
   <!-- #endregion -->
+
+<!-- Modal Overlay -->
+<div class="modal-overlay" id="product-modal">
+  <div class="modal-content">
+    <img src="brigadeiro.png" alt="Brigadeiro de nozes" class="modal-img">
+
+    <div class="modal-info">
+      <h2 class="modal-title">Brigadeiro de nozes</h2>
+      <p class="modal-description">
+        Brigadeiro com nozes, cremoso de chocolate com pedaços crocantes de nozes.
+      </p>
+
+      <p class="modal-label">PREÇO</p>
+      <p class="modal-price">R$ 2,00</p>
+
+      <div class="modal-actions">
+        <div class="modal-quantity">
+          <button>-</button>
+          <span>1</span>
+          <button>+</button>
+        </div>
+
+        <button class="btn-add">Adicionar ao carrinho</button>
+        <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 </body>
