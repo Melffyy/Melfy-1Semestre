@@ -63,7 +63,7 @@
           <label for="senha">Senha</label>
           <input type="password" id="senha" placeholder="Digite sua senha" />
           <span class="error-message" id="senha-error"></span>
-          
+            
           <button type="button" class="btn-logar" id="btn-cadastrar" onclick="continuar()">Continuar</button>
         </form>
       </div>
@@ -71,9 +71,43 @@
       <div class="image-box" id="image-box">
         <img src="../img/Morango.svg" alt="Bolo" class="cake" />
       </div>
+       <div class="login-box" id="form-novo" style="display:none;">
+        <form>
+          <h2>Dados Bancários</h2>
+          
+          <label for="nomeTitular">Nome do Titular</label>
+          <input type="text" id="nomeTitular" placeholder="Digite o nome do titular da conta" />
+      
+          <label for="cpfTitular">CPF do Titular</label>
+          <input type="text" id="cpfTitular" placeholder="Digite o CPF" maxlength="14" oninput="formatarCPF(this)" />
+      
+          <label for="banco">Banco</label>
+          <input type="text" id="banco" placeholder="Ex: Banco do Brasil, Nubank, etc." />
+      
+          <label for="agencia">Agência</label>
+          <input type="text" id="agencia" placeholder="Digite a agência" />
+      
+          <label for="conta">Número da Conta</label>
+          <input type="text" id="conta" placeholder="Digite o número da conta" />
+      
+          <label for="tipoConta">Tipo de Conta</label>
+          <select id="tipoConta">
+            <option value="">Selecione</option>
+            <option value="corrente">Corrente</option>
+            <option value="poupanca">Poupança</option>
+            <option value="pagamento">Conta Pagamento</option>
+          </select>
+
+          <div class="buttons">
+            <button type="button" class="btn-logar" onclick="voltarFormulario()">Voltar</button>
+            <button type="button" class="btn-logar" id="btn-cadastrar" onclick="cadastrar()">Cadastrar</button>
+          </div>
+       </form>
+     </div>
     </div>
   </section>
 </main>
+
 
   <footer class="footer">
     <div class="footer-top">

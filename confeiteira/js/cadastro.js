@@ -10,7 +10,7 @@ window.onload = function () {
         celular: "(11) 91234-5678", 
         email: "ana@melfy.com", 
         senha: "ana123" 
-      },
+    },
       { 
         id: 2, 
         nome: "Bruno Ferreira", 
@@ -19,8 +19,7 @@ window.onload = function () {
         endereco: "Av. Brasil, 2000 - Campinas", 
         celular: "(19) 99876-5432", 
         email: "bruno@melfy.com", 
-        senha: "bruno456" 
-      }
+        senha: "bruno456" }
     ];
     localStorage.setItem('confeiteiras', JSON.stringify(dadosIniciais));
   }
@@ -32,12 +31,107 @@ window.onload = function () {
   document.getElementById('email').addEventListener('input', validarEmail);
   document.getElementById('senha').addEventListener('input', validarSenha);
   document.getElementById('btn-cadastrar').addEventListener('click', continuar);
+  
+  document.getElementById('form-informacoes').style.display = 'block';
+  document.getElementById('form-novo').style.display = 'none';
 };
 
 function gerarId() {
   let confeiteiras = JSON.parse(localStorage.getItem('confeiteiras')) || [];
   return confeiteiras.length > 0 ? Math.max(...confeiteiras.map(c => c.id)) + 1 : 1;
 }
+
+function validarCamposPreenchidos() {
+  return (
+    !document.getElementById('nome').classList.contains('input-error') &&
+    !document.getElementById('cpf_cnpj').classList.contains('input-error') &&
+    !document.getElementById('data').classList.contains('input-error') &&
+    !document.getElementById('celular').classList.contains('input-error') &&
+    !document.getElementById('email').classList.contains('input-error') &&
+    !document.getElementById('senha').classList.contains('input-error') &&
+    document.getElementById('nome').value.trim() !== "" &&
+    document.getElementById('cpf_cnpj').value.trim() !== "" &&
+    document.getElementById('data').value.trim() !== "" &&
+    document.getElementById('celular').value.trim() !== "" &&
+    document.getElementById('email').value.trim() !== "" &&
+    document.getElementById('senha').value.trim() !== ""
+  );
+}
+
+function continuar() {
+  if (!validarCamposPreenchidos()) {
+    alert('Por favor, preencha todos os campos.');
+    return;
+  }
+
+  const id = gerarId();
+
+  const confeiteira = {
+    id: id,
+    nome: document.getElementById('nome').value.trim(),
+    cpf_cnpj: document.getElementById('cpf_cnpj').value.trim(),
+    nascimento: document.getElementById('data').value,
+    endereco: document.getElementById('endereco').value.trim(),
+    celular: document.getElementById('celular').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    senha: document.getElementById('senha').value.trim()
+  };
+
+  let confeiteiras = JSON.parse(localStorage.getItem('confeiteiras')) || [];
+  confeiteiras.push(confeiteira);
+  localStorage.setItem('confeiteiras', JSON.stringify(confeiteiras));
+
+  idConfeiteiraAtual = id; 
+
+  document.querySelector('form').reset();
+  mostrarFormularioNovo();
+}
+
+function mostrarFormularioNovo() {
+  document.getElementById('form-informacoes').style.display = 'none';
+  document.getElementById('form-novo').style.display = 'block';
+}
+
+function cadastrar() {
+  const nomeTitular = document.getElementById('nomeTitular').value.trim();
+  const cpfTitular = document.getElementById('cpfTitular').value.trim();
+  const banco = document.getElementById('banco').value.trim();
+  const agencia = document.getElementById('agencia').value.trim();
+  const conta = document.getElementById('conta').value.trim();
+  const tipoConta = document.getElementById('tipoConta').value;
+
+  if (!nomeTitular || !cpfTitular || !banco || !agencia || !conta || !tipoConta) {
+    alert("Preencha todos os campos bancários.");
+    return;
+  }
+
+  let confeiteiras = JSON.parse(localStorage.getItem('confeiteiras')) || [];
+
+  const index = confeiteiras.findIndex(c => c.id === idConfeiteiraAtual);
+  if (index !== -1) {
+    confeiteiras[index].dadosBancarios = {
+      nomeTitular,
+      cpfTitular,
+      banco,
+      agencia,
+      conta,
+      tipoConta
+    };
+
+    localStorage.setItem('confeiteiras', JSON.stringify(confeiteiras));
+    alert("Cadastro finalizado com sucesso!");
+    location.href = "adicionarProdutos.html"; 
+  } else {
+    alert("Erro ao localizar a confeiteira.");
+  }
+}
+
+function voltarFormulario() {
+  document.getElementById('form-novo').style.display = 'none';
+  document.getElementById('form-informacoes').style.display = 'block';
+}
+
+//-------validação forms1------------
 
 function validarNome() {
   const nome = document.getElementById('nome').value.trim();
@@ -133,34 +227,4 @@ function validarIdade(nascimento) {
   return idade >= 18;
 }
 
-function continuar() {
-  const nome = document.getElementById('nome').value.trim();
-  const cpf_cnpj = document.getElementById('cpf_cnpj').value.trim();
-  const nascimento = document.getElementById('data').value;
-  const endereco = document.getElementById('endereco').value.trim();
-  const celular = document.getElementById('celular').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const senha = document.getElementById('senha').value.trim();
-
-  if (!nome || !cpf_cnpj || !nascimento || !endereco || !celular || !email || !senha) {
-    alert("Por favor, preencha todos os campos!");
-    return;
-  }
-
-  const confeiteira = {
-    id: gerarId(),
-    nome: nome,
-    cpf_cnpj: cpf_cnpj,
-    nascimento: nascimento,
-    endereco: endereco,
-    celular: celular,
-    email: email,
-    senha: senha
-  };
-
-  let confeiteiras = JSON.parse(localStorage.getItem('confeiteiras')) || [];
-  confeiteiras.push(confeiteira);
-  localStorage.setItem('confeiteiras', JSON.stringify(confeiteiras));
-
-  alert("Cadastro realizado com sucesso!");
-}
+//-------validação forms2------------
