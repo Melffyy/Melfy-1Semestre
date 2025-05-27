@@ -1,4 +1,4 @@
-function continuar() {
+function continuar() { 
   const nomeLoja = document.getElementById('nomeloja').value.trim();
   const horario = document.getElementById('horario').value.trim();
   const descricao = document.getElementById('descricao').value.trim();
@@ -20,13 +20,13 @@ function continuar() {
   const idLoja = gerarIdLoja();
 
   let lojas = JSON.parse(localStorage.getItem('Lojas')) || [];
-
   lojas.push({ idLoja, ...dadosLoja });
-
+ 
   localStorage.setItem('Lojas', JSON.stringify(lojas));
 
-  alert("Dados da loja salvos com sucesso!");
+  localStorage.setItem('idLojaAtual', idLoja);
 
+  alert("Dados da loja salvos com sucesso!");
   location.href = "adicionarProdutos.html";
 }
 

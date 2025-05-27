@@ -20,43 +20,31 @@ document.addEventListener("DOMContentLoaded", function() {
             descricao: descricao,
             peso: peso,
             preco: preco,
-            foto: foto
+            foto: foto,
+            idLoja: localStorage.getItem('idLojaAtual'),
+            idConfeiteira: localStorage.getItem('idConfeiteiraAtual') 
         };
 
-        const idConfeiteiraAtual = localStorage.getItem("idConfeiteiraAtual");
-        if (idConfeiteiraAtual) {
-            let confeiteiras = JSON.parse(localStorage.getItem("confeiteiras")) || [];
-            const confeiteira = confeiteiras.find(c => c.id == idConfeiteiraAtual);
+        const idProduto = gerarIdProduto();
 
-            if (confeiteira) {
-                let loja = confeiteira.dadosLoja || {
-                    nomeLoja: "",
-                    produtos: []   
-                };
+        novoProduto.idProduto = idProduto;
 
-                loja.nomeLoja = confeiteira.nome;
+        let produtos = JSON.parse(localStorage.getItem('Produtos')) || [];
 
-                if (!loja.produtos) {
-                    loja.produtos = [];
-                }
+        produtos.push(novoProduto);
 
-                loja.produtos.push(novoProduto);
+        localStorage.setItem('Produtos', JSON.stringify(produtos));
 
-                confeiteira.dadosLoja = loja;
+        alert("Produto adicionado com sucesso!");
 
-                localStorage.setItem("confeiteiras", JSON.stringify(confeiteiras));
-
-                alert("Produto adicionado com sucesso!");
-
-                window.location.href = "meusProdutos.html"; 
-            } else {
-                alert("Confeiteira não encontrada.");
-            }
-        } else {
-            alert("Confeiteira não logada.");
-        }
+        window.location.href = "meusProdutos.html"; 
     });
 });
+
+function gerarIdProduto() {
+    let produtos = JSON.parse(localStorage.getItem('Produtos')) || [];
+    return produtos.length > 0 ? Math.max(...produtos.map(p => p.idProduto)) + 1 : 1;
+}
 
 function exibirImagem(event) {
     const input = event.target;
