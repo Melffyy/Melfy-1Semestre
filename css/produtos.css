@@ -37,7 +37,7 @@ body::before {
   background-color: rgba(255, 255, 255, 0.623);
   z-index: -1;
 }
-
+/* #region Header*/
 header {
   display: flex;
   justify-content: space-between;
@@ -166,14 +166,31 @@ nav .active {
     color: var(--cor-link);
     margin-left: -65px;
 }
-
-.button-filtro{
-    margin-top: 70px;
+.filtro{
+  display: flex;
+  flex-direction: row;
+}
+.filtro i{
+   margin-top: 70px;
     padding: 15px;
     font-size: 20px;
     text-align: center;
     justify-items: center;
 }
+.button-filtro{
+    margin-top: 70px;
+   
+    font-size: 20px;
+    text-align: center;
+    justify-items: center;
+    border: 0;
+    background: transparent;
+}
+.button-filtro i{
+  padding-top: 10px;
+  font-size: 18px;
+}
+
 /* #endregion */
 
 /* #region Perfil- Header*/
@@ -221,7 +238,7 @@ nav .active {
 
 /* #endregion*/
 
-
+/* #region Container com Produtos*/
 .container_produtos{
     
     max-width: 1200px;            
@@ -311,7 +328,7 @@ nav .active {
 .botao-comprar:hover {
     background-color: var(--cor-botao-hover);
 }
-  
+/* #endregion */
 
 /* #region CSS FOOTER--------------------------------------*/
 footer {
@@ -379,7 +396,7 @@ footer {
 }
 /* #endregion CSS FOOTER--------------------------------------*/
 
-/* Modal Overlay */
+/* #region Modal Descrição do produto */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -438,10 +455,20 @@ footer {
   color: #000;
 }
 
+.modal-price-qtd{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 80px;
+  margin-bottom: 40px;
+}
 .modal-price {
+  display: flex;
   font-size: 36px;
   font-weight: 700;
   color: #000;
+  margin-top: 16px;
   margin-bottom: 16px;
 }
 
@@ -451,17 +478,22 @@ footer {
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+  justify-content: right;
+  padding-right: 80px;
 }
 
 /* Quantity */
 .modal-quantity {
-  display: flex;
+ 
   align-items: center;
   background: #D9D9D9;
   border-radius: 100px;
-  padding: 6px 16px;
   gap: 8px;
   font-size: 18px;
+  display: inline-flex;
+  justify-content: space-around;
+  min-width: 70px;
+  min-height: 40px;
 }
 
 .modal-quantity button {
@@ -489,3 +521,4 @@ footer {
   color: #000;
   cursor: pointer;
 }
+ /* #endregion */

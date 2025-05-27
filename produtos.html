@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/produtos.css">
     <script src="./js/produto.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -42,8 +44,10 @@
     <!-- #region Barra Pesquisar e botão filtr -->
 
      <div class="inicio-botao-pesquisar">
-        <a class="button-filtro">Filtro</a>
-        
+        <div class="filtro">
+          <button class="button-filtro">Filtro </button>
+          <i class='bx  bx-slider'  ></i>
+        </div>
 
         <section class="search-bar">
             <input type="text" placeholder="Pesquisar..." />
@@ -250,7 +254,7 @@
   </footer>
   <!-- #endregion -->
 
-<!-- Modal Overlay -->
+<!-- #region Modal Descrição do Produto-->
 <div class="modal-overlay" id="product-modal">
   <div class="modal-content">
     <img src="brigadeiro.png" alt="Brigadeiro de nozes" class="modal-img">
@@ -262,14 +266,17 @@
       </p>
 
       <p class="modal-label">PREÇO</p>
-      <p class="modal-price">R$ 2,00</p>
+    <div class="modal-price-qtd">
+        <p class="modal-price">R$ 2,00</p>
+        <div class="modal-quantity">
+          <button> <i class='bx  bx-minus'  ></i> </button>
+          <span>2</span>
+          <button>  <i class='bx  bx-plus'  ></i> </button>
+        </div>
+    </div>
+   
 
       <div class="modal-actions">
-        <div class="modal-quantity">
-          <button>-</button>
-          <span>1</span>
-          <button>+</button>
-        </div>
 
         <button class="btn-add">Adicionar ao carrinho</button>
         <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
@@ -277,6 +284,8 @@
     </div>
   </div>
 </div>
+<!-- #endregion Modal Overlay -->
+
 
 
 </body>
