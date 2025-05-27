@@ -13,27 +13,26 @@ function continuar() {
     nomeLoja: nomeLoja,
     horario: horario,
     descricao: descricao,
-    fotoPerfil: fotoPerfil
+    fotoPerfil: fotoPerfil,
+    idConfeiteira: localStorage.getItem('idConfeiteiraAtual') 
   };
 
-  const idConfeiteiraAtual = localStorage.getItem('idConfeiteiraAtual');
+  const idLoja = gerarIdLoja();
 
-  if (idConfeiteiraAtual) {
-    let confeiteiras = JSON.parse(localStorage.getItem('confeiteiras')) || [];
-    const confeiteiraIndex = confeiteiras.findIndex(c => c.id == idConfeiteiraAtual);
-    
-    if (confeiteiraIndex !== -1) {
-      confeiteiras[confeiteiraIndex].dadosLoja = dadosLoja;
-      localStorage.setItem('confeiteiras', JSON.stringify(confeiteiras));
+  let lojas = JSON.parse(localStorage.getItem('Lojas')) || [];
 
-      alert("Dados da loja salvos com sucesso!");
-      location.href = "adicionarProdutos.html";
-    } else {
-      alert("Erro ao localizar a confeiteira.");
-    }
-  } else {
-    alert("Confeiteira não logada.");
-  }
+  lojas.push({ idLoja, ...dadosLoja });
+
+  localStorage.setItem('Lojas', JSON.stringify(lojas));
+
+  alert("Dados da loja salvos com sucesso!");
+
+  location.href = "adicionarProdutos.html";
+}
+
+function gerarIdLoja() {
+  let lojas = JSON.parse(localStorage.getItem('Lojas')) || [];
+  return lojas.length > 0 ? Math.max(...lojas.map(l => l.idLoja)) + 1 : 1;
 }
 
 function mostrarFotoPerfil(event) {
