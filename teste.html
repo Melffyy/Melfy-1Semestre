@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Melfy</title>
-  <link rel="stylesheet" href="teste.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="teste.css"/>
+  <script src="teste.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
@@ -14,66 +13,59 @@
 <body>
   <header>
     <div class="logo">
-        <img src="img/Melfy-versão final.svg" alt="Logo" />
+        <img src="./img/Melfy-versão final.svg" alt="Logo" />
     </div>
     <nav>
-      <a href="home.html">Home</a>
-      <a href="confeitarias.html">Confeitarias</a>
-      <a href="#">Meus Pedidos</a>
-      <div class="iconbag">
-        <a href="carrinho.html"> 
-          <i class="fas fa-shopping-bag"></i>
-        </a>
-      </div>
+      <a href="adicionarProdutos.html">Criar Produto</a>
+      <a href="meusProdutos.html">Editar Produtos</a>
+      <a href="pedidos.html">Pedidos</a>
+      <a href="painelADM.html">Painel Administrativo</a>
+      
       <div class="iconuser">
-        <a href="login.html"> 
-          <img src="./img/Perfil.svg" alt="" srcset="">
+        <a href="../login.html"> 
+          <img src="./img/Perfil.svg" alt="">
         </a>
       </div>
     </nav>
   </header> 
 
-<main class="form-container">
-  <h1>Dados Bancários</h1>
-  <form class="bank-form">
-    <div class="form-group">
-      <label for="banco">Banco:</label>
-      <input type="text" id="banco" name="banco" placeholder="Ex: Banco do Brasil" required>
-    </div>
+  <main>
+  <div class="container">
+    <div class="welcome-box">
+      <h1>Bem-vindo à Melfy!</h1>
+      <p>Crie sua loja e comece a vender seus doces com a gente!</p>
+      <img src="" alt="" class="welcome-image" />
+    </div> 
 
-    <div class="form-group">
-      <label for="agencia">Agência:</label>
-      <input type="text" id="agencia" name="agencia" placeholder="Ex: 1234-5" required>
-    </div>
+    <div class="login-box" id="form-novo">
+      <form>
+        <h2>Informações da Loja</h2>
 
-    <div class="form-group">
-      <label for="conta">Conta Corrente:</label>
-      <input type="text" id="conta" name="conta" placeholder="Ex: 98765-4" required>
-    </div>
+        <div class="foto-perfil-container">
+          <div class="foto-circular">
+            <img id="fotoExibida" src="https://via.placeholder.com/150" alt="" />
+          </div>
+          <label class="botao-upload">Selecionar Imagem</label>
+          <input type="file" id="fotoPerfil" accept="image/*" onchange="mostrarFotoPerfil(event)" />
+        </div>
 
-    <div class="form-group">
-      <label for="tipo">Tipo de Conta:</label>
-      <select id="tipo" name="tipo" required>
-        <option value="" disabled selected>Selecione</option>
-        <option value="corrente">Corrente</option>
-        <option value="poupanca">Poupança</option>
-        <option value="pix">Pix</option>
-      </select>
-    </div>
+        <label for="nomeloja">Nome da Loja</label>
+        <input type="text" id="nomeloja" placeholder="Digite o nome da loja" />
 
-    <div class="form-group">
-      <label for="titular">Nome do Titular:</label>
-      <input type="text" id="titular" name="titular" placeholder="Nome completo" required>
-    </div>
+        <label for="horario">Horário de Funcionamento</label>
+        <input type="text" id="horario" placeholder="Ex: Segunda a Sexta, 08:00 - 18:00" />
 
-    <div class="form-group">
-      <label for="cpf">CPF do Titular:</label>
-      <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
-    </div>
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" placeholder="Digite a descrição da loja" oninput="autoResize(this)"></textarea>
 
-    <button type="submit" class="submit-btn">Salvar Dados</button>
-  </form>
+          <button type="button" class="btn-logar" onclick="continuar()">Continuar</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </main>
+
+
 
   <footer class="footer">
     <div class="footer-top">
@@ -93,6 +85,8 @@
       <span>© Copyright, 2025</span>
       <a href="#">Termos e Condições</a>
     </div>
-  </footer>  
+  </footer>
+  
 </body>
 </html>
+
