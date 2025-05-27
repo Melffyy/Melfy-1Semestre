@@ -98,7 +98,6 @@ function validarCamposPreenchidos() {
   );
 }
 
-
 function mostrarFormularioNovo() {
   document.getElementById('form-informacoes').style.display = 'none';
   document.getElementById('form-novo').style.display = 'block';
@@ -136,7 +135,7 @@ function cadastrar() {
     localStorage.setItem('confeiteiras', JSON.stringify(confeiteiras));
     document.querySelector('form').reset();
     alert("Cadastro finalizado com sucesso!");
-    location.href = "adicionarProdutos.html"; 
+    location.href = "cadastroLoja.html"; 
   } else {
     alert("Erro ao localizar a confeiteira.");
   }
