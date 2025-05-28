@@ -6,19 +6,23 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     let produtos = JSON.parse(localStorage.getItem('Produtos')) || [];
+    let lojas = JSON.parse(localStorage.getItem('Lojas')) || [];
 
     if (produtos.length > 0) {
         const cardsWrapper = document.querySelector('.cards-wrapper');
         
         produtos.forEach(produto => {
+            const idLojaProduto = parseInt(produto.idLoja);
+            const loja = lojas.find(l => l.idLoja === idLojaProduto);
+
             const card = document.createElement('div');
             card.classList.add('card');
             
             card.innerHTML = `
                 <div class="border-card">
                     <div class="headerNovidade">
-                        <img src="${produto.foto}" alt="Logo Loja" class="logoLoja">
-                        <span class="marca">${produto.idLoja}</span>
+                        <img src="${loja?.fotoPerfil || ''}" alt="Logo da Loja" class="logoLoja">
+                        <span class="marca">${loja?.nomeLoja || 'Loja Desconhecida'}</span>
                     </div>
                     <img src="${produto.foto}" alt="Imagem do Produto" class="imagem-produto">
                     <div class="descricao">

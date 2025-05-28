@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const precoCounter = document.getElementById("precoCounter");
 
     let pesoGramas = 0;
-    let preco = 0;
+    let preco = 0.00;
 
     function updateCounter(input, counterElement, maxLength) {
         const currentLength = input.value.length;
@@ -122,26 +122,6 @@ document.addEventListener("DOMContentLoaded", function() {
         alert("Produto adicionado com sucesso!");
         window.location.href = "meusProdutos.html";
     });
-
-    function gerarIdProduto() {
-        let produtos = JSON.parse(localStorage.getItem('Produtos')) || [];
-        return produtos.length > 0 ? Math.max(...produtos.map(p => p.idProduto)) + 1 : 1;
-    }
-
-    function exibirImagem(event) {
-        const input = event.target;
-        const arquivo = input.files[0];
-
-        if (arquivo) {
-            const leitor = new FileReader();
-            leitor.onload = function(e) {
-                const imagemExibida = document.getElementById('imagemExibida');
-                imagemExibida.src = e.target.result;
-                imagemExibida.style.display = 'block';
-            };
-            leitor.readAsDataURL(arquivo);
-        }
-    }
 
     updatePesoCounter();
     updatePrecoCounter();
