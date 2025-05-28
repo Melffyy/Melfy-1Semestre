@@ -1,44 +1,152 @@
 document.addEventListener("DOMContentLoaded", function() {
-    document.querySelector("form").addEventListener("submit", function(event) {
-        event.preventDefault(); 
+    const nomeInput = document.getElementById("nome");
+    const subtituloInput = document.getElementById("subtitulo");
+    const nomeCounter = document.getElementById("nomeCounter");
+    const subtituloCounter = document.getElementById("subtituloCounter");
+    const pesoInput = document.getElementById("pesoInput");
+    const precoInput = document.getElementById("precoInput");
+    const pesoCounter = document.getElementById("pesoCounter");
+    const precoCounter = document.getElementById("precoCounter");
 
-        const nomeProduto = document.getElementById("nome").value.trim();
+    let pesoGramas = 0;
+    let preco = 0;
+
+    function updateCounter(input, counterElement, maxLength) {
+        const currentLength = input.value.length;
+        counterElement.textContent = `${currentLength} / ${maxLength}`;
+
+        if (currentLength > maxLength) {
+            counterElement.classList.add("red");
+        } else {
+            counterElement.classList.remove("red");
+        }
+
+        if (currentLength > maxLength) {
+            input.value = input.value.substring(0, maxLength);
+        }
+    }
+
+    nomeInput.addEventListener("input", function() {
+        updateCounter(nomeInput, nomeCounter, 21);
+    });
+
+    subtituloInput.addEventListener("input", function() {
+        updateCounter(subtituloInput, subtituloCounter, 35);
+    });
+
+    function updatePrecoCounter() {
+        precoCounter.textContent = `R$ ${preco.toFixed(2).replace('.', ',')}`;
+    }
+
+    function updatePesoCounter() {
+        if (pesoGramas >= 1000) {
+            let pesoKg = pesoGramas / 1000;
+            pesoCounter.textContent = `${pesoKg.toFixed(2)} kg`;
+        } else {
+            pesoCounter.textContent = `${pesoGramas} g`;
+        }
+    }
+
+    function validarPesoInput(value) {
+        if (value < 0 || isNaN(value)) {
+            return 0;
+        }
+        return value;
+    }
+
+    function validarPrecoInput(value) {
+        if (value < 0 || isNaN(value)) {
+            return 0;
+        }
+        return value;
+    }
+
+    pesoInput.addEventListener("input", function() {
+        pesoGramas = validarPesoInput(parseFloat(pesoInput.value));
+        updatePesoCounter();
+    });
+
+    precoInput.addEventListener("input", function() {
+        preco = validarPrecoInput(parseFloat(precoInput.value));
+        updatePrecoCounter();
+    });
+
+    document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        let nomeProduto = nomeInput.value.trim();
+        let subtitulo = subtituloInput.value.trim();
         const categoria = document.getElementById("categoria").value.trim();
         const descricao = document.getElementById("detalhes").value.trim();
-        const peso = document.getElementById("peso").value.trim();
-        const preco = document.getElementById("preco").value.trim();
-        const foto = document.getElementById("imagemExibida").src; 
 
-        if (!nomeProduto || !categoria || !descricao || !peso || !preco || !foto) {
-            alert("Por favor, preencha todos os campos.");
+        if (nomeProduto.length > 21) {
+            alert("O nome do produto deve ter no máximo 21 caracteres.");
+            return;
+        }
+
+        if (subtitulo.length > 35) {
+            alert("O subtítulo deve ter no máximo 35 caracteres.");
+            return;
+        }
+
+        if (preco <= 0) {
+            alert("O preço deve ser maior que zero.");
+            return;
+        }
+
+        if (pesoGramas <= 0) {
+            alert("O peso deve ser maior que zero.");
             return;
         }
 
         const novoProduto = {
             nome: nomeProduto,
+            subtitulo: subtitulo,
             categoria: categoria,
             descricao: descricao,
-            peso: peso,
+            peso: pesoGramas,
             preco: preco,
-            foto: foto,
+            foto: document.getElementById("imagemExibida").src,
             idLoja: localStorage.getItem('idLojaAtual'),
-            idConfeiteira: localStorage.getItem('idConfeiteiraAtual') 
+            idConfeiteira: localStorage.getItem('idConfeiteiraAtual')
         };
 
         const idProduto = gerarIdProduto();
-
         novoProduto.idProduto = idProduto;
 
         let produtos = JSON.parse(localStorage.getItem('Produtos')) || [];
-
         produtos.push(novoProduto);
 
         localStorage.setItem('Produtos', JSON.stringify(produtos));
 
         alert("Produto adicionado com sucesso!");
-
-        window.location.href = "meusProdutos.html"; 
+        window.location.href = "meusProdutos.html";
     });
+
+    function gerarIdProduto() {
+        let produtos = JSON.parse(localStorage.getItem('Produtos')) || [];
+        return produtos.length > 0 ? Math.max(...produtos.map(p => p.idProduto)) + 1 : 1;
+    }
+
+    function exibirImagem(event) {
+        const input = event.target;
+        const arquivo = input.files[0];
+
+        if (arquivo) {
+            const leitor = new FileReader();
+            leitor.onload = function(e) {
+                const imagemExibida = document.getElementById('imagemExibida');
+                imagemExibida.src = e.target.result;
+                imagemExibida.style.display = 'block';
+            };
+            leitor.readAsDataURL(arquivo);
+        }
+    }
+
+    updatePesoCounter();
+    updatePrecoCounter();
+    updateCounter(nomeInput, nomeCounter, 21);
+    updateCounter(subtituloInput, subtituloCounter, 35);
 });
 
 function gerarIdProduto() {
@@ -54,8 +162,8 @@ function exibirImagem(event) {
         const leitor = new FileReader();
         leitor.onload = function(e) {
             const imagemExibida = document.getElementById('imagemExibida');
-            imagemExibida.src = e.target.result; 
-            imagemExibida.style.display = 'block'; 
+            imagemExibida.src = e.target.result;
+            imagemExibida.style.display = 'block';
         };
         leitor.readAsDataURL(arquivo);
     }

@@ -13,7 +13,7 @@
 <body>
   <header>
     <div class="logo">
-        <img src="../img/Melfy-versão final.svg" alt="Logo" />
+        <img src="../img/Melfy-versão final.svg" alt="Logo"/>
     </div>
     <nav>
       <a href="adicionarProdutos.html">Criar Produto</a>
@@ -48,6 +48,14 @@
                           <div class="floating-input">
                             <input type="text" id="nome" required />
                             <label for="nome">Nome do Produto</label>
+                            <span id="nomeCounter">0 / 21</span>
+                          </div>
+                           <br>
+
+                          <div class="floating-input">
+                            <input type="text" id="subtitulo" required />
+                            <label for="subtitulo">Subtítulo</label>
+                            <span id="subtituloCounter">0 / 35</span>
                           </div>
                            <br>
                       
@@ -64,17 +72,19 @@
                            <br>
                       
                           <div class="floating-input">
-                            <input type="text" id="peso" required />
+                            <input type="number" id="pesoInput" required />
                             <label for="peso">Peso</label>
-                          </div>
-                           <br>
-                          
-                          <div class="floating-input">
-                            <input type="text" id="preco" required />
-                            <label for="preco">Preço</label>
+                            <span id="pesoCounter">0 g</span> 
                           </div>
                            <br>
 
+                           <div class="floating-input">
+                            <input type="number" id="precoInput" required />
+                            <label for="preco">Preço</label>
+                            <span id="precoCounter">R$ 0,00</span> 
+                          </div>
+                           <br>
+                           
                            <button type="submit" class="button">Adicionar Produto</button>
                         </form>
                     </div>
