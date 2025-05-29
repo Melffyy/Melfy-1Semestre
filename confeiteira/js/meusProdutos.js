@@ -1,23 +1,17 @@
-/*document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.botao-editar').addEventListener('click', function() {
-    window.location.href = './editarProdutos.html';
- });
-});*/
-
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let produtos = JSON.parse(localStorage.getItem('Produtos')) || [];
     let lojas = JSON.parse(localStorage.getItem('Lojas')) || [];
 
     if (produtos.length > 0) {
         const cardsWrapper = document.querySelector('.cards-wrapper');
-        
+
         produtos.forEach(produto => {
             const idLojaProduto = parseInt(produto.idLoja);
             const loja = lojas.find(l => l.idLoja === idLojaProduto);
 
             const card = document.createElement('div');
             card.classList.add('card');
-            
+
             card.innerHTML = `
                 <div class="border-card">
                     <div class="headerNovidade">
@@ -38,7 +32,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                 </div>
             `;
-            
+
+            const botaoEditar = card.querySelector('.botao-editar');
+            botaoEditar.addEventListener('click', function () {
+                window.location.href = `./editarProdutos.html?id=${produto.id}`;
+            });
+
             cardsWrapper.appendChild(card);
         });
     } else {
@@ -46,5 +45,3 @@ document.addEventListener("DOMContentLoaded", function() {
         cardsWrapper.innerHTML = '<p>Nenhum produto encontrado.</p>';
     }
 });
-
-
