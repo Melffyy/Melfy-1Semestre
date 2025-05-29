@@ -39,12 +39,19 @@ function logar() {
     if (confeiteira) {
         sessionStorage.setItem("user", confeiteira.nome);
         localStorage.setItem('usuarioLogado', JSON.stringify(confeiteira));
+
+        const idLoja = confeiteira.id || confeiteira.idLoja || null; 
+        if (idLoja) {
+            localStorage.setItem('idLojaAtual', idLoja);
+        }
+
         window.location.href = 'confeiteira/adicionarProdutos.html';
         return;
     }
 
     alert('Usuário ou senha inválidos.');
 }
+
 
 function logado() {
     let usuario = sessionStorage.getItem('user');
