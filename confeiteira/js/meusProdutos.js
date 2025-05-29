@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () { 
     let produtos = JSON.parse(localStorage.getItem('Produtos')) || [];
     let lojas = JSON.parse(localStorage.getItem('Lojas')) || [];
 
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const botaoEditar = card.querySelector('.botao-editar');
             botaoEditar.addEventListener('click', function () {
-                window.location.href = `./editarProdutos.html?id=${produto.id}`;
+                window.location.href = `./editarProdutos.html?idProduto=${produto.idProduto}`;
             });
 
             cardsWrapper.appendChild(card);
