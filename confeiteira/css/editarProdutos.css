@@ -256,7 +256,8 @@ form {
 }
 
 .floating-input input,
-.floating-input textarea {
+.floating-input select,
+.floating-input textarea  {
   width: 100%;
   border: none;
   background: transparent;
@@ -278,6 +279,7 @@ form {
 
 .floating-input input:focus + label,
 .floating-input input:not(:placeholder-shown) + label,
+.floating-input select + label,
 .floating-input textarea:focus + label,
 .floating-input textarea:not(:placeholder-shown) + label {
   top: -10px;

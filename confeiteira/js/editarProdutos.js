@@ -119,4 +119,6 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         alert('Produto não encontrado.');
     }
+
+    
 });

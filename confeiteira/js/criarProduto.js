@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 subtitulo: "Caixa com 7 éclairs sortidas",
                 categoria: "Éclairs",
                 descricao: "Caixa com 7 éclairs sortidas",
-                peso: null,
+                peso: 210,
                 preco: 133.00,
                 foto: "./img/Eclairs.svg",
                 idLoja: "1",
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 subtitulo: "Caixa com 36 doces",
                 categoria: "Bombons",
                 descricao: "Caixa com 36 doces",
-                peso: null,
+                peso: 360,
                 preco: 148.00,
                 foto: "./img/Bombons.svg",
                 idLoja: "2",
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 subtitulo: "Caixa com 6 brigadeiros",
                 categoria: "Brigadeiros",
                 descricao: "Caixa com 6 brigadeiros de chocolate",
-                peso: null,
+                peso: 90,
                 preco: 15.00,
                 foto: "./img/Brigadeiros.svg",
                 idLoja: "3",
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 subtitulo: "Marmita brownie de ninho e nutella",
                 categoria: "Brownie",
                 descricao: "Marmita brownie de ninho e nutella",
-                peso: null,
+                peso: 100,
                 preco: 20.00,
                 foto: "./img/Brownie de Ninho.svg",
                 idLoja: "4",
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 subtitulo: "Cookie recheado de chocolate",
                 categoria: "Cookies",
                 descricao: "Cookie recheado de chocolate",
-                peso: null,
+                peso: 40,
                 preco: 6.00,
                 foto: "./img/Cookies de Chocolate.svg",
                 idLoja: "2",
@@ -67,8 +67,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 subtitulo: "Pudim tamanho família",
                 categoria: "Pudim",
                 descricao: "Pudim tamanho família",
-                peso: null,
-                preco: 56.00,
+                peso: 1300,
+                preco: 70.00,
                 foto: "./img/Pudim.svg",
                 idLoja: "4",
                 idConfeiteira: "4",
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 subtitulo: "Sonhos tradicionais unidade",
                 categoria: "Sonhos",
                 descricao: "Sonhos tradicionais unidade",
-                peso: null,
+                peso: 25,
                 preco: 2.50,
                 foto: "./img/Mini Sonhos.svg",
                 idLoja: "1",
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 subtitulo: "Cheescake de 8 fatias",
                 categoria: "Cheescake",
                 descricao: "Cheescake de 8 fatias",
-                peso: null,
+                peso: 1100,
                 preco: 163.00,
                 foto: "./img/Cheescake.svg",
                 idLoja: "3",
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 subtitulo: "Pavê de chocolate preto e branco",
                 categoria: "Pavê",
                 descricao: "Pavê de chocolate preto e branco",
-                peso: null,
+                peso: 150,
                 preco: 16.00,
                 foto: "./img/Pave.svg",
                 idLoja: "1",
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 subtitulo: "Recheado com geléia de amoras",
                 categoria: "Romcabole", 
                 descricao: "Recheado com geléia de amoras",
-                peso: null, 
+                peso: 600, 
                 preco: 120.00,
                 foto: "./img/Romcabole.svg",
                 idLoja: "1", 
@@ -224,6 +224,12 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("O subtítulo deve ter no máximo 35 caracteres.");
             return;
         }
+        
+        if (!categoria) {
+            alert("Por favor, selecione uma categoria.");
+            return;
+        }
+
 
         if (preco <= 0) {
             alert("O preço deve ser maior que zero.");
