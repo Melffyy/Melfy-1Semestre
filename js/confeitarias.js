@@ -4,9 +4,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const cardsWrapper = document.querySelector('.cards-wrapper');
     const modal = document.getElementById('product-modal');
+    const inputPesquisa = document.getElementById('search-input');
+    const botaoPesquisa = document.getElementById('search-button');
 
-    if (produtos.length > 0) {
-        produtos.forEach(produto => {
+    function removerAcentos(str) {
+        return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function renderizarProdutos(listaProdutos) {
+        cardsWrapper.innerHTML = '';
+
+        if (listaProdutos.length === 0) {
+            cardsWrapper.innerHTML = '<p>Nenhum produto encontrado.</p>';
+            return;
+        }
+
+        listaProdutos.forEach(produto => {
             const idLojaProduto = parseInt(produto.idLoja);
             const loja = lojas.find(l => l.idLoja === idLojaProduto);
 
@@ -42,10 +55,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
             cardsWrapper.appendChild(card);
         });
-    } else {
-        cardsWrapper.innerHTML = '<p>Nenhum produto encontrado.</p>';
     }
-    
+
+    function filtrarProdutos() {
+        const termo = removerAcentos(inputPesquisa.value.trim().toLowerCase());
+        if (!termo) {
+            renderizarProdutos(produtos);
+            return;
+        }
+
+        const produtosFiltrados = produtos.filter(produto => {
+            const nomeSemAcento = removerAcentos(produto.nome.toLowerCase());
+            const subtituloSemAcento = removerAcentos(produto.subtitulo.toLowerCase());
+            const categoriaSemAcento = removerAcentos((produto.categoria || '').toLowerCase());
+
+            return nomeSemAcento.includes(termo) 
+                || subtituloSemAcento.includes(termo) 
+                || categoriaSemAcento.includes(termo);
+        });
+
+        renderizarProdutos(produtosFiltrados);
+    }
+
+    renderizarProdutos(produtos);
+
+    botaoPesquisa.addEventListener('click', filtrarProdutos);
+    inputPesquisa.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            filtrarProdutos();
+        }
+    });
+
     function openModal(produto) {
         const idLojaProduto = parseInt(produto.idLoja);
         const loja = lojas.find(l => l.idLoja === idLojaProduto);
@@ -72,24 +112,23 @@ document.addEventListener("DOMContentLoaded", function () {
     btnAdd.addEventListener('click', function() {
         adicionarNaSacola();
     });
-
 });
 
 function alterarQuantidade(valor) {
-  const qtdSpan = document.getElementById('qtd-value');
-  let quantidade = parseInt(qtdSpan.textContent);
-  quantidade += valor;
-  if (quantidade < 1) quantidade = 1;
-  qtdSpan.textContent = quantidade;
+    const qtdSpan = document.getElementById('qtd-value');
+    let quantidade = parseInt(qtdSpan.textContent);
+    quantidade += valor;
+    if (quantidade < 1) quantidade = 1;
+    qtdSpan.textContent = quantidade;
 }
 
 function autoResize(textarea) {
-  textarea.style.height = "auto";
-  textarea.style.height = textarea.scrollHeight + "px";
+    textarea.style.height = "auto";
+    textarea.style.height = textarea.scrollHeight + "px";
 }
 
 function fecharModal() {
-  document.getElementById("product-modal").style.display = "none";
+    document.getElementById("product-modal").style.display = "none";
 }
 
 function adicionarNaSacola() {
