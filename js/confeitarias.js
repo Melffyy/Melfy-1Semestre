@@ -66,7 +66,13 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('comentario').value = '';
       
         document.getElementById('product-modal').style.display = 'flex';
-      }
+    }
+
+    const btnAdd = document.querySelector('.btn-add');
+    btnAdd.addEventListener('click', function() {
+        adicionarNaSacola();
+    });
+
 });
 
 function alterarQuantidade(valor) {
@@ -86,3 +92,47 @@ function fecharModal() {
   document.getElementById("product-modal").style.display = "none";
 }
 
+function adicionarNaSacola() {
+    const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado')) || null;
+    if (!usuarioLogado || !usuarioLogado.id) {
+        alert('Usuário não está logado corretamente!');
+        return;
+    }
+
+    const nomeProduto = document.querySelector('.modal-title').textContent;
+    const produtos = JSON.parse(localStorage.getItem('Produtos')) || [];
+
+    const produto = produtos.find(p => p.nome === nomeProduto);
+    if (!produto || !produto.idProduto) {
+        alert('Produto não encontrado ou sem ID válido.');
+        return;
+    }
+
+    const quantidade = parseInt(document.getElementById('qtd-value').textContent);
+    const comentario = document.getElementById('comentario').value.trim();
+
+    const agora = new Date();
+    const data = agora.toLocaleDateString();
+    const horario = agora.toLocaleTimeString();
+
+    const valorUnitario = parseFloat(produto.preco);
+    const valorTotal = valorUnitario * quantidade;
+
+    const itemSacola = {
+        idProduto: produto.idProduto,
+        idUsuario: usuarioLogado.id,
+        quantidade,
+        comentario,
+        valorUnitario,
+        valorTotal,
+        data,
+        horario
+    };
+
+    const sacola = JSON.parse(localStorage.getItem('Sacola')) || [];
+    sacola.push(itemSacola);
+    localStorage.setItem('Sacola', JSON.stringify(sacola));
+
+    alert('Produto adicionado à sacola!');
+    fecharModal();
+}
