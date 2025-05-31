@@ -138,7 +138,43 @@
       
       <h3 class="h3Novidades">Novidades</h3>
       <div class="cards-wrapper"></div>
-</main>
+
+      <div class="modal-overlay" id="product-modal">
+        <div class="modal-content">
+          <button class="modal-close" onclick="fecharModal()">x</button>
+      
+          <img src="" alt="" class="modal-img" />
+      
+          <div class="modal-info">
+            <div class="modal-header">
+              <div class="modal-loja">
+                <img src="" alt="Logo da loja" class="modal-logo" />
+                <span class="modal-nome-loja">Dama</span>
+                <span class="modal-avaliacoes">★ 4.8</span>
+              </div>
+            </div>
+      
+            <h2 class="modal-title"></h2>
+            <p class="modal-subtitulo"></p>
+            <p class="modal-description"></p>
+            <p class="modal-peso"></p>
+            <p class="modal-price"></p>
+      
+            <label class="comentario">Comentário</label>
+            <textarea id="comentario" rows="1" placeholder="Digite um comentário..." oninput="autoResize(this)"></textarea>
+      
+            <div class="modal-actions">
+              <div class="modal-quantity">
+                <button onclick="alterarQuantidade(-1)" class="qtd-btn">-</button>
+                <span id="qtd-value">1</span>
+                <button onclick="alterarQuantidade(1)" class="qtd-btn">+</button>
+              </div>
+              <button class="btn-add">Adicionar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
 
   <footer class="footer">
     <div class="footer-top">
