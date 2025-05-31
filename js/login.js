@@ -1,23 +1,27 @@
 function dados() {
-    if (!localStorage.getItem('banco')) {
+    if (!localStorage.getItem('Usuários')) {
         const usuarios = [
-            { id: 1, nome: "Nicole", email: "nicole@gmail.com", senha: "1234" },
-            { id: 2, nome: "Julia", email: "julia@gmail.com", senha: "5678" },
-            { id: 3, nome: "Isabella", email: "isabella@gmail.com", senha: "1357" },
-            { id: 4, nome: "Ana", email: "ana@gmail.com", senha: "2468" }
+            { id: 1, nome: "Lucas Andrade", email: "lucas@email.com", senha: "lucas123", dataNascimento: "2000-05-20" },
+            { id: 2, nome: "Fernanda Lima", email: "fernanda@email.com", senha: "nanda456", dataNascimento: "1998-08-10" },
+            { id: 3, nome: "Carlos Mendes", email: "carlos@email.com", senha: "carl789", dataNascimento: "1995-02-14" },
+            { id: 4, nome: "Juliana Silva", email: "juliana@email.com", senha: "ju321", dataNascimento: "2001-11-05" },
+            { id: 5, nome: "Nicole", email: "nicole@gmail.com", senha: "1234", dataNascimento: "1999-03-15" },
+            { id: 6, nome: "Julia", email: "julia@gmail.com", senha: "5678", dataNascimento: "2002-07-22" },
+            { id: 7, nome: "Isabella", email: "isabella@gmail.com", senha: "1357", dataNascimento: "1997-12-03" },
+            { id: 8, nome: "Ana", email: "ana@gmail.com", senha: "2468", dataNascimento: "2000-09-30" }
         ];
-        localStorage.setItem('banco', JSON.stringify(usuarios));
+        localStorage.setItem('Usuários', JSON.stringify(usuarios));
     }
 
-    if (!localStorage.getItem('confeiteiras')) {
-        const confeiteiras = [];
-        localStorage.setItem('confeiteiras', JSON.stringify(confeiteiras));
+    if (!localStorage.getItem('Confeiteiras')) {
+        const Confeiteiras = [];
+        localStorage.setItem('Confeiteiras', JSON.stringify(Confeiteiras));
     }
 }
 
 function logar() {
-    const usuarios = JSON.parse(localStorage.getItem('banco'));
-    const confeiteiras = JSON.parse(localStorage.getItem('confeiteiras'));
+    const usuarios = JSON.parse(localStorage.getItem('Usuários'));
+    const Confeiteiras = JSON.parse(localStorage.getItem('Confeiteiras'));
 
     let lg = document.querySelector('#email').value.trim();
     let sn = document.querySelector('#senha').value.trim();
@@ -35,7 +39,7 @@ function logar() {
         return;
     }
 
-    const confeiteira = confeiteiras.find(c => c.email === lg && c.senha === sn);
+    const confeiteira = Confeiteiras.find(c => c.email === lg && c.senha === sn);
     if (confeiteira) {
         sessionStorage.setItem("user", confeiteira.nome);
         localStorage.setItem('usuarioLogado', JSON.stringify(confeiteira));
@@ -75,23 +79,23 @@ function redefinirSenha(event) {
         return;
     }
 
-    let usuarios = JSON.parse(localStorage.getItem('banco'));
+    let usuarios = JSON.parse(localStorage.getItem('Usuários'));
     let userIndex = usuarios.findIndex(u => u.email === email);
 
     if (userIndex !== -1) {
         usuarios[userIndex].senha = novaSenha;
-        localStorage.setItem('banco', JSON.stringify(usuarios));
+        localStorage.setItem('Usuários', JSON.stringify(usuarios));
         alert('Senha redefinida com sucesso!');
         window.location.href = 'login.html';
         return;
     }
 
-    let confeiteiras = JSON.parse(localStorage.getItem('confeiteiras'));
-    let confIndex = confeiteiras.findIndex(c => c.email === email);
+    let Confeiteiras = JSON.parse(localStorage.getItem('Confeiteiras'));
+    let confIndex = Confeiteiras.findIndex(c => c.email === email);
 
     if (confIndex !== -1) {
-        confeiteiras[confIndex].senha = novaSenha;
-        localStorage.setItem('confeiteiras', JSON.stringify(confeiteiras));
+        Confeiteiras[confIndex].senha = novaSenha;
+        localStorage.setItem('Confeiteiras', JSON.stringify(Confeiteiras));
         alert('Senha redefinida com sucesso!');
         window.location.href = 'login.html';
         return;

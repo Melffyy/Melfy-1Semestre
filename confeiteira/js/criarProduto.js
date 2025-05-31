@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
             {
                 nome: "Éclairs",
                 subtitulo: "Caixa com 7 éclairs sortidas",
-                categoria: "Doces",
+                categoria: "Éclairs",
                 descricao: "Caixa com 7 éclairs sortidas",
                 peso: null,
                 preco: 133.00,
@@ -17,67 +17,67 @@ document.addEventListener("DOMContentLoaded", function() {
             {
                 nome: "Bombons",
                 subtitulo: "Caixa com 36 doces",
-                categoria: "Doces",
+                categoria: "Bombons",
                 descricao: "Caixa com 36 doces",
                 peso: null,
                 preco: 148.00,
                 foto: "./img/Bombons.svg",
-                idLoja: "1",
-                idConfeiteira: "1",
+                idLoja: "2",
+                idConfeiteira: "2",
                 idProduto: 2
             },
             {
                 nome: "Brigadeiros",
                 subtitulo: "Caixa com 6 brigadeiros",
-                categoria: "Doces",
+                categoria: "Brigadeiros",
                 descricao: "Caixa com 6 brigadeiros de chocolate",
                 peso: null,
                 preco: 15.00,
                 foto: "./img/Brigadeiros.svg",
-                idLoja: "1",
-                idConfeiteira: "1",
+                idLoja: "3",
+                idConfeiteira: "3",
                 idProduto: 3
             },
             {
                 nome: "Brownie ninho e nutella",
                 subtitulo: "Marmita brownie de ninho e nutella",
-                categoria: "Doces",
+                categoria: "Brownie",
                 descricao: "Marmita brownie de ninho e nutella",
                 peso: null,
                 preco: 20.00,
                 foto: "./img/Brownie de Ninho.svg",
-                idLoja: "1",
-                idConfeiteira: "1",
+                idLoja: "4",
+                idConfeiteira: "4",
                 idProduto: 4
             },
             {
                 nome: "Cookies Recheados",
                 subtitulo: "Cookie recheado de chocolate",
-                categoria: "Doces",
+                categoria: "Cookies",
                 descricao: "Cookie recheado de chocolate",
                 peso: null,
                 preco: 6.00,
                 foto: "./img/Cookies de Chocolate.svg",
-                idLoja: "1",
-                idConfeiteira: "1",
+                idLoja: "2",
+                idConfeiteira: "2",
                 idProduto: 5
             },
             {
                 nome: "Pudim",
                 subtitulo: "Pudim tamanho família",
-                categoria: "Doces",
+                categoria: "Pudim",
                 descricao: "Pudim tamanho família",
                 peso: null,
                 preco: 56.00,
                 foto: "./img/Pudim.svg",
-                idLoja: "1",
-                idConfeiteira: "1",
+                idLoja: "4",
+                idConfeiteira: "4",
                 idProduto: 6
             },
             {
                 nome: "Mini Sonhos",
                 subtitulo: "Sonhos tradicionais unidade",
-                categoria: "Doces",
+                categoria: "Sonhos",
                 descricao: "Sonhos tradicionais unidade",
                 peso: null,
                 preco: 2.50,
@@ -89,19 +89,19 @@ document.addEventListener("DOMContentLoaded", function() {
             {
                 nome: "Cheescake de Morango",
                 subtitulo: "Cheescake de 8 fatias",
-                categoria: "Tortas",
+                categoria: "Cheescake",
                 descricao: "Cheescake de 8 fatias",
                 peso: null,
                 preco: 163.00,
                 foto: "./img/Cheescake.svg",
-                idLoja: "1",
-                idConfeiteira: "1",
+                idLoja: "3",
+                idConfeiteira: "3",
                 idProduto: 8
             },
             {
                 nome: "Pavê de Chocolates",
                 subtitulo: "Pavê de chocolate preto e branco",
-                categoria: "Doces",
+                categoria: "Pavê",
                 descricao: "Pavê de chocolate preto e branco",
                 peso: null,
                 preco: 16.00,
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function() {
             {
                 nome: "Romcabole Red Velvet",
                 subtitulo: "Recheado com geléia de amoras",
-                categoria: "Doces", 
+                categoria: "Romcabole", 
                 descricao: "Recheado com geléia de amoras",
                 peso: null, 
                 preco: 120.00,
@@ -133,7 +133,6 @@ document.addEventListener("DOMContentLoaded", function() {
         produtosExistentes = produtosExistentes.concat(novosProdutos);
         localStorage.setItem('Produtos', JSON.stringify(produtosExistentes));
 
-        localStorage.setItem('ProdutosIniciaisAdicionados', 'true');
     }
 
     const nomeInput = document.getElementById("nome");
@@ -285,3 +284,4 @@ function exibirImagem(event) {
         leitor.readAsDataURL(arquivo);
     }
 }
+

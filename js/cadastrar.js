@@ -16,7 +16,7 @@ function cadastrar() {
         return;
     }
 
-    let usuarios = JSON.parse(localStorage.getItem('banco')) || [];
+    let usuarios = JSON.parse(localStorage.getItem('Usuários')) || [];
     let existe = usuarios.some(user => user.email === email);
     if (existe) {
         alert("Este e-mail já está cadastrado.");
@@ -34,7 +34,7 @@ function cadastrar() {
 
     usuarios.push(novoUsuario);
 
-    localStorage.setItem('banco', JSON.stringify(usuarios));
+    localStorage.setItem('Usuários', JSON.stringify(usuarios));
 
     alert("Cadastro realizado com sucesso!");
     window.location.href = 'login.html';
