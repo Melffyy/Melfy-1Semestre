@@ -181,13 +181,14 @@ h3 {
     border-radius: 35px;
     background-color: var(--cor-fundo);
     height: 125px;
+    padding: 0 50px;
 }
   
 .doces, .categorias {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
-    padding: 0 40px;
+    gap: 10px;
 }
   
 .doce, .categoria {
@@ -202,7 +203,7 @@ h3 {
     border-radius: 50%;
     background: #fff1a8;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
   
 .categoria img {
@@ -235,6 +236,7 @@ h3 {
 .arrow.right {
     right: 10px;
 }
+
   
 .arrow:hover {
     color: var(--cor-preco-icone);
