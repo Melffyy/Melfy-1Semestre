@@ -238,6 +238,41 @@ nav .active {
 
 /* #endregion*/
 
+.carrossel {
+    position: relative;
+    display: flex;
+    align-items: center;
+        overflow: hidden;
+
+}
+.arrow img {
+    width: 30px;
+    height: 30px;
+}
+  
+.arrow {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    height: 30px;
+}
+  
+.arrow.left {
+    left: 10px;
+}
+  
+.arrow.right {
+    right: 10px;
+}
+
+  
+.arrow:hover {
+    color: var(--cor-preco-icone);
+}
+  
 /* #region Container com Produtos*/
 .container_produtos{
     
@@ -253,11 +288,13 @@ nav .active {
 }
 
 .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
     gap: 20px;
-    padding: 20px 40px;
-  }
+    overflow: hidden;
+    scroll-behavior: smooth;
+    padding: 20px 55px;
+}
+
   
 .card{
     display: flex;
@@ -418,6 +455,33 @@ footer {
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   gap: 24px;
 }
+.modal-header {
+  display: flex;
+  margin-top: 10px;
+}
+
+.modal-close {
+  font-size: 28px;
+  background: transparent;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  position:absolute;
+  right: 215px;
+  top: 45px;
+
+
+  /* Remova estas linhas:
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  z-index: 10;
+  */
+}
+
+.modal-close:hover {
+  color: #000;
+}
 
 /* Image */
 .modal-img {
@@ -434,7 +498,33 @@ footer {
   flex-direction: column;
   gap: 12px;
 }
+.modal-header {
+  margin-bottom: 16px; 
+}
 
+.modal-loja {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.modal-logo {
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.modal-nome-loja {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.modal-avaliacoes {
+  font-size: 14px;
+  color: #a05b00;
+  font-weight: bold;
+}
 .modal-title {
   font-family: 'Istok Web', sans-serif;
   font-size: 32px;
@@ -475,6 +565,8 @@ footer {
 /* Actions */
 .modal-actions {
   display: flex;
+  flex-direction: row;
+
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
@@ -493,7 +585,7 @@ footer {
   display: inline-flex;
   justify-content: space-around;
   min-width: 70px;
-  min-height: 40px;
+  min-height: 45px;
 }
 
 .modal-quantity button {

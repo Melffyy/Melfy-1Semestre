@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   carrosseis.forEach(carrossel => {
     const leftBtn = carrossel.querySelector('.arrow.left');
     const rightBtn = carrossel.querySelector('.arrow.right');
-    const scrollContainer = carrossel.querySelector('.categorias') || carrossel.querySelector('.doces');
+    const scrollContainer = carrossel.querySelector('.categorias') || carrossel.querySelector('.doces') || carrossel.querySelector('.cards-container');
 
     if (!leftBtn || !rightBtn || !scrollContainer) return;
 

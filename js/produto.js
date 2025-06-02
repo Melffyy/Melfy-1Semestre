@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const modalTitulo = modal.querySelector('.modal-title');
   const modalDescricao = modal.querySelector('.modal-description');
   const modalPreco = modal.querySelector('.modal-price');
-  const fecharBtn = modal.querySelector('.btn-cancel');
+  const fecharBtn = modal.querySelector('.modal-close');
 
   cards.forEach(card => {
     card.addEventListener('click', () => {
@@ -32,3 +32,45 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+function getQueryParam(param) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(param);
+}
+
+const nomeBusca = getQueryParam('nome')?.toLowerCase() || '';
+
+// Pega os produtos do localStorage
+const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+
+// Filtra os produtos que contenham o nome buscado, ignorando maiúsculas/minúsculas
+const produtosFiltrados = produtos.filter(produto =>
+  produto.nome.toLowerCase().includes(nomeBusca)
+);
+
+// Exibe os produtos filtrados na tela
+function mostrarProdutos(lista) {
+  const container = document.querySelector('.cards-container');
+  container.innerHTML = '';
+
+  lista.forEach(produto => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.innerHTML = `
+      <img src="${produto.imagem}" alt="${produto.nome}" class="foto-produto">
+      <div class="descricao">
+        <h3>${produto.nome}</h3>
+      </div>
+      <div class="preco-comprar">
+        <div class="preco">
+          <span class="icone-preco">R$</span>
+          <span class="valor">${produto.preco.toFixed(2)}</span>
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+mostrarProdutos(produtosFiltrados);
+
