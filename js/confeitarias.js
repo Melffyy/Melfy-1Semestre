@@ -147,7 +147,7 @@ function adicionarNaSacola() {
         return;
     }
 
-    const quantidade = parseInt(document.getElementById('qtd-value').textContent);
+    const quantidadeAdicionada = parseInt(document.getElementById('qtd-value').textContent);
     const comentario = document.getElementById('comentario').value.trim();
 
     const agora = new Date();
@@ -155,21 +155,38 @@ function adicionarNaSacola() {
     const horario = agora.toLocaleTimeString();
 
     const valorUnitario = parseFloat(produto.preco);
-    const valorTotal = valorUnitario * quantidade;
+    const valorTotalAdicionado = valorUnitario * quantidadeAdicionada;
 
-    const itemSacola = {
-        idProduto: produto.idProduto,
-        idUsuario: usuarioLogado.id,
-        quantidade,
-        comentario,
-        valorUnitario,
-        valorTotal,
-        data,
-        horario
-    };
+    let sacola = JSON.parse(localStorage.getItem('Sacola')) || [];
 
-    const sacola = JSON.parse(localStorage.getItem('Sacola')) || [];
-    sacola.push(itemSacola);
+    // Verifica se já existe o mesmo produto na sacola desse usuário
+    const itemExistente = sacola.find(item =>
+        item.idUsuario === usuarioLogado.id &&
+        item.idProduto === produto.idProduto
+    );
+
+    if (itemExistente) {
+        // Atualiza a quantidade e o valor total
+        itemExistente.quantidade += quantidadeAdicionada;
+        itemExistente.valorTotal = itemExistente.quantidade * itemExistente.valorUnitario;
+
+        // Opcional: você pode sobrescrever o comentário, juntar os comentários ou manter o antigo
+        itemExistente.comentario = comentario || itemExistente.comentario;
+        itemExistente.data = data;
+        itemExistente.horario = horario;
+    } else {
+        // Adiciona um novo item
+        sacola.push({
+            idProduto: produto.idProduto,
+            idUsuario: usuarioLogado.id,
+            quantidade: quantidadeAdicionada,
+            comentario,
+            valorUnitario,
+            valorTotal: valorTotalAdicionado,
+            data,
+            horario
+        });
+    }
     localStorage.setItem('Sacola', JSON.stringify(sacola));
 
     alert('Produto adicionado à sacola!');

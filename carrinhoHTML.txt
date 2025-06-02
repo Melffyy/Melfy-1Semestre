@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/carrinho.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="./js/carrinho.js"></script>
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
@@ -54,32 +54,51 @@
           </thead>
 
 
-          <tbody id="tabela-carrinho">
+          <tbody>
+            <tr>
+                <td>
+                <div class="produto">
+                    <img src="/img/brigadeiros.jpg" alt="brigadeiro" class="foto-produto">
+                    <div class="info">
+                      <h3 class="nome">Brigadeiros</h3>
+                      <div class="nome-loja">Soucier</div>
+
+                    </div>
+                </div>
+              </td>
+              <td>R$ 120,00</td>
+              <td>
+                <div class="qtd">
+                  <button> <i class='bx  bx-minus'  ></i> </button>
+                  <span>2</span>
+                  <button> 
+                     <i class='bx  bx-plus'  ></i> 
+                  </button>
+                </div>
+              </td>
+              <td>R$ 240,00</td>
+              <td>
+                <button class="remover"> <i class='bx bx-x'></i> </button>
+              </td>
+            </tr>
+
 
           </tbody>
         </table>
       </section>
-      
       <aside>
         <div class="box-finalizar-compra">
-         <div class="conteudo">
-            <div>
-              <span>Subtotal</span> 
-              <span id="subtotal">R$ 0,00</span>
-            </div>
-            <div>
-              <span>Taxa de entrega</span> 
-              <span id="taxa-entrega">Gratuito</span>
-            </div>
-            <div>
-              <button class="btn-cupom">Add cupom de desconto</button>
-            </div>
+          <div class="cabecalho">Resumo da compra</div>
+          <div class="conteudo">
+            <div><span>Sutotal</span> <span> R$100</span></div>
+            <div><span>Taxa de entrega</span> <span>gratuito</span></div>
+            <div><button class="btn-cupom">Add copon de desconto</button>
+           </div>
           </div>
           <div class="rodape">
             <span>Total</span>
-            <span id="total">R$ 0,00</span>
+            <span>R$ 20,00</span>
           </div>
-
         
         </div>
     
