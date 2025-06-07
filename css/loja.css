@@ -335,7 +335,6 @@ main {
   transform: scale(1.2) rotate(5deg);
 }
 
-
 .lista-produtos{
   font-family: "Istok Web", sans-serif;
   margin-top: 40px;
@@ -378,7 +377,6 @@ main {
 .card:hover .descricao .h3menor {
   color: var(--cor-link);
 }
-
 
 .imagem-produto {
   width: 170px;
