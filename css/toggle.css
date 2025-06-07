@@ -9,7 +9,7 @@
     --cor-borda: #00000057;
     --cor-footer: #F9E955;
     --cor-footer-bottom: #F8D720;
-    --cor-footer-text: #473535;
+    --cor-footer-text: #666;
     --cor-contraste: #5d3a00;
     --cor-card: #ceac18;
     --cor-amarelo: #FFE600;
@@ -659,7 +659,7 @@ h3 {
 
 .btn-add {
     background-color: var(--cor-botao);
-    color: white;
+    color: var(--cor-nome);
     border: none;
     border-radius: 10px;
     padding: 10px 18px;
@@ -754,89 +754,3 @@ footer {
     flex-grow: 1; 
 }
 
-@media (max-width: 1024px) {
-  nav {
-    margin-left: 100px;
-    flex-wrap: wrap;
-  }
-
-  .search-bar input {
-    width: 80%;
-  }
-
-  .modal-content {
-    flex-direction: column;
-    align-items: center;
-    width: 95%;
-  }
-
-  .modal-img {
-    width: 80%;
-  }
-
-  .modal-actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .btn-add {
-    margin-left: 0;
-  }
-
-  .modal-quantity {
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 0;
-    width: 100%;
-  }
-
-  nav a {
-    margin: 10px 0;
-  }
-
-  .logo img {
-    height: 50px;
-  }
-
-  .search-bar {
-    padding-top: 20px;
-  }
-
-  .search-bar input {
-    width: 90%;
-  }
-
-  .iconsearch {
-    margin-left: -50px;
-  }
-
-  .cards-wrapper {
-    padding: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-
-  .modal-content {
-    padding: 20px;
-    gap: 20px;
-  }
-
-  .modal-nome-loja, .modal-title, .modal-price {
-    font-size: 18px;
-  }
-
-  footer {
-    height: auto;
-    padding: 10px;
-  }
-}
