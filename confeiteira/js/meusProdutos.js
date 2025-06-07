@@ -18,10 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 card.innerHTML = `
                     <div class="border-card">
-                        <div class="headerNovidade">
-                            <img src="${loja?.fotoPerfil || ''}" alt="Logo da Loja" class="logoLoja">
-                            <span class="marca">${loja?.nomeLoja || 'Loja Desconhecida'}</span>
-                        </div>
                         <img src="${produto.foto}" alt="Imagem do Produto" class="imagem-produto">
                         <div class="descricao">
                             <h3>${produto.nome}</h3>

@@ -156,18 +156,18 @@ nav .active {
     gap: 40px 60px;
     justify-content: center;
     padding: 40px 20px;
-    background-color: #00520b;
+    background-color: #584019;
     border-radius: 20px;
-    border: 10px solid #5d3a00;
+    border: 10px solid #8d5900;
 }
 
 .post-it {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 200px;
-    min-height: 200px;
-    padding: 15px;
+    width: 150px;
+    min-height: 150px;
+    padding: 10px;
     border: 2px solid #e5d67c;
     box-shadow: 4px 4px 8px rgba(0,0,0,0.15);
     border-radius: 10px;

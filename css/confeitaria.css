@@ -275,17 +275,6 @@ h3 {
 }
 
 .card{
-    height: 300px;
-    width: 220px;
-    background-color: var(--cor-card);
-    border-radius: 16px;
-    padding: 10px;
-    font-family: 'Arial', sans-serif;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    color: #fff;
-}
-
-.card{
   height: 300px;
   width: 220px;
   background-color: var(--cor-card);
