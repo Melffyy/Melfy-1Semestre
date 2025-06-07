@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-
     if (!localStorage.getItem('ProdutosIniciaisAdicionados')) {
         const produtosPadrao = [
             {

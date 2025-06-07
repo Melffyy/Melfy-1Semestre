@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let lojas = JSON.parse(localStorage.getItem('Lojas')) || [];
 
     const cardsWrapper = document.querySelector('.cards-wrapper');
-    const modal = document.getElementById('product-modal');
     const inputPesquisa = document.getElementById('search-input');
     const botaoPesquisa = document.getElementById('search-button');
 
@@ -25,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const card = document.createElement('div');
             card.classList.add('card');
-
+            
             card.innerHTML = `
                 <div class="border-card">
                     <div class="headerNovidade">
@@ -45,15 +44,27 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div>
             `;
-
+            
+            const nomeLojaElement = card.querySelector('.marca');
+            const logoLojaElement = card.querySelector('.logoLoja');
+            
+            [nomeLojaElement, logoLojaElement].forEach(el => {
+                el.addEventListener('click', function (e) {
+                    e.stopPropagation(); 
+                    localStorage.setItem('idLojaSelecionada', loja.idLoja);
+                    window.location.href = 'loja.html';
+                });
+            });
+            
             card.addEventListener('click', function (event) {
                 const isHeader = event.target.closest('.headerNovidade');
                 if (!isHeader) {
                     openModal(produto);
                 }
             });
-
+            
             cardsWrapper.appendChild(card);
+
         });
     }
 
