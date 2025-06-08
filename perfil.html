@@ -26,7 +26,7 @@
         </a>
       </div>
       <div class="iconuser">
-        <a href="login.html"> 
+        <a href="perfil.html"> 
           <img src="./img/Perfil.svg" alt="" srcset="">
         </a>
       </div>
@@ -47,8 +47,8 @@
             <div class="item-container-perfil">
                 <img src="img/cute-bee-design.avif" alt="" id="image-profile">
                 <div class="item-nome-email">
-                    <p id="name-user">Nome do Usuário</p>
-                    <p>E-mail</p>
+                    <p id="nome-exibir"></p>
+                    <p id="email-exibir">E-mail</p>
                 </div>
             </div>
             <div class="item-topicos-flex">
@@ -61,8 +61,8 @@
               
             </div>
 
-            <div class="item-container-logout">
-              <img src="./img/logout (1).png" class="img-logout" alt="">
+            <div class="item-container-logout"><a href="#" id="botao-sair"><img src="./img/logout (1).png" class="img-logout" alt="" onclick="sairConta()"></a>
+              
               <p></p>
             </div>
         </div>
@@ -76,33 +76,33 @@
             <div class="item-meus-dados">
               <div class="item-meus-dados-input">
                 <label for="">Nome</label>
-                <input type="text" name="" id="">
+                <input type="text" name="" id="nome-input" disabled>
               </div>
               <div class="item-meus-dados-input">
                 <label for="">Sobrenome</label>
-                <input type="text" name="" id="">  
+                <input type="text" name="" id="sobrenome-input" disabled>  
               </div>
-              
+
               <div class="item-meus-dados-input">
                 <label for="">CPF</label>
-                <input type="text" name="" id="">            
+                <input type="text" name="" id="cpf-input" disabled>            
               </div>
             </div>
             
           <div class="item-meus-dados">
               <div class="item-meus-dados-input">
                 <label>Data de Nascimento</label>
-                <input type="text" name="" id="">
+                <input type="text" name="" id="dataNascimento-input" disabled>
               </div>
               
               <div class="item-meus-dados-input">
                 <label for="">E-mail</label>
-                <input type="text" name="" id="">
+                <input type="text" name="" id="email-input" disabled>
               </div>
 
               <div class="item-meus-dados-input">
-                <label for="">Telefone</label>
-                <input type="text" name="" id="">
+                <label for="">Celular</label>
+                <input type="text" name="" id="celular-input" disabled>
               </div>
           </div>   
           </div>
@@ -111,11 +111,9 @@
           <div>
                                                 <!-- BOTÕES SALVAR E EDITAR -->
             <div class="item-container-buttons">
+
               <div class="item-buttons">
-                <button id="botao-salvar">Salvar dados</button>
-              </div>
-              <div class="item-buttons">
-                <button id="botao-editar">Editar dados</button>
+                <button id="botao-editar" onclick="habilitarEdicao()">Editar</button>
               </div>
             </div>
           </div>
@@ -143,5 +141,7 @@
         </div>
   </footer>
 
+  <script src="./js/perfil.js"></script>
+  
 </body>
 </html>

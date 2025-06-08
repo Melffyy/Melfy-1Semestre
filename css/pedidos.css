@@ -24,6 +24,7 @@ body {
   background-position: center;
   height: 100vh;
   width: 100%;
+  background-color: #fff9e8;
 }
 
 body::before {
@@ -33,7 +34,6 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.623);
   z-index: -1;
 }
 
@@ -133,50 +133,50 @@ nav .active {
   font-size: 20px;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #fff;
-    color: #333;
-}
-
 .container {
-    max-width: 1600px;
     margin: auto;
-    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-h2 {
+h1 {
     margin-top: 40px;
 }
 
 .pedidos-ativos {
-    background-color: #ffe082;
-    border-radius: 10px;
-    padding: 20px;
     display: flex;
-    gap: 20px;
+    gap: 90px;
     margin-bottom: 40px;
+    width: 100%;
+    justify-content: center;
+  background: linear-gradient(150deg, rgb(255, 233, 123), rgb(255, 162, 137));
 }
 
 .pedido-card {
+    display: flex;
     background: white;
-    border-radius: 10px;
-    width: 270px;
+    width: 350px;
+    height: 480px;
     box-shadow: 0 0 6px rgba(0,0,0,0.1);
     overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .pedido-card img {
-    width: 91%;
+    width: 100%;
+    padding: 10px;
     position: relative;
     height: auto;
-    padding: 10px;
-    border-radius: 18px;
 }
 
 .pedido-info {
-    padding: 17px;
+    padding: 12px;
 }
 
 .marca {
@@ -185,15 +185,16 @@ h2 {
     display: flex;
     align-items: center;
     gap: 6px;
+    margin-top: -20px;
+    padding: 0;
+    margin-right: 100px;
 }
 
-
 .marca .perfil-img {
-  width: 20%;
-  height: 70%;
+  width: 40px;
+  height: 40px;
   border-radius: 60%;
   object-fit: cover;
-  margin-right: 6px;
   vertical-align: middle;
 }
 
@@ -255,7 +256,7 @@ h2 {
     background: #fff8cc;
     border-radius: 10px;
     padding: 15px;
-    width: 250px;
+    width: 270px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.205);
 }
 
@@ -282,14 +283,13 @@ h2 {
     background: #ff9f00;
     border: none;
     border-radius:  15px;
-    padding: 10px 15px;
+    padding: 15px 15px;
     font-weight: bold;
     cursor: pointer;
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.205);
     left: 67%;
     position: relative;
-    
 }
 
 .ver-mais {
@@ -304,11 +304,12 @@ footer {
   font-family: 'Quicksand', sans-serif;
   color: #666;
   text-align: center;
-  padding: 20px 0px;
+  padding: 40px 0px;
   border-top: 2px solid var(--cor-borda);
   width: 100%;
   box-sizing: border-box;
   height: 170px;
+  margin-top: 5%;
 }
   
 .footer-top .social-icons {
@@ -348,6 +349,7 @@ footer {
   color: #666;
   width: 100%;
   box-sizing: border-box;
+  padding: 20px;
 }
   
 .footer-bottom a {
@@ -363,3 +365,74 @@ footer {
   flex-grow: 1; 
 }
   
+  .menu {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 10%;
+    }
+
+    .menu-item {
+      background-color: white;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .menu-item button{
+      background: #ff9f00;
+      margin-bottom: 7%;
+      margin-top: 7%;
+      border: none;
+      border-radius:  15px;
+      padding: 10px 15px;
+      font-weight: bold;
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.205);
+  
+    }
+
+    .menu-item img {
+    width: 265px;
+    height: 120px;
+    border-radius: 5px;
+    object-fit: cover;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.26);
+    display: block;
+      
+    }
+
+    img::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; /* metade da largura */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* preto com opacidade */
+    pointer-events: none; /* permite clicar na imagem por baixo, se necessário */
+    }
+
+    .menu-item h4 {
+      margin: 10px 0 4px;
+      font-size: 14px;
+    }
+
+    .menu-item p {
+      margin: 0;
+      font-size: 12px;
+      color: #555;
+    }
+
+    .menu-item .price {
+      font-weight: bold;
+      margin-top: 6px;
+      font-size: 14px;
+    }
+
+    .arrows{
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+    }

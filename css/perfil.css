@@ -193,7 +193,7 @@ nav .active {
     color: #ffffff;
     border-radius: 20px;
     width: 100px;
-    padding: 1%;
+    padding-left: 2%;
 
 }
 
@@ -271,6 +271,7 @@ input{
     width: 70%;
     margin: 20px;
     transition: 0.5s;
+    padding-left: 15px;
 }
 
 
@@ -396,3 +397,7 @@ footer {
   flex-grow: 1; 
 }
   
+.editando {
+  border: 2px solid #ff6600;
+  background-color: #fff;
+}

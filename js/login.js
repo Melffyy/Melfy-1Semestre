@@ -1,14 +1,14 @@
 function dados() {
     if (!localStorage.getItem('Usuários')) {
         const usuarios = [
-            { id: 1, nome: "Lucas Andrade", email: "lucas@email.com", senha: "lucas123", dataNascimento: "2000-05-20" },
-            { id: 2, nome: "Fernanda Lima", email: "fernanda@email.com", senha: "nanda456", dataNascimento: "1998-08-10" },
-            { id: 3, nome: "Carlos Mendes", email: "carlos@email.com", senha: "carl789", dataNascimento: "1995-02-14" },
-            { id: 4, nome: "Juliana Silva", email: "juliana@email.com", senha: "ju321", dataNascimento: "2001-11-05" },
-            { id: 5, nome: "Nicole", email: "nicole@gmail.com", senha: "1234", dataNascimento: "1999-03-15" },
-            { id: 6, nome: "Julia", email: "julia@gmail.com", senha: "5678", dataNascimento: "2002-07-22" },
-            { id: 7, nome: "Isabella", email: "isabella@gmail.com", senha: "1357", dataNascimento: "1997-12-03" },
-            { id: 8, nome: "Ana", email: "ana@gmail.com", senha: "2468", dataNascimento: "2000-09-30" }
+            { id: 1, nome: "Lucas", sobrenome:'Andrade Da silva', email: "lucas@email.com", celular:'123456', cpf: '12345', senha: "lucas123", dataNascimento: "2000-05-20" },
+            { id: 2, nome: "Fernanda", sobrenome:'Lima Monteiro', email: "fernanda@email.com", celular: '1190394039', cpf:'3234564321', senha: "nanda456", dataNascimento: "1998-08-10" },
+            { id: 3, nome: "Carlos", sobrenome:'Mendes', email: "carlos@email.com", celular: '1190394039', cpf:'3234564321', senha: "carl789", dataNascimento: "1995-02-14" },
+            { id: 4, nome: "Juliana", sobrenome:'Silva', email: "juliana@email.com", celular: '1190394039', cpf:'3234564321', senha: "ju321", dataNascimento: "2001-11-05" },
+            { id: 5, nome: "Nicole", sobrenome:'Oliveira', email: "nicole@gmail.com", celular: '1190394039', cpf:'3234564321', senha: "1234", dataNascimento: "1999-03-15" },
+            { id: 6, nome: "Julia", sobrenome:'Silva', email: "julia@gmail.com", celular: '1190394039', cpf:'3234564321', senha: "5678", dataNascimento: "2002-07-22" },
+            { id: 7, nome: "Isabella", sobrenome:'Apolinário', email: "isabella@gmail.com", celular: '1190394039', cpf:'3234564321', senha: "1357", dataNascimento: "1997-12-03" },
+            { id: 8, nome: "Ana", sobrenome:'Gonçalves', email: "ana@gmail.com", celular: '1190394039', cpf:'3234564321', senha: "2468", dataNascimento: "2000-09-30" }
         ];
         localStorage.setItem('Usuários', JSON.stringify(usuarios));
     }
