@@ -5,25 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Melfy</title>
   <link rel="stylesheet" href="./css/style.css"/>
-  <script src="./js/script.js"></script>
+  <script src="./js/toggle.js" defer></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 </head>
 
 <body>
   <header>
     <div class="logo">
-        <img src="img/Melfy-versão final.svg" alt="Logo" />
+      <img src="img/Melfy-versão final.svg" alt="Logo" />
     </div>
     <nav>
       <a href="home.html">Home</a>
       <a href="confeitarias.html">Produtos</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="login.html">Login</a>
-      
+      <a href="pedidos.html">Meus Pedidos</a>
+      <div class="iconbag">
+        <a href="carrinho.html"><i class="fas fa-shopping-bag"></i></a>
+      </div>
+      <div class="iconuser">
+        <a href="login.html"><img src="./img/Perfil.svg" alt="Perfil" /></a>
+      </div>
     </nav>
-  </header>  
+    <div id="toggle-dark-mode" class="toggle-btn" aria-pressed="false">
+      <div class="toggle-icon"></div>
+    </div>
+  </header>
 
   <main class="main-content">
     <div class="circle"></div>
@@ -59,6 +70,59 @@
       </div>
     </div>
   </main>
+  
+  <section class="branco" id="section1">
+    <div class="text-content">
+      <h1>Na <span class="highlight">Melfy</span> quem cria delícias <br />encontra quem ama saborear!</h1>
+      <p>Conectamos quem faz com quem ama, para transformar cada momento em algo doce.</p>
+      <div class="buttons">
+        <button class="btn btn-dark" onclick="window.location.href='confeiteira/login.html'">Quero encantar com meus doces</button>
+        <button class="btn btn-yellow" onclick="window.location.href='login.html'">Quero me deliciar</button>
+      </div>
+    </div>
+    <div class="cake-image">
+      <img src="./img/BoloLading.svg" alt="Bolo delicioso com chocolate" />
+    </div>
+  </section>
+  
+  <section class="amarelo">
+    <h1 class="text">MAIS QUE UMA PLATAFORMA: <br>A MELFY É UM MOVIMENTO</h1>
+    <p class="textp">Valorizamos mulheres empreendedoras e <br>aproximamos quem cria com quem ama saborear.</p>
+    <div class="home-section">
+      <div class="mapa-section">
+        <div class="pesquisa">
+          <input type="text" id="inputLocal" placeholder="Onde você está?" />
+          <button onclick="pesquisar()">Ver confeitarias próximas</button>
+        </div>
+        <div id="mapa" style="width: 900px; height: 450px; border-radius: 10px; margin-top: 20px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="branco1">
+    <div class="info-section">
+      <div class="info-block">
+        <div class="text">
+          <h2>A sua doçura de <br />empreender começa no <span class="highlight">Melfy!</span></h2>
+          <p>Cadastre sua confeitaria <br />ou sua doceria</p>
+          <button class="btn-gradient">Saiba mais</button>
+        </div>
+        <div class="image">
+          <img src="./img/Confeitaria.svg" alt="Doceria ilustrada" />
+        </div>
+      </div>
+      <div class="info-block reverse">
+        <div class="image">
+          <img src="./img/Comendo Doce.svg" alt="Pessoa segurando doce" />
+        </div>
+        <div class="text">
+          <h2>Você tem fome de<br />um docinho depois de<br />um dia difícil?<br /><span class="highlight">A Melfy te entende</span></h2>
+          <p>Cadastre-se e vem<br />pedir o seu no Melfy!</p>
+          <button class="btn-gradient">Saiba mais</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="footer-top">
@@ -68,10 +132,7 @@
         <a href="#"><img src="./img/Linkedin.svg" alt="LinkedIn" /></a>
       </div>
       <p>Rua das Flores, nº 255, Jardim Rosinha, SP, Brasil</p>
-      <p>
-        <i class="fas fa-phone-alt"></i> (11) 959343957 &nbsp;
-        <i class="fas fa-envelope"></i> melfy@gmail.com
-      </p>
+      <p><i class="fas fa-phone-alt"></i> (11) 959343957 &nbsp; <i class="fas fa-envelope"></i> melfy@gmail.com</p>
     </div>
     <div class="footer-bottom">
       <a href="#">Política de Privacidade</a>
@@ -80,8 +141,8 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="./js/script.js"></script>
+
 </body>
-</html> 
-
-
-
+</html>
