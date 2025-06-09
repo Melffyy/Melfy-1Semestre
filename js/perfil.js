@@ -8,20 +8,18 @@ window.onload = function () {
 
     exibirInformacoes();
 }
-
-
-
-
 function entrarPerfil() {
-    let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado')) || []
-    
-    if (usuarioLogado == null){
-        alert('Você precisa se logar primeiro!')
-    } else {
-        alert('Usuario logado! redirecionando')
-        window.location.href = 'perfil.html'
-    }
-    console.log(usuarioLogado)
+  let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+  if (!usuarioLogado || Object.keys(usuarioLogado).length === 0) {
+      alert('Você precisa se logar primeiro!');
+      window.location.href = 'login.html';
+  } else {
+      alert('Usuário logado!!');
+      window.location.href = 'perfil.html';
+  }
+
+  console.log(usuarioLogado);
 }
 
 
@@ -37,6 +35,8 @@ function exibirInformacoes(){
   const usuarioLogado = JSON.parse(usuarioLogadoJSON);
 
 
+  document.getElementById('nome-exibir').innerText = usuarioLogado.nome 
+  document.getElementById('email-exibir').innerText = usuarioLogado.email
   document.getElementById("nome-input").value = usuarioLogado.nome || "";
   document.getElementById("sobrenome-input").value = usuarioLogado.sobrenome || "";
   document.getElementById("email-input").value = usuarioLogado.email || "";
@@ -152,6 +152,19 @@ function sairConta() {
     alert('Usuário deslogado');
     window.location.href = 'index.html';
 }
+
+
+function abrirModal(){
+  let modal = document.getElementById('modal')
+  
+  modal.style.display = 'flex'
+}
+
+function fecharModal(){
+  let modal = document.getElementById('modal')
+  modal.style.display = 'none'
+}
+
 
 
 
