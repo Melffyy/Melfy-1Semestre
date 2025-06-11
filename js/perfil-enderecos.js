@@ -46,7 +46,12 @@ function adicionarEndereco() {
 
 
   let logadouro = document.getElementById('logadouro').value;
+  let numero = document.getElementById('numero').value;
+  let complemento = document.getELementById('complemento').value;
+  let bairro = document.getElementById('bairro').value;
+  let cidade = document.getElementById('cidade').value;
   let tipo = document.getElementById('tipo').value;
+  let cep = document.getElementById('cep').value;
 
 
   const usuarioIndex = usuarios.findIndex(user => user.id === usuarioLogado.id);
@@ -69,6 +74,10 @@ function adicionarEndereco() {
 
   usuarios[usuarioIndex].enderecos.push({
     logadouro,
+    numero,
+    complemento,
+    bairro,
+    cidade,
     tipo
   });
 
