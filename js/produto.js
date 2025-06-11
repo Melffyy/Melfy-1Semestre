@@ -1,4 +1,84 @@
 window.addEventListener('DOMContentLoaded', () => {
+  const categoriaSelecionada = localStorage.getItem('categoriaSelecionada');
+
+  const lojas = JSON.parse(localStorage.getItem('Lojas')) || [];
+
+  const produtos = JSON.parse(localStorage.getItem('Produtos')) || [];
+
+  const produtosFiltrados = produtos.filter(produtos =>
+    produtos.categoria === categoriaSelecionada
+  );
+
+
+
+  // Agrupar produtos por loja
+  const produtosPorLoja = {};
+  produtosFiltrados.forEach(produto => {
+    if (!produtosPorLoja[produto.idLoja]) {
+      produtosPorLoja[produto.idLoja] = [];
+    }
+    produtosPorLoja[produto.idLoja].push(produto);
+  });
+
+  const mainContainer = document.querySelector('main');
+
+  // Limpar conteúdo existente
+  mainContainer.innerHTML = '';
+
+  // Montar um bloco para cada loja
+  Object.keys(produtosPorLoja).forEach(idLoja => {
+    const loja = lojas.find(l => l.idLoja == idLoja);
+    const produtos = produtosPorLoja[idLoja];
+
+    if (!loja) {
+      console.warn(`Loja com id ${idLoja} não encontrada!`);
+      return;
+    }
+
+
+    const container = document.createElement('div');
+    container.classList.add('container_produtos');
+
+    container.innerHTML = `
+      <div class="loja-categoria">
+        <img src="${loja.fotoPerfil}" alt="Logo da Loja" class="perfil-logo">
+        <div class="perfil-nome-avaliacao">
+          <span class="nome-loja">${loja.nomeLoja}</span>
+          <img src="./img/Avaliação.svg" alt="Avaliação" class="perfil-avaliacao">
+        </div>
+      </div>
+
+      <div class="carrossel">
+        <button class="arrow left"><img src="./img/seta esquerda.svg" alt=""></button>
+        <div class="cards-container">
+          ${produtos.map(prod => `
+            <div class="card">
+              <img src="${prod.foto}" alt="${prod.nome}" class="foto-produto">
+              <div class="descricao">
+                <h3>${prod.nome}</h3>
+                <p>${prod.subtitulo}</p>
+              </div>
+              <div class="preco-comprar">
+                <div class="preco">
+                  <span class="icone-preco">R$</span>
+                  <span class="valor">${prod.preco.toFixed(2)}</span>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+          
+ 
+
+    mainContainer.appendChild(container);
+  });
+  
+});
+
+
+function adicionarEventosAoModal() {
   const cards = document.querySelectorAll('.card');
   const modal = document.getElementById('product-modal');
   const modalImg = modal.querySelector('.modal-img');
@@ -31,46 +111,6 @@ window.addEventListener('DOMContentLoaded', () => {
       modal.style.display = 'none';
     }
   });
-});
-
-function getQueryParam(param) {
-  const params = new URLSearchParams(window.location.search);
-  return params.get(param);
 }
 
-const nomeBusca = getQueryParam('nome')?.toLowerCase() || '';
-
-// Pega os produtos do localStorage
-const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
-
-// Filtra os produtos que contenham o nome buscado, ignorando maiúsculas/minúsculas
-const produtosFiltrados = produtos.filter(produto =>
-  produto.nome.toLowerCase().includes(nomeBusca)
-);
-
-// Exibe os produtos filtrados na tela
-function mostrarProdutos(lista) {
-  const container = document.querySelector('.cards-container');
-  container.innerHTML = '';
-
-  lista.forEach(produto => {
-    const card = document.createElement('div');
-    card.classList.add('card');
-    card.innerHTML = `
-      <img src="${produto.imagem}" alt="${produto.nome}" class="foto-produto">
-      <div class="descricao">
-        <h3>${produto.nome}</h3>
-      </div>
-      <div class="preco-comprar">
-        <div class="preco">
-          <span class="icone-preco">R$</span>
-          <span class="valor">${produto.preco.toFixed(2)}</span>
-        </div>
-      </div>
-    `;
-    container.appendChild(card);
-  });
-}
-
-mostrarProdutos(produtosFiltrados);
 

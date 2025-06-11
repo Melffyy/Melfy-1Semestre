@@ -17,7 +17,7 @@
 </head>
 <body>
 
-    <!-- #region Header-->
+
   <header>
     <div class="logo">
         <img src="img/Melfy-versão final.svg" alt="Logo" />
@@ -41,28 +41,25 @@
       <div class="toggle-icon"></div>
     </div>
   </header>
-  <!-- #endregion-->
+    <!-- #region Barra Pesquisar e botão filtr -->
+
+    <div class="inicio-botao-pesquisar">
+      <div class="filtro">
+        <button class="button-filtro">Filtro </button>
+        <i class='bx  bx-slider'  ></i>
+      </div>
+
+      <section class="search-bar">
+          <input type="text" placeholder="Pesquisar..." />
+          <div class="iconsearch">
+              <i class="fas fa-search"></i>
+          </div>
+      </section>        
+   </div>
+  <!-- #endregion -->
 
     <!-- #region Conteudo Principal -->
   <main> 
-    <!-- #region Barra Pesquisar e botão filtr -->
-
-     <div class="inicio-botao-pesquisar">
-        <div class="filtro">
-          <button class="button-filtro">Filtro </button>
-          <i class='bx  bx-slider'  ></i>
-        </div>
-
-        <section class="search-bar">
-            <input type="text" placeholder="Pesquisar..." />
-            <div class="iconsearch">
-                <i class="fas fa-search"></i>
-            </div>
-        </section>        
-     </div>
-    <!-- #endregion -->
-
-
 
 
         <div class="container_produtos">
@@ -80,7 +77,7 @@
 
               <!-- NOVO: container dos cards -->
               <div class="cards-container">
-                <!-- #region CARDS -->
+           
                 <div class="card">
                   <img src="./img/BrigadeiroNozes.svg" alt="Brigadeiro" class="foto-produto">
                   <div class="descricao">
@@ -94,112 +91,18 @@
                     
                   </div>
                 </div>
-                <!-- #endregion -->
-
-                <!-- #region CARDS -->
-                <div class="card">
-                  <img src="./img/BrigadeiroNozes.svg" alt="Brigadeiro" class="foto-produto">
-                  <div class="descricao">
-                    <h3>Brigadeiro de Nozes</h3>
-                  </div>
-                  <div class="preco-comprar">
-                    <div class="preco">
-                      <span class="icone-preco">R$</span>
-                      <span class="valor">3.00</span>
-                    </div>
-                  </div>
-                </div>
-                <!-- #endregion -->
-                
-                <!-- #region CARDS -->
-                <div class="card">
-                  <img src="./img/BrigadeiroNozes.svg" alt="Brigadeiro" class="foto-produto">
-                  <div class="descricao">
-                    <h3>Brigadeiro de Nozes</h3>
-                  </div>
-                  <div class="preco-comprar">
-                    <div class="preco">
-                      <span class="icone-preco">R$</span>
-                      <span class="valor">2.00</span>
-                    </div>
-                  </div>
-                </div>
-                <!-- #endregion -->
-
-                <!-- #region CARDS -->
-                <div class="card">
-                  <img src="./img/BrigadeiroNozes.svg" alt="Brigadeiro" class="foto-produto">
-                  <div class="descricao">
-                    <h3>Brigadeiro de Nozes</h3>
-                  </div>
-                  <div class="preco-comprar">
-                    <div class="preco">
-                      <span class="icone-preco">R$</span>
-                      <span class="valor">2.00</span>
-                    </div>
-                  </div>
-                </div>
-                <!-- #endregion -->
-
-                <div class="card">
-                  <img src="./img/BrigadeiroNozes.svg" alt="Brigadeiro" class="foto-produto">
-                  <div class="descricao">
-                    <h3>Brigadeiro de Nozes</h3>
-                  </div>
-                  <div class="preco-comprar">
-                    <div class="preco">
-                      <span class="icone-preco">R$</span>
-                      <span class="valor">2.00</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <img src="./img/BrigadeiroNozes.svg" alt="Brigadeiro" class="foto-produto">
-                  <div class="descricao">
-                    <h3>Brigadeiro de Nozes</h3>
-                  </div>
-                  <div class="preco-comprar">
-                    <div class="preco">
-                      <span class="icone-preco">R$</span>
-                      <span class="valor">2.00</span>
-                    </div>
-                  </div>
-                </div>
-
-
-                <div class="card">
-                  <img src="./img/BrigadeiroNozes.svg" alt="Brigadeiro" class="foto-produto">
-                  <div class="descricao">
-                    <h3>Brigadeiro de Nozes</h3>
-                  </div>
-                  <div class="preco-comprar">
-                    <div class="preco">
-                      <span class="icone-preco">R$</span>
-                      <span class="valor">2.00</span>
-                    </div>
-                  </div>
-                </div>
-
-              
-
+             
               </div>
               <button class="arrow right"><img src="./img/seta direita.svg" alt="" srcset=""></button>
             </div>
         </div>
-
-    <div class="footer-bottom">
-      <a href="#">Política de Privacidade</a>
-      <span>© Copyright, 2025</span>
-      <a href="#">Termos e Condições</a>
-    </div>
-  </footer>
+  </main>
   <!-- #endregion -->
 
-<!-- #region Modal Descrição do Produto-->
-<div class="modal-overlay" id="product-modal">
-  <div class="modal-content">
-   
+  <!-- #region Modal Descrição do Produto-->
+    <div class="modal-overlay" id="product-modal">
+    <div class="modal-content">
+    
     <img src="brigadeiro.png" alt="Brigadeiro de nozes" class="modal-img">
 
     <button class="modal-close" onclick="closeModal()">×</button>
@@ -239,8 +142,8 @@
       </div>
     </div>
   </div>
-</div>
-<!-- #endregion Modal Overlay -->
+  </div>
+  <!-- #endregion Modal Overlay -->
 
 
 

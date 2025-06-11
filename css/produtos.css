@@ -17,6 +17,7 @@
   --cor-preco-icone: #a86a00;
   --cor-botao: #4a2c1d;
   --cor-botao-hover: #3a2014;
+  --cor-subtitulo:#333333a6;
 }
 
 body {
@@ -299,7 +300,7 @@ nav .active {
 .card{
     display: flex;
     flex-direction: column;
-    height: 280px;
+    height: 310px;
     width: 220px;
     background-color: #FFFDF4;
     border-radius: 16px;
@@ -314,7 +315,8 @@ nav .active {
 .foto-produto{
     flex-direction: inherit;
     width: 220px;
-    height: auto;
+    max-height: 220px;
+
 }
 
 
@@ -325,10 +327,18 @@ nav .active {
     margin: 0;
 }
   
+.descricao p {
+  font-size: 13px;
+  opacity: 1;
+  color: var(--cor-subtitulo);
+  margin: 2px 0 2px;
+  padding-left: 10px;
+}
+  
 .preco-comprar {
     display: flex;
     align-items: center;
-    padding-top: 10px;
+   
 }
   
 .preco {
@@ -438,7 +448,7 @@ footer {
   position: fixed;
   inset: 0;
   background-color: rgba(142, 142, 142, 0.27);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 1000;
