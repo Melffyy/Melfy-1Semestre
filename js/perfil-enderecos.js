@@ -74,8 +74,6 @@ function adicionarEndereco() {
 
 
   localStorage.setItem('Usuários', JSON.stringify(usuarios));
-
- 
   renderizarEnderecos();
 }
 
@@ -84,12 +82,12 @@ function adicionarEndereco() {
 function renderizarEnderecos() {
   const container = document.getElementById('enderecos');
   const botaoAdicionar = document.getElementById('add-endereco');
-  container.innerHTML = '';
   console.log(document.getElementById('enderecos')); // deve mostrar <div id="enderecos">...</div>
 
   let usuarios = JSON.parse(localStorage.getItem('Usuários')) || [];
   let usuarioLogadoJSON = localStorage.getItem('usuarioLogado');
   if (!usuarioLogadoJSON) return;
+
 
   let usuarioLogado = JSON.parse(usuarioLogadoJSON);
   const usuario = usuarios.find(user => user.id === usuarioLogado.id);
@@ -100,14 +98,23 @@ function renderizarEnderecos() {
     const div = document.createElement('div');
     div.className = 'endereco-box';
     div.innerHTML = `
-      <p><strong>${endereco.logadouro}</strong><br>${endereco.tipo}</p>
+      <p class='p-endereco'><strong>${endereco.logadouro}</strong><br>${endereco.tipo}</p>
       <span class="numero-endereco">#${index + 1}</span>
     `;
+
+    div.addEventListener('click', () => abrirModalEndereco(index));
     container.appendChild(div);
   });
 
+  
 
   if (botaoAdicionar) container.appendChild(botaoAdicionar);
+}
+
+
+function abrirModalEndereco() {
+  let modaldois = document.getElementById('modal-dois')
+  modaldois.style.display = 'flex'
 }
 
 

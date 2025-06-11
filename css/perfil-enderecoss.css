@@ -201,7 +201,7 @@ nav .active {
     color: #ffffff;
     border-radius: 20px;
     width: 100px;
-    padding-left: 2%;
+    padding-left: 4%;
 
 }
 
@@ -235,7 +235,8 @@ a{
 
 #title-meus-dados{
     color: #D36900;
-    margin-bottom: 7%;
+    margin-bottom: 3%;
+    margin-top: 6%;
 }
 
 #name-user{
@@ -330,7 +331,6 @@ button{
 button:hover{
     transform: scale(1.1);
 }
-
 
 
                                 /* CONTAINER PARA CENTRALIZAR A IMG LOGOUT */
@@ -428,16 +428,35 @@ footer {
     flex-direction: column;
   }
 
-  #modal-item{
-    background:#ffffff; 
-    padding:20px; 
-    border-radius:5px; 
+  #modal-item {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
     max-width: 800px;
     width: 160%;
-    height: 400px;
+    height: 90vh;
     display: flex;
     flex-direction: column;
+  
+    overflow-y: auto; /* barra de rolagem vertical */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: var(--cor-laranja) transparent; /* Firefox */
   }
+  
+  #modal-item::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  #modal-item::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  #modal-item::-webkit-scrollbar-thumb {
+    background-color: var(--cor-laranja);
+    border-radius: 10px;
+    border: 2px solid transparent;
+  }
+  
 
 
 .item-meus-dados-input{
@@ -450,8 +469,9 @@ footer {
 .container-botao{
     display: flex;
     flex-direction: row;
-    height: 500px;
-    align-items: flex-end;
+    justify-content: center;
+
+    align-items: center;
 }
 
 .container-endereços{
@@ -480,19 +500,21 @@ footer {
 
     .endereco-box {
       border-radius: 10px;
-      padding: 15px;
+      padding: 18px;
       margin-bottom: 15px;
       position: relative;
       background-color: #ffe16a;
       box-shadow: 0 1px 2px rgba(0,0,0,0.05);
       width: 95vh;
+      height: 40px;
+      cursor: pointer;
     }
 
     .endereco-box p {
       margin: 0;
       color: #000;
       font-size: 14px;
-      line-height: 1.4;
+      line-height: 1;
     }
 
     .endereco-box p strong {
@@ -514,7 +536,7 @@ footer {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100px;
+      height: 70px;
       cursor: pointer;
       text-align: center;
       margin-top: -10px;
@@ -541,3 +563,76 @@ footer {
       flex-direction: column;
 
  }
+
+
+
+ .linha-inputs {
+  display: flex;
+  gap: 0px;
+  justify-content: space-between;
+}
+
+.linha-inputs-bottom{
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* faz os inputs ocuparem espaço igual */
+}
+
+.input-group label {
+  margin-bottom: 0px;
+  font-weight: 700;
+  color: var(--cor-destaque);
+}
+
+.input-group input,
+.input-group select {
+  background-color: #dcdcdc;
+  border: 2px solid #dcdcdc;
+  border-radius: 8px;
+  height: 35px;
+  padding-left: 15px;
+  font-size: 14px;
+  transition: 0.5s;
+  width: 350px;
+  box-sizing: border-box;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: var(--cor-laranja);
+  background-color: #fff;
+}
+
+
+.inp-group1{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inp-group2{
+  display: flex;
+  flex-direction: column;
+}
+
+select{
+  margin-top: 19px;
+}
+
+
+#adicionar{
+  background-color: #007a5a;
+  color: white;
+}
+
+#fechar{
+  background-color: rgb(255, 64, 0);
+  color: white;
+}

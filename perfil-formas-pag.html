@@ -73,37 +73,16 @@
         <div class="item container-meus-dados">
           <h1 id="title-meus-dados" style="color: #d87e00;">Formas de Pagamento</h1>
 <div class="formas-pagamento-wrapper">
-  <div class="forma-cartao">
-    <div class="info-cartao">
   
-      <p><strong></strong></p>
-      <p></p>
-    </div>
-    <div class="info-direita">
-      <p></p>
-      <span></span>
-    </div>
-  </div>
-
-  <div class="forma-cartao">
-    <div class="info-cartao">
-      <p><strong></strong></p>
-      <p></p>
-    </div>
-    <div class="info-direita">
-      <p></p>
-      <span>#2</span>
-    </div>
-  </div>
+  
 
  
 </div>
 
 
 <!-- Botão para abrir o modal -->
-<div onclick="abrirModal()" class="adicionar-forma">
-  <img src="img/credit-card (1).png" alt="Adicionar">
-
+<div id="add-pag" onclick="abrirModal()" style="border: 2px solid rgb(255, 202, 29); display: flex; justify-content: center; padding: 30px; width: 40px; height: 40px; border-radius: 10px; cursor: pointer; margin-bottom: -10px;">
+  <img style="width: 55px; height: 55px;" src="img/credit-card (1).png" alt="">
 </div>
 
 <!-- Modal -->
@@ -111,20 +90,28 @@
   <div class="modal">
     <h2>Adicionar Cartão</h2>
 
-    <label for="nomeTitular">Nome do titular</label>
-    <input type="text" id="nomeTitular" placeholder="Nome impresso no cartão">
+    <div>
+      <label for="nomeTitular">Nome do titular</label>
+      <input type="text" id="nomeTitular" placeholder="Nome impresso no cartão">
+    </div>
 
-    <label for="numeroCartao">Número do cartão</label>
-    <input type="text" id="numeroCartao" maxlength="19" placeholder="XXXX XXXX XXXX XXXX" oninput="formatarNumero(this)">
-
-    <label for="validade">Validade</label>
-    <input type="text" id="validade" placeholder="MM/AA" maxlength="5" oninput="formatarValidade(this)">
-
-    <label for="cvv">CVV</label>
-    <input type="text" id="cvv" maxlength="4" placeholder="CVV">
+    <div>
+      <label for="numeroCartao">Número do cartão</label>
+      <input type="text" id="numeroCartao" maxlength="19" placeholder="XXXX XXXX XXXX XXXX" oninput="formatarNumero(this)">  
+    </div>
+  
+    <div>  
+      <label for="validade">Validade</label>
+      <input type="text" id="validade" placeholder="MM/AA" maxlength="5" oninput="formatarValidade(this)">
+    </div>
+  
+    <div>
+      <label for="cvv">CVV</label>
+      <input type="text" id="cvv" maxlength="4" placeholder="CVV">  
+    </div>
 
     <div class="modal-actions">
-      <button onclick="fecharModal()">Cancelar</button>
+      <button class="fechar" onclick="fecharModal()">Cancelar</button>
       <button class="submit" onclick="salvarCartao()">Salvar</button>
     </div>
   </div>

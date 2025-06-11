@@ -69,8 +69,8 @@ function salvarCartao() {
 
 function renderizarCartoes() {
   const container = document.querySelector('.formas-pagamento-wrapper');
-  container.innerHTML = '';
 
+  const botaoAdicionar = document.getElementById('add-pag')
   let usuarios = JSON.parse(localStorage.getItem('Usuários')) || [];
   let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
 
@@ -92,16 +92,8 @@ function renderizarCartoes() {
     `;
     container.appendChild(div);
   });
-
-  // Botão de adicionar cartão
-  // const botaoAdicionar = document.createElement('button');
-  // botaoAdicionar.className = 'adicionar-forma';
-  // botaoAdicionar.onclick = abrirModal;
-  // botaoAdicionar.innerHTML = `
-  //   <img src="https://cdn-icons-png.flaticon.com/512/929/929408.png" alt="Adicionar">
-  //   <p id="p-add-pag">Adicionar</p>
-  // `;
-  // container.appendChild(botaoAdicionar);
+  
+  if (botaoAdicionar) container.appendChild(botaoAdicionar);
 }
 
 // Formatar número do cartão

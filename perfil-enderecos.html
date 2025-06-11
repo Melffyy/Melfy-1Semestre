@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Melfy</title>
   <link rel="stylesheet" href="./css/perfil-enderecoss.css"/>
+  <script src="./js/perfil-enderecos.js"></script>
   <script src="./js/toggle.js" defer></script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -71,80 +72,115 @@
                                               <!-- CONTAINER INPUTS MEUS DADOS -->
 
         <div class="item container-meus-dados">
-          <h1 id="title-meus-dados">Meus Dados</h1>
+          <h1 id="title-meus-dados">Enderecos</h1>
           <div class="item-meus-dados-flex">
             <div class="item-meus-dados">
               
             <div id="enderecos">
-        
 
               <div class="item-endereco-input" id="add-endereco">
                 <a onclick="abrirModal()">
-                  <div class="" style="border: 2px solid rgb(255, 202, 29); display: flex; justify-content: center; padding: 30px; width: 70px; border-radius: 10px; cursor: pointer; margin-bottom: -10px;">
-                    <img src="./img/pin.png" alt="" style="width: 65px;">
+                  <div class="" style="border: 2px solid rgb(255, 202, 29); display: flex; justify-content: center; padding: 30px; width: 40px; height: 40px; border-radius: 10px; cursor: pointer; margin-bottom: -10px;">
+                    <img src="./img/pin.png" alt="" style="width: 70px;">
                   </div>
                 </a>
               </div>
             </div>
               <div class="item-meus-dados-input">
-            <div id="modal">
-              <div id="modal-item">
-                <h1>Endereço</h1>
-                <div class="container-enderecos">
-                  <div class="item-meus-dados-input">
-                    <div class="item-enderecos">
-                      <label for="">Endereço</label>
-                      <input type="text" placeholder="Endereço" id="logadouro">
-                    </div>
-                    <div class="item-enderecos">
-                      <label for="">Tipo</label>
-                      <input type="text" name="" id="tipo" placeholder="Número">
-                    </div>
-                  </div>
+                <div id="modal">
+                  <div id="modal-item">
+                    <h1>Adicionar Endereço</h1>
+                    <form id="form-endereco" style="display: flex; flex-direction: column; gap: 20px;">
+                
 
-                  <div class="item-meus-dados-input">
-                    <div class="item-enderecos">
-                      <label for="">Endereço</label>
-                      <input type="text" placeholder="Endereço">
-                    </div>
-                    <div class="item-enderecos">
-                      <label for="">Número</label>
-                      <input type="text" name="" id="" placeholder="Número">
-                    </div>
+                      <div class="inp-group1"> 
+                        <div class="linha-inputs">
+                          <div class="input-group">
+                            <label for="logradouro">Logradouro</label>
+                            <input type="text" id="logradouro" name="logradouro" placeholder="Rua, Avenida..." required>
+                          </div>
+                          <div class="input-group">
+                            <label for="numero">Número</label>
+                            <input type="text" id="numero" name="numero" placeholder="Número" required>
+                          </div>
+                        </div>
+
+                           
+                
+                        <div class="linha-inputs">
+                          <div class="input-group">
+                            <label for="complemento">Complemento</label>
+                            <input type="text" id="complemento" name="complemento" placeholder="Apartamento, bloco, etc.">
+                          </div>
+                          <div class="input-group">
+                            <label for="bairro">Bairro</label>
+                            <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
+                          </div>
+                        </div>
+
+                      </div>
+
+
+                      <div class="inp-group2">
+
+                        <div class="linha-inputs-bottom">
+                          <div class="input-group">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
+                          </div>
+                          <div class="input-group">
+                            <label for="estado">Estado</label>
+                            <select id="estado" name="estado" required>
+                              <option value="">Selecione</option>
+                              <option value="SP">São Paulo</option>
+                              <option value="RJ">Rio de Janeiro</option>
+                              <option value="MG">Minas Gerais</option>
+                            
+                              <!-- outros estados -->
+                            </select>
+                          </div>
+                        </div>
+                  
+                        <div class="linha-inputs-bottom">
+                          <div class="input-group">
+                            <label for="cep">CEP</label>
+                            <input type="text" id="cep" name="cep" placeholder="00000-000" pattern="\d{5}-?\d{3}" required>
+                          </div>
+                          <div class="input-group">
+                            <label for="tipo">Tipo de Endereço</label>
+                            <select id="tipo" name="tipo">
+                              <option value="Residencial">Residencial</option>
+                              <option value="Comercial">Comercial</option>
+                              <option value="Outro">Outro</option>
+                            </select>
+                          </div>
+                        </div>
+                  
+                      </div>
+                
+                      
+                      <div class="container-botao" style="gap: 15px; margin-top: 0">
+                        <button type="button" onclick="fecharModal()" id="fechar">Fechar</button>
+                        <button type="submit" id="adicionar">Adicionar</button>
+                      </div>
+                    </form>
                   </div>
                 </div>
 
-                <div class="container-botao">
-                  <div class="item-botao">
-                    <button onclick="fecharModal()">Fechar</button>
-                  </div>
-
-                  <div class="item-botao">
-                    <button onclick="adicionarEndereco()">Adicionar</button>
-                  </div>
-                </div>                        
-              </div>
-            </div>
-              </div>
+          </div>
 
 
 
             </div>
             
           <div class="item-meus-dados">
-
           </div>   
           </div>
-
-          
           <div>
                                                 <!-- BOTÕES SALVAR E EDITAR -->
     
-
-             
             </div>
           </div>
-
         </div>
     </div>
 
@@ -168,8 +204,7 @@
         </div>
   </footer>
 
-  <script src="./js/perfil-enderecos.js"></script>
-
+ 
   
 </body>
 </html>

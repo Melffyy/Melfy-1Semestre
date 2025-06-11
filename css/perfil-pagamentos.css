@@ -201,7 +201,7 @@ nav .active {
     color: #ffffff;
     border-radius: 20px;
     width: 100px;
-    padding-left: 2%;
+    padding-left: 4%;
 
 }
 
@@ -235,7 +235,7 @@ a{
 
 #title-meus-dados{
     color: #D36900;
-    margin-bottom: 7%;
+    margin-bottom: 3%;
 }
 
 #name-user{
@@ -476,7 +476,7 @@ footer {
   display: flex;
   justify-content: space-between;
   padding: 16px;
-  height: 80px;
+  height: 40px;
   border-radius: 10px;
   background-color: #ffe16a;
   font-family: 'Istok Web', sans-serif;
@@ -497,8 +497,8 @@ footer {
   border: 2px solid rgb(255, 202, 29);
   border-radius: 10px;
   padding: 20px;
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   text-align: center;
   cursor: pointer;
   margin-bottom: -20px;
@@ -539,6 +539,7 @@ footer {
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   position: relative;
   display: flex;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -552,10 +553,10 @@ footer {
 }
 
 .modal input, .modal select {
-  padding: 10px;
+  padding: 9px;
   margin-top: 5px;
-  border: 1px solid #ccc;
   border-radius: 5px;
+  width: 85%;
 }
 
 .modal-actions {
@@ -567,13 +568,18 @@ footer {
 
 .modal-actions button {
   padding: 8px 16px;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
   border: none;
 }
 
 .modal-actions .submit {
   background-color: #007a5a;
+  color: white;
+}
+
+.modal-actions .fechar{
+  background-color: rgb(255, 64, 0);
   color: white;
 }
 
@@ -589,4 +595,11 @@ footer {
   border: none;
   font-size: 22px;
   cursor: pointer;
+}
+
+input:focus,
+input-group select:focus {
+  outline: none;
+  border-color: var(--cor-laranja);
+  background-color: #fff;
 }
