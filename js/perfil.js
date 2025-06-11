@@ -1,11 +1,8 @@
+document.addEventListener("DOMContentLoaded", function () {
+  exibirInformacoes();
+  renderizarEnderecos();
+});
 
-  window.onload = function () {
-    const btnSair = document.getElementById('botao-sair');
-    if (btnSair) {
-        btnSair.addEventListener('click', sairConta);
-    }
-    exibirInformacoes();
-  };
 
 
 
@@ -239,7 +236,3 @@ function renderizarEnderecos() {
 }
 
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  renderizarEnderecos();
-});

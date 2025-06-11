@@ -465,79 +465,128 @@ footer {
 }
 
 
-.container-teste {
-      border: 1px solid #FFA500;
-      border-radius: 10px;
-      padding: 20px;
-      width: 480px;
-    }
+.formas-pagamento-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 0px;
+}
 
-    h2 {
-      color: #FFA500;
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
+.forma-cartao {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: #ffe16a;
+  font-family: 'Istok Web', sans-serif;
+}
 
-    .endereco-box {
-      border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 15px;
-      position: relative;
-      background-color: #ffe16a;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-      width: 95vh;
-    }
+.info-cartao p,
+.info-direita p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: rgb(0, 0, 0)  ;
+}
 
-    .endereco-box p {
-      margin: 0;
-      color: #000;
-      font-size: 14px;
-      line-height: 1.4;
-    }
+.info-direita {
+  text-align: right;
+}
 
-    .endereco-box p strong {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
+.adicionar-forma {
+  border: 2px solid rgb(255, 202, 29);
+  border-radius: 10px;
+  padding: 20px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: -20px;
+  background-color: transparent;
+  
+}
 
-    .numero-endereco {
-      position: absolute;
-      bottom: 8px;
-      right: 12px;
-      color: #333;
-      font-size: 12px;
-    }
+.adicionar-forma img {
+  width: 80px;
+  margin-bottom: 0px;
+  margin-top: 15px;
+}
 
-    .add-endereco {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100px;
-      cursor: pointer;
-      text-align: center;
-      margin-top: -10px;
-    }
+#p-add-pag{
+  font-size: 13px;
+  
+}
 
-    .add-endereco .icone-adicionar {
-      font-size: 32px;
-      margin-bottom: 5px;
-      color: #000;
-    }
 
-    .add-endereco p {
-      font-size: 13px;
-      color: #555;
-      margin: 0;
-    }
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
 
-    .add-endereco:hover {
-      background-color: #fff3e0;
-    }
+.modal {
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  width: 400px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
 
-    #enderecos{
-      display: flex;
-      flex-direction: column;
+.modal h2 {
+  margin-bottom: 20px;
+}
 
- }
+.modal label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.modal input, .modal select {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-actions {
+  display: flex;
+
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.modal-actions .submit {
+  background-color: #007a5a;
+  color: white;
+}
+
+.modal-actions button:hover {
+  opacity: 0.9;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
