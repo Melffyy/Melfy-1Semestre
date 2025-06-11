@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Melfy</title>
+  <link rel="stylesheet" href="teste.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+        <img src="img/Melfy-versão final.svg" alt="Logo" />
+    </div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="confeitarias.html">Produtos</a>
+      <a href="#">Meus Pedidos</a>
+      <div class="iconbag">
+        <a href="carrinho.html"> 
+          <i class="fas fa-shopping-bag"></i>
+        </a>
+      </div>
+      <div class="iconuser">
+        <a href="login.html"> 
+          <img src="./img/Perfil.svg" alt="" srcset="">
+        </a>
+      </div>
+    </nav>
+    <div id="toggle-dark-mode" class="toggle-btn" aria-pressed="false">
+      <div class="toggle-icon"></div>
+    </div>
+  </header> 
+
+    <button onclick="openModal()">Abrir Modal</button>
+
+    <!-- Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Resumo do Pedido</h2>
+
+            <!-- Endereço do Usuário -->
+            <div class="user-info">
+                <h3>Endereço do Usuário:</h3>
+                <p id="userAddress">Rua Exemplo, 123 - Bairro Exemplo</p>
+            </div>
+
+            <!-- Foto e Informações da Loja -->
+            <div class="store-info">
+                <h3>Informações da Loja:</h3>
+                <img src="https://via.placeholder.com/50" alt="Foto da Loja" class="store-img">
+                <p id="storeName">Loja Exemplo</p>
+            </div>
+
+            <!-- Produtos -->
+            <div class="products">
+                <h3>Produtos</h3>
+                <div id="productList">
+                    <!-- Produtos serão inseridos aqui dinamicamente -->
+                </div>
+            </div>
+
+            <!-- Forma de Entrega (Radio Buttons) -->
+            <div class="delivery">
+                <h3>Forma de Entrega:</h3>
+                <div class="delivery-options">
+                    <label>
+                        <input type="radio" name="delivery" value="retirada" checked>
+                        Retirada na Loja
+                    </label><br>
+                    <label>
+                        <input type="radio" name="delivery" value="delivery">
+                        Entrega (R$10,00)
+                    </label>
+                </div>
+            </div>
+
+            <!-- Forma de Pagamento (Radio Buttons) -->
+            <div class="payment">
+                <h3>Forma de Pagamento:</h3>
+                <div class="payment-options">
+                    <label>
+                        <input type="radio" name="payment" value="pix" checked>
+                        PIX
+                    </label><br>
+                    <label>
+                        <input type="radio" name="payment" value="cartao">
+                        Cartão de Crédito
+                    </label><br>
+                    <label>
+                        <input type="radio" name="payment" value="boleto">
+                        Boleto
+                    </label>
+                </div>
+            </div>
+
+            <!-- Valor Total -->
+            <div class="total">
+                <h3>Resumo</h3>
+                <p id="totalValue">Total dos Produtos: R$200,00</p>
+                <p id="shippingValue">Frete: R$10,00</p>
+                <hr>
+                <p id="finalValue">Total Final: R$210,00</p>
+            </div>
+        </div>
+    </div>
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="social-icons">
+        <a href="#"><img src="./img/Instagram.svg" alt="Instagram" /></a>
+        <a href="#"><img src="./img/Facebook.svg" alt="Facebook" /></a>
+        <a href="#"><img src="./img/Linkedin.svg" alt="LinkedIn" /></a>
+      </div>
+      <p>Rua das Flores, nº 255, Jardim Rosinha, SP, Brasil</p>
+      <p>
+        <i class="fas fa-phone-alt"></i> (11) 959343957 &nbsp;
+        <i class="fas fa-envelope"></i> melfy@gmail.com
+      </p>
+    </div>
+    <div class="footer-bottom">
+      <a href="#">Política de Privacidade</a>
+      <span>© Copyright, 2025</span>
+      <a href="#">Termos e Condições</a>
+    </div>
+  </footer>
+
+  <script src="teste.js"></script>
+  
+</body>
+</html>

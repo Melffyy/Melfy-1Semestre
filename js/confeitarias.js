@@ -127,8 +127,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.doce').forEach(doce => {
         doce.addEventListener('click', function () {
           const categoria = this.querySelector('p').textContent.trim();
-          localStorage.setItem('categoriaSelecionada', categoria); // salva o nome da categoria
-          window.location.href = 'produtos.html'; // redireciona para a página de produtos
+          localStorage.setItem('categoriaSelecionada', categoria); 
+          window.location.href = 'produtos.html';
         });
       });
       

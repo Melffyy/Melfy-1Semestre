@@ -434,6 +434,65 @@ td{
     font-size: 15px;
 }
 
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.linha-loja {
+  padding-top: 16px;
+}
+
+.linha-loja td {
+  font-weight: bold;
+  padding: 12px;
+  padding-top: 24px;
+}
+
+.linha-loja:not(:first-child) td {
+  padding-top: 32px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.td-separador {
+  position: relative;  
+  height: 40px;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 40px;
+}
+
+.td-separador::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../img/separador.png');
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 40px;
+  opacity: 0.3; 
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.loja-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-loja {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+
 /* #endregion*/
 
 /* #region Pecça Também*/
@@ -656,6 +715,8 @@ nav a {
   padding: 20px;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
+
+
 
 footer {
   height: auto;
