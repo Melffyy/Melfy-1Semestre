@@ -4,54 +4,139 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Melfy</title>
-  <link rel="stylesheet" href="./css/lojas.css"/>
-    <script src="./js/toggle.js" defer></script>
-  <script src="./js/header.js"></script>
+  
+  <!-- Fontes e ícones -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="./css/lojas.css" />
+
+  <!-- JS -->
+  <script src="./js/toggle.js" defer></script>
+  <script src="./js/header.js" defer></script>
 </head>
 
 <body>
   <div id="header"></div>
 
-  <main> 
-    
-     <div class="lojas-botao-pesquisar">
-        <div class="filtro">
-          <button class="button-filtro">Filtro </button>
-          <i class='bx  bx-slider'  ></i>
-        </div>
+  <main>
+    <!-- Filtro e Pesquisa -->
+    <div class="lojas-botao-pesquisar">
+      <div class="filtro">
+        <button class="button-filtro">Filtro</button>
+        <i class='bx bx-slider'></i>
+      </div>
 
-        <section class="search-bar">
-            <input type="text" placeholder="Pesquisar..." />
-            <div class="iconsearch">
-                <i class="fas fa-search"></i>
+      <section class="search-bar">
+        <input type="text" placeholder="Pesquisar..." />
+        <div class="iconsearch">
+          <i class="fas fa-search"></i>
+        </div>
+      </section>
+    </div>
+
+    <!-- Lista de Lojas -->
+    <section class="container">
+      <h2 class="mb-4">Lojas</h2>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+
+        <!-- Card loja -->
+        <div class="col">
+          <div class="card d-flex flex-row align-items-center p-3">
+            <img src="/img/img/sucrier-icon.png" class="rounded-circle" alt="Logo Sucrier" width="60" height="60">
+            <div class="ms-3">
+              <h5 class="card-title mb-1">Sucrier</h5>
+              <p class="card-text small text-muted">Avaliação: ★★★★☆ • 2.5km</p>
+              <p class="card-text small text-muted">Entrega: Grátis</p>
             </div>
-        </section>        
-     </div>
-
-
-     <div class="card mb-3">
-        <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-        <div class="card-body">
-          <h5 class="card-title">Título do card</h5>
-          <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>
-          <p class="card-text"><small class="text-muted">Atualizados 3 minutos atrás</small></p>
+            <div class="ms-auto">
+              <i class="far fa-heart"></i>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Título do card</h5>
-          <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>
-          <p class="card-text"><small class="text-muted">Atualizados 3 minutos atrás</small></p>
+
+        <div class="col">
+          <div class="card d-flex flex-row align-items-center p-3">
+            <img src="./img/img/DoceMi-icon.png" class="rounded-circle" alt="Logo DoceMi" width="60" height="60">
+            <div class="ms-3">
+              <h5 class="card-title mb-1">DoceMi</h5>
+              <p class="card-text small text-muted">Avaliação: ★★★★☆ • 2.5km</p>
+              <p class="card-text small text-muted">Entrega: Grátis</p>
+            </div>
+            <div class="ms-auto">
+              <i class="far fa-heart"></i>
+            </div>
+          </div>
         </div>
-        <img class="card-img-bottom" src=".../100px180/" alt="Imagem de capa do card">
+
+        <div class="col">
+          <div class="card d-flex flex-row align-items-center p-3">
+            <img src="./img/img/Mimi-icon.png" class="rounded-circle" alt="Logo Mimi's" width="60" height="60">
+            <div class="ms-3">
+              <h5 class="card-title mb-1">Mimi's</h5>
+              <p class="card-text small text-muted">Avaliação: ★★★★☆ • 2.5km</p>
+              <p class="card-text small text-muted">Entrega: Grátis</p>
+            </div>
+            <div class="ms-auto">
+              <i class="far fa-heart"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card d-flex flex-row align-items-center p-3">
+            <img src="./img/img/Cakelê-icon.png" class="rounded-circle" alt="Logo Cakelê" width="60" height="60">
+            <div class="ms-3">
+              <h5 class="card-title mb-1">Cakelê</h5>
+              <p class="card-text small text-muted">Avaliação: ★★★★☆ • 2.5km</p>
+              <p class="card-text small text-muted">Entrega: Grátis</p>
+            </div>
+            <div class="ms-auto">
+              <i class="far fa-heart"></i>
+            </div>
+          </div>
+        </div>
+
+         <div class="col">
+          <div class="card d-flex flex-row align-items-center p-3">
+            <img src="./img/img/TiaGlu-icon.png" class="rounded-circle" alt="Logo TiaGlu" width="60" height="60">
+            <div class="ms-3">
+              <h5 class="card-title mb-1">TiaGlu</h5>
+              <p class="card-text small text-muted">Avaliação: ★★★★☆ • 2.5km</p>
+              <p class="card-text small text-muted">Entrega: Grátis</p>
+            </div>
+            <div class="ms-auto">
+              <i class="far fa-heart"></i>
+            </div>
+          </div>
+        </div>
+
+         <div class="col">
+          <div class="card d-flex flex-row align-items-center p-3">
+            <img src="./img/img/Bolinê-icon.png" class="rounded-circle" alt="Logo Bolinê" width="60" height="60">
+            <div class="ms-3">
+              <h5 class="card-title mb-1">Bolinê</h5>
+              <p class="card-text small text-muted">Avaliação: ★★★★☆ • 2.5km</p>
+              <p class="card-text small text-muted">Entrega: Grátis</p>
+            </div>
+            <div class="ms-auto">
+              <i class="far fa-heart"></i>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Repita esse bloco .col para mais lojas -->
+
       </div>
-
-
-
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="footer-top">
@@ -71,6 +156,6 @@
       <span>© Copyright, 2025</span>
       <a href="#">Termos e Condições</a>
     </div>
-  </footer>  
+  </footer>
 </body>
 </html>
