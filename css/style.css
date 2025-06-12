@@ -555,6 +555,7 @@ p {
 .btn-dark {
   background-color: #4a2c20;
   color: white;
+  cursor: pointer;
 }
 
 .btn-dark:hover {
@@ -564,6 +565,7 @@ p {
 .btn-yellow {
   background-color: #f7b229;
   color: #4a2c20;
+  cursor: pointer;
 }
 
 .btn-yellow:hover {

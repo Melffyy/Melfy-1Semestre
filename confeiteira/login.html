@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Melfy</title>
   <link rel="stylesheet" href="./css/login.css"/>
+  <script src="../js/toggle.js"></script>
   <script src="./js/login.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +16,7 @@
 <body onload="logar()">
   <header>
     <div class="logo">
-        <img src="../img/Melfy-versão final.svg" alt="Logo" />
+        <img src="../img/Melfy-versão final.svg" alt="Logo"/>
     </div>
     <nav>
       <a href="adicionarProdutos.html">Criar Produto</a>
@@ -24,11 +25,14 @@
       <a href="painelADM.html">Painel Administrativo</a>
       
       <div class="iconuser">
-        <a href="../login.html"> 
+        <a href="./login.html"> 
           <img src="../img/Perfil.svg" alt="">
         </a>
       </div>
     </nav>
+    <div id="toggle-dark-mode" class="toggle-btn" aria-pressed="false">
+      <div class="toggle-icon"></div>
+    </div>
   </header> 
 
   <main>
