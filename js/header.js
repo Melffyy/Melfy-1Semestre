@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <nav>
         <a href="home.html">Home</a>
         <a href="confeitarias.html">Produtos</a>
-        <a href="#">Meus Pedidos</a>
+        <a href="pedidos.html">Meus Pedidos</a>
         <div class="iconbag">
           <a href="carrinho.html"> 
             <i class="fas fa-shopping-bag"></i>
