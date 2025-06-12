@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Melfy</title>
   <link rel="stylesheet" href="./css/editarProdutos.css"/>
+  <script src="../js/toggle.js"></script>
   <script src="./js/editarProdutos.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -13,7 +14,7 @@
 <body>
   <header>
     <div class="logo">
-        <img src="../img/Melfy-versão final.svg" alt="Logo" />
+        <img src="../img/Melfy-versão final.svg" alt="Logo"/>
     </div>
     <nav>
       <a href="adicionarProdutos.html">Criar Produto</a>
@@ -22,11 +23,14 @@
       <a href="painelADM.html">Painel Administrativo</a>
       
       <div class="iconuser">
-        <a href="../login.html"> 
+        <a href="./login.html"> 
           <img src="../img/Perfil.svg" alt="">
         </a>
       </div>
     </nav>
+    <div id="toggle-dark-mode" class="toggle-btn" aria-pressed="false">
+      <div class="toggle-icon"></div>
+    </div>
   </header> 
   
   <main>
