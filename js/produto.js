@@ -1,15 +1,22 @@
 window.addEventListener('DOMContentLoaded', () => {
   const categoriaSelecionada = localStorage.getItem('categoriaSelecionada');
-
   const lojas = JSON.parse(localStorage.getItem('Lojas')) || [];
-
   const produtos = JSON.parse(localStorage.getItem('Produtos')) || [];
 
-  const produtosFiltrados = produtos.filter(produtos =>
-    produtos.categoria === categoriaSelecionada
+  const produtosFiltrados = produtos.filter(produto =>
+    produto.categoria === categoriaSelecionada
   );
 
+  const mainContainer = document.querySelector('main');
+  mainContainer.innerHTML = '';
 
+  
+  if (produtosFiltrados.length === 0) {
+    mainContainer.innerHTML = `
+      <p class="mensagem-vazia">Nenhum produto encontrado para a categoria selecionada.</p>
+    `;
+    return;
+  }
 
   // Agrupar produtos por loja
   const produtosPorLoja = {};
@@ -20,21 +27,15 @@ window.addEventListener('DOMContentLoaded', () => {
     produtosPorLoja[produto.idLoja].push(produto);
   });
 
-  const mainContainer = document.querySelector('main');
-
-  // Limpar conteúdo existente
-  mainContainer.innerHTML = '';
-
-  // Montar um bloco para cada loja
+  // Exibir apenas as lojas que têm produtos filtrados
   Object.keys(produtosPorLoja).forEach(idLoja => {
     const loja = lojas.find(l => l.idLoja == idLoja);
-    const produtos = produtosPorLoja[idLoja];
+    const produtosDaLoja = produtosPorLoja[idLoja];
 
     if (!loja) {
       console.warn(`Loja com id ${idLoja} não encontrada!`);
       return;
     }
-
 
     const container = document.createElement('div');
     container.classList.add('container_produtos');
@@ -51,7 +52,7 @@ window.addEventListener('DOMContentLoaded', () => {
       <div class="carrossel">
         <button class="arrow left"><img src="./img/seta esquerda.svg" alt=""></button>
         <div class="cards-container">
-          ${produtos.map(prod => `
+          ${produtosDaLoja.map(prod => `
             <div class="card">
               <img src="${prod.foto}" alt="${prod.nome}" class="foto-produto">
               <div class="descricao">
@@ -64,18 +65,21 @@ window.addEventListener('DOMContentLoaded', () => {
                   <span class="valor">${prod.preco.toFixed(2)}</span>
                 </div>
               </div>
+              <button class="arrow right"><img src="./img/seta direita.svg" alt="" srcset=""></button>
+
             </div>
           `).join('')}
         </div>
       </div>
     `;
-          
- 
 
     mainContainer.appendChild(container);
   });
-  
+
+  adicionarEventosAoModal();
 });
+
+
 
 
 function adicionarEventosAoModal() {
@@ -86,6 +90,7 @@ function adicionarEventosAoModal() {
   const modalDescricao = modal.querySelector('.modal-description');
   const modalPreco = modal.querySelector('.modal-price');
   const fecharBtn = modal.querySelector('.modal-close');
+
 
   cards.forEach(card => {
     card.addEventListener('click', () => {
@@ -112,5 +117,6 @@ function adicionarEventosAoModal() {
     }
   });
 }
+
 
 

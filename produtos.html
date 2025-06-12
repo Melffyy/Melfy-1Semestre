@@ -100,52 +100,62 @@
   <!-- #endregion -->
 
   <!-- #region Modal Descrição do Produto-->
-    <div class="modal-overlay" id="product-modal">
-    <div class="modal-content">
-    
-    <img src="brigadeiro.png" alt="Brigadeiro de nozes" class="modal-img">
-
-    <button class="modal-close" onclick="closeModal()">×</button>
-
-    <div class="modal-info">
-
-      <div class="modal-header">
-        <div class="modal-loja">
-          <img src="" alt="Logo da loja" class="modal-logo" />
-          <span class="modal-nome-loja">Dama</span>
-          <span class="modal-avaliacoes">★ 4.8</span>
+      <div class="modal-overlay" id="product-modal">
+        <div class="modal-content">
+          <button class="modal-close" onclick="fecharModal()">×</button>
+      
+          <img src="" alt="" class="modal-img" />
+      
+          <div class="modal-info">
+            <div class="modal-header">
+              <div class="modal-loja">
+                <img src="" alt="Logo da loja" class="modal-logo" />
+                <span class="modal-nome-loja">Dama</span>
+                <span class="modal-avaliacoes">★ 4.8</span>
+              </div>
+            </div>
+      
+            <h2 class="modal-title"></h2>
+            <p class="modal-subtitulo"></p>
+            <p class="modal-description"></p>
+            <p class="modal-peso"></p>
+            <p class="modal-price"></p>
+      
+            <label class="comentario">Comentário</label>
+            <textarea id="comentario" rows="1" placeholder="Digite um comentário..." oninput="autoResize(this)"></textarea>
+      
+            <div class="modal-actions">
+              <div class="modal-quantity">
+                <button onclick="alterarQuantidade(-1)" class="qtd-btn">-</button>
+                <span id="qtd-value">1</span>
+                <button onclick="alterarQuantidade(1)" class="qtd-btn">+</button>
+              </div>
+              <button class="btn-add">Adicionar</button>
+            </div>
+          </div>
         </div>
       </div>
-      <h2 class="modal-title">Brigadeiro de nozes</h2>
-      <p class="modal-description">
-        Brigadeiro com nozes, cremoso de chocolate com pedaços crocantes de nozes.
-      </p>
-
-      <p class="modal-label">PREÇO</p>
-    <div class="modal-price-qtd">
-        <p class="modal-price">R$ 2,00</p>
-        <div class="modal-quantity">
-          <button> <i class='bx  bx-minus'  ></i> </button>
-          <span>2</span>
-          <button>  <i class='bx  bx-plus'  ></i> </button>
-        </div>
-    </div>
- 
-
-      <div class="modal-actions">
-        <div class="modal-quantity">
-          <button> <i class='bx  bx-minus'  ></i> </button>
-          <span>2</span>
-          <button>  <i class='bx  bx-plus'  ></i> </button>
-        </div>  
-        <button class="btn-add">Adicionar ao carrinho</button>
-      </div>
-    </div>
-  </div>
-  </div>
+  
   <!-- #endregion Modal Overlay -->
-
-
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="social-icons">
+        <a href="#"><img src="./img/Instagram.svg" alt="Instagram" /></a>
+        <a href="#"><img src="./img/Facebook.svg" alt="Facebook" /></a>
+        <a href="#"><img src="./img/Linkedin.svg" alt="LinkedIn" /></a>
+      </div>
+      <p>Rua das Flores, nº 255, Jardim Rosinha, SP, Brasil</p>
+      <p>
+        <i class="fas fa-phone-alt"></i> (11) 959343957 &nbsp;
+        <i class="fas fa-envelope"></i> melfy@gmail.com
+      </p>
+    </div>
+    <div class="footer-bottom">
+      <a href="#">Política de Privacidade</a>
+      <span>© Copyright, 2025</span>
+      <a href="#">Termos e Condições</a>
+    </div>
+  </footer>
 
 </body>
 </html>
