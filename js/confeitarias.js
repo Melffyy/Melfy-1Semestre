@@ -215,8 +215,6 @@ function adicionarNaSacola() {
 
 
 
-
-
 function entrarPerfil() {
   let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
 
