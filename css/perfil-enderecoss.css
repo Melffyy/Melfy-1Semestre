@@ -179,9 +179,16 @@ nav .active {
     width: 100px;
 }
 
+
 .item-nome-email{
-  margin-top: -20px;
-  margin-bottom: -20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+
+#nome-exibir{
+  margin-bottom: -15px;
+  font-weight: bold;
 }
 
 #forma-pg{
@@ -299,7 +306,7 @@ label{
 
 .item-container-buttons{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 
@@ -324,7 +331,6 @@ button{
     font-size: 17px;
     cursor: pointer;
     transition: 0.5s;
-    left: 18%;
     position: relative;
 }
 
@@ -592,8 +598,7 @@ footer {
 
 .input-group input,
 .input-group select {
-  background-color: #dcdcdc;
-  border: 2px solid #dcdcdc;
+  background-color: #e6e6e6;
   border-radius: 8px;
   height: 35px;
   padding-left: 15px;
@@ -635,4 +640,92 @@ select{
 #fechar{
   background-color: rgb(255, 64, 0);
   color: white;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-conteudo {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+.fechar {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+
+.modal-conteudo .input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.modal-conteudo input[disabled],
+.modal-conteudo select[disabled] {
+  background-color: #eee;
+}
+
+.modal-conteudo button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 13px;
+  background-color: #ffc107;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-conteudo #btn-editar-endereco{
+  background-color: #FF7F00;
+}
+
+.modal-conteudo #btn-remover-endereco{
+  background-color: #ff2200;
+}
+
+.modal-conteudo button:hover {
+  opacity: 0.9;
+}
+
+.container-botoes{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+#edit-tipo{
+  width: 70%;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: #dcdcdc;
+  font-size: 16px;
+  height: 40px;
+  margin-left: 30px;
+  position: relative;
 }

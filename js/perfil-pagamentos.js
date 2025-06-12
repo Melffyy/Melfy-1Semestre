@@ -1,3 +1,31 @@
+
+document.addEventListener("DOMContentLoaded", function () {
+  exibirInformacoes();
+
+});
+
+
+
+
+function exibirInformacoes(){
+  const usuarioLogadoJSON = localStorage.getItem("usuarioLogado");
+
+  if (!usuarioLogadoJSON) {
+    console.warn("Nenhum usuário logado encontrado no localStorage.");
+    return;
+  }
+
+  const usuarioLogado = JSON.parse(usuarioLogadoJSON);
+
+
+  document.getElementById('nome-exibir').innerText = usuarioLogado.nome 
+  document.getElementById('email-exibir').innerText = usuarioLogado.email
+ 
+}
+
+
+
+
 function abrirModal() {
   const modal = document.getElementById('modalPagamento');
   let usuarios = JSON.parse(localStorage.getItem('Usuários')) || [];
@@ -34,8 +62,9 @@ function salvarCartao() {
   let numeroCartao = document.getElementById('numeroCartao').value;
   let validade = document.getElementById('validade').value;
   let cvv = document.getElementById('cvv').value;
+  let tipoCartao = document.getElementById('tipoCartao').value;
 
-  if (!nomeTitular || !numeroCartao || !validade || !cvv) {
+  if (!nomeTitular || !numeroCartao || !validade || !cvv || !tipoCartao) {
     alert('Preencha todos os campos!');
     return;
   }
@@ -59,7 +88,8 @@ function salvarCartao() {
     nomeTitular,
     numeroCartao,
     validade,
-    cvv
+    cvv, 
+    tipoCartao
   });
 
   localStorage.setItem('Usuários', JSON.stringify(usuarios));
@@ -82,7 +112,7 @@ function renderizarCartoes() {
     div.className = 'forma-cartao';
     div.innerHTML = `
       <div class="info-cartao">
-        <p><strong>Cartão ${cartao.numeroCartao.startsWith('4') ? 'Crédito' : 'Débito'}</strong></p>
+        <p><strong>${cartao.tipoCartao}</strong></p>
         <p>nº ${cartao.numeroCartao}</p>
       </div>
       <div class="info-direita">
@@ -116,3 +146,6 @@ function formatarValidade(input) {
 window.onload = () => {
   renderizarCartoes();
 };
+
+
+

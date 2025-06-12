@@ -179,10 +179,18 @@ nav .active {
     width: 100px;
 }
 
+
+
 .item-nome-email{
-  margin-top: -20px;
-  margin-bottom: -20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
+
+#nome-exibir{
+  margin-bottom: -15px;
+  font-weight: bold;
+}
+
 
 #forma-pg{
     width: 200px;
@@ -258,7 +266,6 @@ h1{
     border: 2px solid yellow;
     background-color: transparent;
     width: 100vh;
-    justify-content: center;
 }
 
 .item-meus-dados-flex{
@@ -323,7 +330,7 @@ button{
     font-size: 17px;
     cursor: pointer;
     transition: 0.5s;
-    left: 18%;
+
     position: relative;
 }
 
@@ -552,16 +559,31 @@ footer {
   font-weight: bold;
 }
 
-.modal input, .modal select {
+
+.modal input{
   padding: 9px;
   margin-top: 5px;
-  border-radius: 5px;
+  border-radius: 12px;
   width: 85%;
+  border: 2px solid #dcdcdc;
+  background-color: #dcdcdc;
+  transition: 0.5s;
+  font-size: 12px;
+}
+
+.modal select{
+ padding: 5px;
+} 
+
+#tipoCartao{
+  border-radius: 12px;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #dcdcdc;
 }
 
 .modal-actions {
   display: flex;
-
   gap: 20px;
   margin-top: 20px;
 }
@@ -602,4 +624,16 @@ input-group select:focus {
   outline: none;
   border-color: var(--cor-laranja);
   background-color: #fff;
+}
+
+
+.fechar {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#label-tipo{
+  margin: 0%;
+  
 }
