@@ -25,6 +25,7 @@
     --cor-glow: rgba(255, 213, 0, 0.6);
     --cor-container: #FFFDF4;
     --cor-rodape: #f8f8f8;
+    --cor-card: #ffffff;
 }
 
 body.dark-mode {
@@ -53,6 +54,7 @@ body.dark-mode {
   --cor-glow: rgba(255, 213, 0, 0.3);
   --cor-container: #fff3c1;
   --cor-rodape: #b8811b;
+  --cor-card1: #3e2d00;
 }
 body.dark-mode::before {
   background-color: rgb(0, 0, 0);
