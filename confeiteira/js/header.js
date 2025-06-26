@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <img src="img/Melfy-versão final.svg" alt="Logo" />
       </div>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="confeitarias.html">Produtos</a>
-        <a href="sobre.html">Sobre</a>
+        <a href="../index.html">Home</a>
+        <a href="../confeitarias.html">Produtos</a>
+        <a href="../sobre.html">Sobre</a>
         <a href="login.html">Login</a>
         <div class="iconuser">
           <a href="login.html" id="link-perfil"><img src="./img/Perfil.svg" alt="Perfil" /></a>

@@ -1,128 +1,7 @@
-document.addEventListener("DOMContentLoaded", function() {
-    if (!localStorage.getItem('ProdutosIniciaisAdicionados')) {
-        const produtosPadrao = [
-            {
-                nome: "Éclairs",
-                subtitulo: "Caixa com 7 éclairs sortidas",
-                categoria: "Éclairs",
-                descricao: "Caixa com 7 éclairs sortidas",
-                peso: 210,
-                preco: 133.00,
-                foto: "./img/Eclairs.svg",
-                idLoja: "1",
-                idConfeiteira: "1",
-                idProduto: 1
-            },
-            {
-                nome: "Bombons",
-                subtitulo: "Caixa com 36 doces",
-                categoria: "Bombons",
-                descricao: "Caixa com 36 doces",
-                peso: 360,
-                preco: 148.00,
-                foto: "./img/Bombons.svg",
-                idLoja: "2",
-                idConfeiteira: "2",
-                idProduto: 2
-            },
-            {
-                nome: "Brigadeiros",
-                subtitulo: "Caixa com 6 brigadeiros",
-                categoria: "Brigadeiros",
-                descricao: "Caixa com 6 brigadeiros de chocolate",
-                peso: 90,
-                preco: 15.00,
-                foto: "./img/Brigadeiros.svg",
-                idLoja: "3",
-                idConfeiteira: "3",
-                idProduto: 3
-            },
-            {
-                nome: "Brownie ninho e nutella",
-                subtitulo: "Marmita brownie de ninho e nutella",
-                categoria: "Brownie",
-                descricao: "Marmita brownie de ninho e nutella",
-                peso: 100,
-                preco: 20.00,
-                foto: "./img/Brownie de Ninho.svg",
-                idLoja: "4",
-                idConfeiteira: "4",
-                idProduto: 4
-            },
-            {
-                nome: "Cookies Recheados",
-                subtitulo: "Cookie recheado de chocolate",
-                categoria: "Cookies",
-                descricao: "Cookie recheado de chocolate",
-                peso: 40,
-                preco: 6.00,
-                foto: "./img/Cookies de Chocolate.svg",
-                idLoja: "2",
-                idConfeiteira: "2",
-                idProduto: 5
-            },
-            {
-                nome: "Pudim",
-                subtitulo: "Pudim tamanho família",
-                categoria: "Pudim",
-                descricao: "Pudim tamanho família",
-                peso: 1300,
-                preco: 70.00,
-                foto: "./img/Pudim.svg",
-                idLoja: "4",
-                idConfeiteira: "4",
-                idProduto: 6
-            },
-            {
-                nome: "Mini Sonhos",
-                subtitulo: "Sonhos tradicionais unidade",
-                categoria: "Sonhos",
-                descricao: "Sonhos tradicionais unidade",
-                peso: 25,
-                preco: 2.50,
-                foto: "./img/Mini Sonhos.svg",
-                idLoja: "1",
-                idConfeiteira: "1",
-                idProduto: 7
-            },
-            {
-                nome: "Cheescake de Morango",
-                subtitulo: "Cheescake de 8 fatias",
-                categoria: "Cheescake",
-                descricao: "Cheescake de 8 fatias",
-                peso: 1100,
-                preco: 163.00,
-                foto: "./img/Cheescake.svg",
-                idLoja: "3",
-                idConfeiteira: "3",
-                idProduto: 8
-            },
-            {
-                nome: "Pavê de Chocolates",
-                subtitulo: "Pavê de chocolate preto e branco",
-                categoria: "Pavê",
-                descricao: "Pavê de chocolate preto e branco",
-                peso: 150,
-                preco: 16.00,
-                foto: "./img/Pave.svg",
-                idLoja: "1",
-                idConfeiteira: "1",
-                idProduto: 9
-            },
-            {
-                nome: "Romcabole Red Velvet",
-                subtitulo: "Recheado com geléia de amoras",
-                categoria: "Romcabole", 
-                descricao: "Recheado com geléia de amoras",
-                peso: 600, 
-                preco: 120.00,
-                foto: "./img/Romcabole.svg",
-                idLoja: "1", 
-                idConfeiteira: "1", 
-                idProduto: 10 
-            }
+import { carregarTodosOsDados } from './dicionario.js';
 
-        ];
+document.addEventListener('DOMContentLoaded', () => {
+  carregarTodosOsDados();
 
         let produtosExistentes = JSON.parse(localStorage.getItem('Produtos')) || [];
 
@@ -132,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
         produtosExistentes = produtosExistentes.concat(novosProdutos);
         localStorage.setItem('Produtos', JSON.stringify(produtosExistentes));
 
-    }
 
     const nomeInput = document.getElementById("nome");
     const subtituloInput = document.getElementById("subtitulo");

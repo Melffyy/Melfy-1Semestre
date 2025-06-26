@@ -1,3 +1,9 @@
+import { carregarTodosOsDados } from '../confeiteira/js/dicionario.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  carregarTodosOsDados();
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".button").addEventListener("click", function() {
   document.getElementById("section1").scrollIntoView({ behavior: "smooth" });
