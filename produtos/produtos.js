@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 el.addEventListener('click', function (e) {
                     e.stopPropagation(); 
                     localStorage.setItem('idLojaSelecionada', loja.idLoja);
-                    window.location.href = 'loja.html';
+                    window.location.href = '../loja/loja.html';
                 });
             });
             
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
         doce.addEventListener('click', function () {
           const categoria = this.querySelector('p').textContent.trim();
           localStorage.setItem('categoriaSelecionada', categoria); 
-          window.location.href = 'produtos.html';
+          window.location.href = '../docesQueridinhos/docesQueridinhos.html';
         });
       });
       
@@ -220,10 +220,10 @@ function entrarPerfil() {
 
   if (!usuarioLogado || Object.keys(usuarioLogado).length === 0) {
       alert('Você precisa se logar primeiro!');
-      window.location.href = 'login.html';
+      window.location.href = '../login/login.html';
   } else {
       alert('Usuário logado!!');
-      window.location.href = 'perfil.html';
+      window.location.href = '../perfil/perfil.html';
   }
 
   console.log(usuarioLogado);

@@ -1,10 +1,7 @@
 import { carregarTodosOsDados } from '../confeiteira/js/dicionario.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  carregarTodosOsDados();
-});
-
 document.addEventListener("DOMContentLoaded", function () {
+  carregarTodosOsDados();
   document.querySelector(".button").addEventListener("click", function() {
   document.getElementById("section1").scrollIntoView({ behavior: "smooth" });
 });
@@ -47,8 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
     title.classList.add("glow");
   });
 });
-
-
 
 const coordenadasIniciais = [-23.561684, -46.625378];
 const mapa = L.map("mapa").setView(coordenadasIniciais, 13);

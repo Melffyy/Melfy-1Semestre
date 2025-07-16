@@ -148,7 +148,7 @@ function habilitarEdicao() {
 function sairConta() {
     localStorage.removeItem('usuarioLogado');
     alert('Usuário deslogado');
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
 }
 
 

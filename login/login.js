@@ -35,7 +35,7 @@ function logar() {
     if (usuario) {
         sessionStorage.setItem("user", usuario.nome);
         localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
-        window.location.href = 'confeitarias.html';
+        window.location.href = '../produtos/produtos.html';
         return;
     }
 
@@ -49,7 +49,7 @@ function logar() {
             localStorage.setItem('idLojaAtual', idLoja);
         }
 
-        window.location.href = 'confeiteira/adicionarProdutos.html';
+        window.location.href = '../confeiteira/adicionarProdutos.html';
         return;
     }
 
