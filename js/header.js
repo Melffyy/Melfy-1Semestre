@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const headerNaoLogado = `
     <header>
       <div class="logo">
-        <img src="../img/Melfy-versão final.svg" alt="Logo" />
+        <img src="img/Melfy-versão final.svg" alt="Logo" />
       </div>
       <nav>
-        <a href="../index.html">Home</a>
-        <a href="../produtos/produtos.html">Produtos</a>
-        <a href="../sobre/sobre.html">Sobre</a>
-        <a href="../login/login.html">Login</a>
+        <a href="index.html">Home</a>
+        <a href="confeitarias.html">Produtos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="login.html">Login</a>
         <div class="iconuser">
-          <a href="../login/login.html" id="link-perfil"><img src="../img/Perfil.svg" alt="Perfil" /></a>
+          <a href="login.html" id="link-perfil"><img src="./img/Perfil.svg" alt="Perfil" /></a>
         </div>
       </nav>
       <div id="toggle-dark-mode" class="toggle-btn" aria-pressed="false">
@@ -27,20 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const headerLogado = `
     <header>
       <div class="logo">
-        <img src="../img/Melfy-versão final.svg" alt="Logo" />
+        <img src="img/Melfy-versão final.svg" alt="Logo" />
       </div>
       <nav>
-        <a href="../home/home.html">Home</a>
-        <a href="../produtos/produtos.html">Produtos</a>
-        <a href="../pedidos/pedidos.html">Meus Pedidos</a>
+        <a href="home.html">Home</a>
+        <a href="confeitarias.html">Produtos</a>
+        <a href="pedidos.html">Meus Pedidos</a>
         <div class="iconbag">
-          <a href="../carrinho/carrinho.html"> 
+          <a href="carrinho.html"> 
             <i class="fas fa-shopping-bag"></i>
           </a>
         </div>
         <div class="iconuser">
-          <a href="../perfil/perfil.html" id="link-perfil"> 
-            <img src="../img/Perfil.svg" alt="Perfil" />
+          <a href="perfil.html" id="link-perfil"> 
+            <img src="./img/Perfil.svg" alt="Perfil" />
           </a>
         </div>
       </nav>
@@ -57,9 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
     linkPerfil.addEventListener('click', (e) => {
       e.preventDefault();
       if (usuarioLogado) {
-        window.location.href = '../perfil/perfil.html';
+        window.location.href = 'perfil.html';
       } else {
-        window.location.href = '../login/login.html';
+        window.location.href = 'login.html';
       }
     });
   }

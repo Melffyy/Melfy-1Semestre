@@ -1,50 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./docesQueridinhos.css">
-    <script src="./docesQueridinhos.js"></script>
-    <script src="../produtos/carrossel.js" defer></script>
-    <script src="../toggle/toggle.js" defer></script>
-    <script src="../header/header.js"></script>  
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Melfy</title>
+  <link rel="stylesheet" href="./css/loja.css"/>
+  <script src="./js/loja.js"></script>
+  <script src="./js/toggle.js" defer></script>
+  <script src="./js/header.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div id="header"></div>
-    <!-- #region Barra Pesquisar e botão filtr -->
 
-    <div class="inicio-botao-pesquisar">
-      <div class="filtro">
-        <button class="button-filtro">Filtro </button>
-        <i class='bx  bx-slider'  ></i>
-      </div>
+  <main>
+    <div class="border">
 
-      <section class="search-bar">
-          <input type="text" placeholder="Pesquisar..." />
-          <div class="iconsearch">
-              <i class="fas fa-search"></i>
-          </div>
-      </section>        
-   </div>
-  <!-- #endregion -->
-
-    <!-- #region Conteudo Principal -->
-  <main> 
-
-
-        <div class="container_produtos">
-          
+      <section class="banner">
+        <div class="banner">
+          <img src="./img/banner-sucrier.png" alt="Banner Sucrier">
         </div>
-  </main>
-  <!-- #endregion -->
+      </section>
+      
+      <section class="header-loja"> 
+        <div class="logo-loja"></div>
+        <div class="detalhes">
+          <h2 id="nome-loja"></h2>
+          <span class="avaliacoes">★ 4.8</span>
+          <a href="#" class="ver-mais">ver mais</a>
+        </div>
+      </section>
+    
+      <section class="destaques">
+        <h3>Novidades</h3>
+        <div class="container">
+          <div class="produtos"></div>
+        </div>
+      </section>
+      
+      <section class="search-bar">
+        <input type="text" id="search-input" placeholder="Pesquisar..." />
+        <div class="iconsearch" id="search-button">
+          <i class="fas fa-search"></i>
+        </div>
+      </section>
 
-  <!-- #region Modal Descrição do Produto-->
-      <div class="modal-overlay" id="product-modal">
+      <h3 class="lista-produtos">Todos os Produtos</h3>
+      <div class="cards-wrapper"></div>
+    </div>
+
+    <div class="modal-overlay" id="product-modal">
         <div class="modal-content">
           <button class="modal-close" onclick="fecharModal()">×</button>
       
@@ -79,14 +87,14 @@
           </div>
         </div>
       </div>
+  </main>
   
-  <!-- #endregion Modal Overlay -->
   <footer class="footer">
     <div class="footer-top">
       <div class="social-icons">
-        <a href="#"><img src="../img/Instagram.svg" alt="Instagram" /></a>
-        <a href="#"><img src="../img/Facebook.svg" alt="Facebook" /></a>
-        <a href="#"><img src="../img/Linkedin.svg" alt="LinkedIn" /></a>
+        <a href="#"><img src="./img/Instagram.svg" alt="Instagram" /></a>
+        <a href="#"><img src="./img/Facebook.svg" alt="Facebook" /></a>
+        <a href="#"><img src="./img/Linkedin.svg" alt="LinkedIn" /></a>
       </div>
       <p>Rua das Flores, nº 255, Jardim Rosinha, SP, Brasil</p>
       <p>
@@ -100,6 +108,6 @@
       <a href="#">Termos e Condições</a>
     </div>
   </footer>
-
+  
 </body>
 </html>

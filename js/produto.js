@@ -45,12 +45,12 @@ window.addEventListener('DOMContentLoaded', () => {
         <img src="${loja.fotoPerfil}" alt="Logo da Loja" class="perfil-logo">
         <div class="perfil-nome-avaliacao">
           <span class="nome-loja">${loja.nomeLoja}</span>
-          <img src="../img/Avaliação.svg" alt="Avaliação" class="perfil-avaliacao">
+          <img src="./img/Avaliação.svg" alt="Avaliação" class="perfil-avaliacao">
         </div>
       </div>
 
       <div class="carrossel">
-        <button class="arrow left"><img src="../img/seta esquerda.svg" alt=""></button>
+        <button class="arrow left"><img src="./img/seta esquerda.svg" alt=""></button>
         <div class="cards-container">
           ${produtosDaLoja.map(prod => `
             <div class="card">
@@ -65,7 +65,7 @@ window.addEventListener('DOMContentLoaded', () => {
                   <span class="valor">${prod.preco.toFixed(2)}</span>
                 </div>
               </div>
-              <button class="arrow right"><img src="../img/seta direita.svg" alt="" srcset=""></button>
+              <button class="arrow right"><img src="./img/seta direita.svg" alt="" srcset=""></button>
 
             </div>
           `).join('')}

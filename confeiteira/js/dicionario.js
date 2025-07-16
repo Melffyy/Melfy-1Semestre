@@ -71,16 +71,15 @@ export const lojasIniciais = [
     nomeLoja: "Dama",
     horario: "08:00 - 18:00",
     descricao: "Bolos decorados e doces artesanais feitos com carinho.",
-    fotoPerfil: "../../img/Lojas/Dama.svg",
+    fotoPerfil: "img/Lojas/Dama.svg",
     idConfeiteira: "1"
   },
-
   {
     idLoja: 2,
     nomeLoja: "Caseirinho",
     horario: "09:00 - 20:00",
     descricao: "Tortas gourmet, cupcakes e doces personalizados para eventos.",
-    fotoPerfil: "../../img/Lojas/Caseirinho.svg",
+    fotoPerfil: "img/Lojas/Caseirinho.svg",
     idConfeiteira: "2"
   },
   {
@@ -88,7 +87,7 @@ export const lojasIniciais = [
     nomeLoja: "Da Bê",
     horario: "10:00 - 17:00",
     descricao: "Bolos caseiros e brigadeiros feitos com ingredientes naturais.",
-    fotoPerfil: "../../img/Lojas/Da Bê.svg",
+    fotoPerfil: "img/Lojas/Da Bê.svg",
     idConfeiteira: "3"
   },
   {
@@ -96,7 +95,7 @@ export const lojasIniciais = [
     nomeLoja: "Barcelle",
     horario: "11:00 - 19:00",
     descricao: "Brownies, cookies e sobremesas de potinho irresistíveis.",
-    fotoPerfil: "../../img/Lojas/Barcelle.png",
+    fotoPerfil: "img/Lojas/Barcelle.png",
     idConfeiteira: "4"
   }
 ];
@@ -109,7 +108,7 @@ export const produtosPadrao = [
       descricao: "Caixa com 7 éclairs sortidas",
       peso: 210,
       preco: 133.00,
-      foto: "../../img/Eclairs.svg",
+      foto: "./img/Eclairs.svg",
       idLoja: "1",
       idConfeiteira: "1",
       idProduto: 1
@@ -121,7 +120,7 @@ export const produtosPadrao = [
       descricao: "Caixa com 36 doces",
       peso: 360,
       preco: 148.00,
-      foto: "../../img/Bombons.svg",
+      foto: "./img/Bombons.svg",
       idLoja: "2",
       idConfeiteira: "2",
       idProduto: 2
@@ -133,7 +132,7 @@ export const produtosPadrao = [
       descricao: "Caixa com 6 brigadeiros de chocolate",
       peso: 90,
       preco: 15.00,
-      foto: "../../img/Brigadeiros.svg",
+      foto: "./img/Brigadeiros.svg",
       idLoja: "3",
       idConfeiteira: "3",
       idProduto: 3
@@ -145,7 +144,7 @@ export const produtosPadrao = [
       descricao: "Marmita brownie de ninho e nutella",
       peso: 100,
       preco: 20.00,
-      foto: "../../img/Brownie de Ninho.svg",
+      foto: "./img/Brownie de Ninho.svg",
       idLoja: "4",
       idConfeiteira: "4",
       idProduto: 4
@@ -157,7 +156,7 @@ export const produtosPadrao = [
       descricao: "Cookie recheado de chocolate",
       peso: 40,
       preco: 6.00,
-      foto: "../../img/Cookies de Chocolate.svg",
+      foto: "./img/Cookies de Chocolate.svg",
       idLoja: "2",
       idConfeiteira: "2",
       idProduto: 5
@@ -169,7 +168,7 @@ export const produtosPadrao = [
       descricao: "Pudim tamanho família",
       peso: 1300,
       preco: 70.00,
-      foto: "../../img/Pudim.svg",
+      foto: "./img/Pudim.svg",
       idLoja: "4",
       idConfeiteira: "4",
       idProduto: 6
@@ -181,7 +180,7 @@ export const produtosPadrao = [
       descricao: "Sonhos tradicionais unidade",
       peso: 25,
       preco: 2.50,
-      foto: "../../img/Mini Sonhos.svg",
+      foto: "./img/Mini Sonhos.svg",
       idLoja: "1",
       idConfeiteira: "1",
       idProduto: 7
@@ -193,7 +192,7 @@ export const produtosPadrao = [
       descricao: "Cheescake de 8 fatias",
       peso: 1100,
       preco: 163.00,
-      foto: "../../img/Cheescake.svg",
+      foto: "./img/Cheescake.svg",
       idLoja: "3",
       idConfeiteira: "3",
       idProduto: 8
@@ -205,7 +204,7 @@ export const produtosPadrao = [
       descricao: "Pavê de chocolate preto e branco",
       peso: 150,
       preco: 16.00,
-      foto: "../../img/Pave.svg",
+      foto: "./img/Pave.svg",
       idLoja: "1",
       idConfeiteira: "1",
       idProduto: 9
@@ -217,7 +216,7 @@ export const produtosPadrao = [
       descricao: "Recheado com geléia de amoras",
       peso: 600, 
       preco: 120.00,
-      foto: "../../img/Romcabole.svg",
+      foto: "./img/Romcabole.svg",
       idLoja: "1", 
       idConfeiteira: "1", 
       idProduto: 10 

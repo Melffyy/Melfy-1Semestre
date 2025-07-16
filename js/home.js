@@ -57,7 +57,7 @@ lojas.forEach(loja => {
 
   card.addEventListener('click', () => {
     localStorage.setItem('idLojaSelecionada', loja.idLoja);
-    window.location.href = '../loja/loja.html';
+    window.location.href = 'loja.html';
   });
 
   container.appendChild(card);
